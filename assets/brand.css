@@ -1,0 +1,79 @@
+/* ============================================================
+   TUK & TIDE CLUB — Shared Brand Stylesheet
+   Used by every page partial. Do not redefine tokens locally.
+   WeasyPrint-safe (no inset:, display:contents, mix-blend-mode,
+   text-shadow, or filter: drop-shadow).
+   ============================================================ */
+
+/* ---- Fonts (local TTF, embedded) ---- */
+@font-face { font-family:'Fredoka';   src:url('fonts/Fredoka.ttf');            font-weight:400 700; }
+@font-face { font-family:'Bricolage'; src:url('fonts/BricolageGrotesque.ttf'); font-weight:400 800; }
+@font-face { font-family:'DM Sans';   src:url('fonts/DMSans.ttf');             font-weight:400 700; }
+
+/* ---- Tokens ---- */
+:root{
+  --terracotta:#C8502A;   /* primary  */
+  --mustard:#E0A434;      /* secondary*/
+  --teal:#2E7D74;         /* accent   */
+  --cream:#F4EAD5;        /* bg       */
+  --cacao:#2E211A;        /* text     */
+  --cream-deep:#EADBBE;   /* panel    */
+  --terracotta-deep:#A63E1E;
+  --teal-deep:#215A53;
+
+  --display:'Fredoka', sans-serif;
+  --head:'Bricolage', sans-serif;
+  --body:'DM Sans', sans-serif;
+}
+
+/* ---- Page system (A4 portrait) ---- */
+@page { size:A4; margin:0; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ font-family:var(--body); color:var(--cacao); }
+
+.page{
+  position:relative;
+  width:210mm; height:297mm;
+  background:var(--cream);
+  overflow:hidden;
+  page-break-after:always;
+  padding:22mm 20mm;
+}
+.page:last-child{ page-break-after:auto; }
+.page.bleed{ padding:0; }          /* full-bleed pages (cover etc.) */
+
+/* ---- Type helpers ---- */
+.display{ font-family:var(--display); font-weight:700; line-height:0.98; color:var(--terracotta); }
+.kicker{ font-family:var(--display); font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+         font-size:11pt; color:var(--teal); }
+h1.sec{ font-family:var(--display); font-weight:700; font-size:34pt; color:var(--terracotta);
+        line-height:1.0; margin-bottom:4mm; }
+h2.sub{ font-family:var(--head); font-weight:700; font-size:16pt; color:var(--cacao); margin-bottom:3mm; }
+p{ font-family:var(--body); font-size:11pt; line-height:1.55; max-width:150mm; }
+.lead{ font-size:13pt; line-height:1.5; }
+.small{ font-size:9pt; color:#6c5a4a; }
+
+/* ---- Footer page mark ---- */
+.pgmark{ position:absolute; bottom:12mm; left:20mm; right:20mm;
+         display:flex; justify-content:space-between;
+         font-family:var(--head); font-size:8pt; letter-spacing:.12em;
+         text-transform:uppercase; color:var(--teal); }
+
+/* ---- Reusable bits ---- */
+.divider{ height:3px; width:54mm; background:var(--mustard); border-radius:2px; margin:5mm 0; }
+.chip{ display:inline-block; padding:2mm 4mm; border-radius:30px; font-family:var(--head);
+       font-weight:700; font-size:9pt; background:var(--teal); color:var(--cream); }
+.panel{ background:var(--cream-deep); border-radius:6mm; padding:8mm; }
+
+/* ---- Wordmark (shared — render identically everywhere) ---- */
+.wordmark{ text-align:center; }
+.wordmark .wm-main{ font-family:var(--display); font-weight:700; color:var(--terracotta);
+                    line-height:0.95; font-size:48pt; }
+.wordmark .wm-main .amp{ color:var(--mustard); }
+.wordmark .wm-rule{ height:4px; width:46mm; background:var(--teal); border-radius:3px;
+                    margin:3mm auto; }
+.wordmark .wm-sub{ font-family:var(--head); font-weight:700; letter-spacing:.34em;
+                   text-transform:uppercase; font-size:11pt; color:var(--teal);
+                   padding-left:.34em; }
+/* small inline badge image helper */
+.badge-img{ display:block; }
