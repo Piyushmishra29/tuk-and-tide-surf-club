@@ -1,0 +1,147 @@
+<div class="page">
+  <style scoped>
+    .ls-head{ margin-bottom:7mm; }
+    .ls-head .kicker{ margin-bottom:2mm; }
+
+    /* hero row: primary badge + wordmark */
+    .ls-hero{ display:flex; gap:7mm; margin-bottom:7mm; }
+    .ls-hero .panel{ display:flex; flex-direction:column; align-items:center;
+                     justify-content:center; padding:9mm 6mm; }
+    .ls-hero .primary{ width:78mm; }
+    .ls-hero .word{ flex:1; }
+    .ls-cap{ font-family:var(--head); font-weight:700; font-size:8pt;
+             letter-spacing:.18em; text-transform:uppercase; color:var(--teal);
+             margin-bottom:5mm; align-self:flex-start; }
+    .ls-badge-primary{ display:block; width:55mm; height:55mm; }
+
+    /* compact wordmark variant (reuses .wordmark structure) */
+    .wm-compact .wm-main{ font-size:24pt; }
+    .wm-compact .wm-rule{ width:30mm; height:3px; margin:1.8mm auto; }
+    .wm-compact .wm-sub{ font-size:7pt; letter-spacing:.26em; }
+    .wm-mini .wm-main{ font-size:15pt; white-space:nowrap; }
+    .wm-mini .wm-rule{ width:22mm; height:2px; margin:1.4mm auto; }
+    .wm-mini .wm-sub{ font-size:5.5pt; letter-spacing:.2em; }
+
+    /* lockups grid */
+    .ls-locks{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; margin-bottom:6mm; }
+    .lock{ background:var(--cream-deep); border-radius:6mm; padding:6mm;
+           display:flex; flex-direction:column; height:49mm; }
+    .lock .body{ flex:1; display:flex; align-items:center; justify-content:center; }
+    .lock-cap{ font-family:var(--head); font-weight:700; font-size:7.5pt;
+               letter-spacing:.14em; text-transform:uppercase; color:var(--terracotta-deep);
+               margin-top:4mm; text-align:center; }
+    .lock.stamp{ background:var(--terracotta); }
+    .lock.stamp .lock-cap{ color:var(--cream); }
+
+    /* horizontal lockup */
+    .lk-h{ display:flex; align-items:center; gap:5mm; }
+    .lk-h img{ width:26mm; height:26mm; display:block; }
+    .lk-h .wm-compact{ text-align:left; }
+    .lk-h .wm-compact .wm-rule{ margin:1.8mm 0; }
+    .lk-h .wm-compact .wm-sub{ padding-left:0; }
+
+    /* stacked lockup */
+    .lk-s{ display:flex; flex-direction:column; align-items:center; gap:3mm; }
+    .lk-s img{ width:24mm; height:24mm; display:block; }
+
+    /* badge only */
+    .lk-b img{ width:30mm; height:30mm; display:block; }
+
+    /* stamp tile */
+    .stamp-tile{ background:var(--cream); border-radius:4mm; padding:4mm;
+                 display:flex; align-items:center; justify-content:center; }
+    .stamp-tile img{ width:20mm; height:20mm; display:block; }
+
+    /* notes */
+    .ls-notes{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+    .ls-notes .note{ border-left:3px solid var(--mustard); padding-left:5mm; }
+    .ls-notes h3{ font-family:var(--head); font-weight:800; font-size:10pt;
+                  color:var(--cacao); margin-bottom:1.5mm; letter-spacing:.02em; }
+  </style>
+
+  <div class="ls-head">
+    <div class="kicker">Identity</div>
+    <h1 class="sec">The Logo System</h1>
+  </div>
+
+  <!-- HERO: primary badge + wordmark -->
+  <div class="ls-hero">
+    <div class="panel primary">
+      <div class="ls-cap">Primary Badge</div>
+      <img class="ls-badge-primary" src="../assets/logo/badge.svg" alt="Tuk &amp; Tide Club badge">
+    </div>
+    <div class="panel word">
+      <div class="ls-cap">Wordmark</div>
+      <div class="wordmark wm-compact" style="margin:auto 0;">
+        <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
+        <div class="wm-rule"></div>
+        <div class="wm-sub">Weligama · Sri Lanka</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCKUPS -->
+  <div class="ls-locks">
+    <div class="lock">
+      <div class="body">
+        <div class="lk-h">
+          <img src="../assets/logo/badge.svg" alt="badge">
+          <div class="wordmark wm-mini">
+            <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
+            <div class="wm-rule"></div>
+            <div class="wm-sub">Weligama · Sri Lanka</div>
+          </div>
+        </div>
+      </div>
+      <div class="lock-cap">A · Horizontal Lockup</div>
+    </div>
+
+    <div class="lock">
+      <div class="body">
+        <div class="lk-s">
+          <img src="../assets/logo/badge.svg" alt="badge">
+          <div class="wordmark wm-mini">
+            <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
+            <div class="wm-rule"></div>
+            <div class="wm-sub">Weligama · Sri Lanka</div>
+          </div>
+        </div>
+      </div>
+      <div class="lock-cap">B · Stacked Lockup</div>
+    </div>
+
+    <div class="lock">
+      <div class="body lk-b">
+        <img src="../assets/logo/badge.svg" alt="badge">
+      </div>
+      <div class="lock-cap">C · Badge Only</div>
+    </div>
+
+    <div class="lock stamp">
+      <div class="body">
+        <div class="stamp-tile">
+          <img src="../assets/logo/badge.svg" alt="badge stamp">
+        </div>
+      </div>
+      <div class="lock-cap">D · One-colour / Stamp Use</div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="ls-notes">
+    <div class="note">
+      <h3>Clear Space</h3>
+      <p class="small">Keep breathing room equal to the height of the wordmark's
+        <strong>&amp;</strong> on all sides of any lockup. Nothing — type, edges or
+        other marks — enters that zone.</p>
+    </div>
+    <div class="note">
+      <h3>Minimum Size</h3>
+      <p class="small">Badge never smaller than <strong>16&nbsp;mm</strong> wide;
+        wordmark never below <strong>30&nbsp;mm</strong> wide. Stamp use stands in for a
+        single-ink reproduction where colour printing isn't possible.</p>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
+</div>

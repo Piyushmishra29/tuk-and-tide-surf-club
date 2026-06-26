@@ -5,10 +5,16 @@
    text-shadow, or filter: drop-shadow).
    ============================================================ */
 
-/* ---- Fonts (local TTF, embedded) ---- */
-@font-face { font-family:'Fredoka';   src:url('fonts/Fredoka.ttf');            font-weight:400 700; }
-@font-face { font-family:'Bricolage'; src:url('fonts/BricolageGrotesque.ttf'); font-weight:400 800; }
-@font-face { font-family:'DM Sans';   src:url('fonts/DMSans.ttf');             font-weight:400 700; }
+/* ---- Fonts (local TTF, embedded). Variable TTFs registered at the explicit
+   weights we use — WeasyPrint maps each to the font's wght axis. ---- */
+@font-face { font-family:'Fredoka';   src:url('fonts/Fredoka.ttf');            font-weight:400; }
+@font-face { font-family:'Fredoka';   src:url('fonts/Fredoka.ttf');            font-weight:600; }
+@font-face { font-family:'Fredoka';   src:url('fonts/Fredoka.ttf');            font-weight:700; }
+@font-face { font-family:'Bricolage'; src:url('fonts/BricolageGrotesque.ttf'); font-weight:400; }
+@font-face { font-family:'Bricolage'; src:url('fonts/BricolageGrotesque.ttf'); font-weight:700; }
+@font-face { font-family:'Bricolage'; src:url('fonts/BricolageGrotesque.ttf'); font-weight:800; }
+@font-face { font-family:'DM Sans';   src:url('fonts/DMSans.ttf');             font-weight:400; }
+@font-face { font-family:'DM Sans';   src:url('fonts/DMSans.ttf');             font-weight:700; }
 
 /* ---- Tokens ---- */
 :root{

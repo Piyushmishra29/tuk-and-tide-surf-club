@@ -1,0 +1,72 @@
+<div class="page bleed cover">
+  <style scoped>
+    .cover{ overflow:hidden; }
+    /* rising-sun arc behind the badge (subtle) */
+    .cover-sun{
+      position:absolute; top:24mm; left:35mm;
+      width:140mm; height:70mm;
+      background:var(--mustard);
+      border-radius:70mm 70mm 0 0;
+      opacity:0.30;
+    }
+    .cover-sun-ring{
+      position:absolute; top:33mm; left:44mm;
+      width:122mm; height:61mm;
+      border:2.5mm solid var(--mustard);
+      border-bottom:none;
+      border-radius:61mm 61mm 0 0;
+      opacity:0.22;
+    }
+    /* layered retro wave band — lower third */
+    .cover-wave{
+      position:absolute; left:0; bottom:0;
+      width:210mm; height:108mm;
+    }
+    /* centered content stack */
+    .cover-stack{
+      position:absolute; top:0; left:0; right:0;
+      padding-top:30mm;
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .cover-badge{ width:76mm; height:76mm; display:block; }
+    .cover-wm{ margin-top:9mm; }
+    .cover-tag{
+      font-family:var(--display); font-weight:600;
+      font-size:19pt; color:var(--teal-deep);
+      margin-top:9mm; letter-spacing:.01em;
+    }
+    .cover-kicker{
+      font-family:var(--head); font-weight:700;
+      letter-spacing:.40em; text-transform:uppercase;
+      font-size:10pt; color:var(--teal);
+      margin-top:7mm; padding-left:.40em;
+    }
+  </style>
+
+  <div class="cover-sun"></div>
+  <div class="cover-sun-ring"></div>
+
+  <svg class="cover-wave" viewBox="0 0 210 108" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 30 C 42 12 84 14 126 30 C 162 44 192 40 210 30 L210 108 L0 108 Z" fill="#E0A434"/>
+    <path d="M0 44 C 48 26 92 28 140 46 C 178 60 200 54 210 46 L210 108 L0 108 Z" fill="#C8502A"/>
+    <path d="M0 60 C 46 46 96 48 146 64 C 184 76 202 70 210 62 L210 108 L0 108 Z" fill="#2E7D74"/>
+    <path d="M0 78 C 56 68 110 84 160 78 C 188 75 204 76 210 78 L210 108 L0 108 Z" fill="#215A53"/>
+    <g fill="#F4EAD5">
+      <circle cx="40" cy="42" r="1.5"/><circle cx="88" cy="40" r="1.2"/>
+      <circle cx="138" cy="56" r="1.5"/><circle cx="186" cy="50" r="1.2"/>
+    </g>
+  </svg>
+
+  <div class="cover-stack">
+    <img class="cover-badge" src="../assets/logo/badge.svg" alt="Tuk & Tide Club badge">
+
+    <div class="wordmark cover-wm">
+      <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
+      <div class="wm-rule"></div>
+      <div class="wm-sub">Weligama · Sri Lanka</div>
+    </div>
+
+    <div class="cover-tag">Surf, ride, repeat.</div>
+    <div class="cover-kicker">Visual Identity · Brand Book 2026</div>
+  </div>
+</div>
