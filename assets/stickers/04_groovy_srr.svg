@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+  <rect x="10" y="10" width="340" height="340" rx="58" fill="#C24A2C"/>
+  <rect x="10" y="10" width="340" height="340" rx="58" fill="none" stroke="#241D18" stroke-width="6"/>
+  <rect x="22" y="22" width="316" height="316" rx="48" fill="none" stroke="#241D18" stroke-width="2"/>
+  <text x="180" y="118" font-family="Shrikhand" font-size="86" fill="#241D18" text-anchor="middle">Surf</text>
+  <text x="180" y="196" font-family="Shrikhand" font-size="86" fill="#EFE3D0" text-anchor="middle">Ride</text>
+  <text x="180" y="276" font-family="Shrikhand" font-size="66" fill="#241D18" text-anchor="middle">Repeat</text>
+  <g stroke="#241D18" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M120 310 q10 -10 20 0 q10 10 20 0 q10 -10 20 0 q10 10 20 0 q10 -10 20 0"/>
+    <path d="M120 322 q10 -10 20 0 q10 10 20 0 q10 -10 20 0 q10 10 20 0 q10 -10 20 0"/>
+  </g>
+</svg>

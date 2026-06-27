@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+<circle cx="180" cy="180" r="178" fill="#241D18"/>
+<circle cx="180" cy="180" r="172" fill="none" stroke="#C24A2C" stroke-width="3"/>
+<circle cx="180" cy="180" r="165" fill="none" stroke="#C24A2C" stroke-width="1.2"/>
+<text x="33.5" y="143.5" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-76.00 33.5 143.5)">T</text>
+<text x="40.0" y="123.4" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-68.00 40.0 123.4)">U</text>
+<text x="49.2" y="104.5" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-60.00 49.2 104.5)">K</text>
+<text x="75.1" y="71.4" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-44.00 75.1 71.4)">&amp;</text>
+<text x="109.1" y="46.7" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-28.00 109.1 46.7)">T</text>
+<text x="128.4" y="38.1" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-20.00 128.4 38.1)">I</text>
+<text x="148.6" y="32.3" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-12.00 148.6 32.3)">D</text>
+<text x="169.5" y="29.4" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-4.00 169.5 29.4)">E</text>
+<text x="211.4" y="32.3" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(12.00 211.4 32.3)">S</text>
+<text x="231.6" y="38.1" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(20.00 231.6 38.1)">U</text>
+<text x="250.9" y="46.7" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(28.00 250.9 46.7)">R</text>
+<text x="268.8" y="57.8" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(36.00 268.8 57.8)">F</text>
+<text x="299.0" y="87.0" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(52.00 299.0 87.0)">C</text>
+<text x="310.8" y="104.5" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(60.00 310.8 104.5)">L</text>
+<text x="320.0" y="123.4" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(68.00 320.0 123.4)">U</text>
+<text x="326.5" y="143.5" font-size="14" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(76.00 326.5 143.5)">B</text>
+<text x="50.8" y="256.1" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(59.50 50.8 256.1)">W</text>
+<text x="78.7" y="290.6" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(42.50 78.7 290.6)">E</text>
+<text x="115.4" y="315.4" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(25.50 115.4 315.4)">L</text>
+<text x="157.8" y="328.4" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(8.50 157.8 328.4)">I</text>
+<text x="202.2" y="328.4" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-8.50 202.2 328.4)">G</text>
+<text x="244.6" y="315.4" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-25.50 244.6 315.4)">A</text>
+<text x="281.3" y="290.6" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-42.50 281.3 290.6)">M</text>
+<text x="309.2" y="256.1" font-size="16" fill="#EFE3D0" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-59.50 309.2 256.1)">A</text>
+<circle cx="44.1" cy="243.4" r="3.5" fill="#C24A2C"/>
+<circle cx="315.9" cy="243.4" r="3.5" fill="#C24A2C"/>
+<text x="180" y="148" font-size="92" fill="#C24A2C" font-family="Shrikhand" text-anchor="middle" dominant-baseline="central">RIP</text>
+<text x="180" y="232" font-size="92" fill="#C24A2C" font-family="Shrikhand" text-anchor="middle" dominant-baseline="central">TIDE</text>
+<g transform="translate(149,188) rotate(-32) scale(0.42)"><path d="M0,-60 C9,-44 12,-22 12,6 C12,34 7,52 0,60 C-7,52 -12,34 -12,6 C-12,-22 -9,-44 0,-60 Z" fill="#EFE3D0"/><path d="M0,-52 L0,52" stroke="#241D18" stroke-width="2.2"/><path d="M0,40 L0,58" stroke="#241D18" stroke-width="4"/></g>
+<g transform="translate(211,188) rotate(32) scale(0.42)"><path d="M0,-60 C9,-44 12,-22 12,6 C12,34 7,52 0,60 C-7,52 -12,34 -12,6 C-12,-22 -9,-44 0,-60 Z" fill="#EFE3D0"/><path d="M0,-52 L0,52" stroke="#241D18" stroke-width="2.2"/><path d="M0,40 L0,58" stroke="#241D18" stroke-width="4"/></g>
+</svg>

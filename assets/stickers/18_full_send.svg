@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+<circle cx="150" cy="150" r="148" fill="#241D18"/>
+<circle cx="150" cy="150" r="144" fill="#C24A2C"/>
+<circle cx="150" cy="150" r="132" fill="none" stroke="#241D18" stroke-width="3.5"/>
+<circle cx="150" cy="150" r="125" fill="none" stroke="#241D18" stroke-width="1.5"/>
+<polygon points="168,70 120,158 152,158 116,232 188,132 154,132 192,70" fill="#241D18"/>
+<text x="72.4" y="63.8" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-42.00 72.4 63.8)">F</text>
+<text x="121.9" y="37.4" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-14.00 121.9 37.4)">U</text>
+<text x="178.1" y="37.4" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(14.00 178.1 37.4)">L</text>
+<text x="227.6" y="63.8" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(42.00 227.6 63.8)">L</text>
+<text x="72.4" y="236.2" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(42.00 72.4 236.2)">S</text>
+<text x="121.9" y="262.6" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(14.00 121.9 262.6)">E</text>
+<text x="178.1" y="262.6" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-14.00 178.1 262.6)">N</text>
+<text x="227.6" y="236.2" font-size="30" fill="#241D18" font-family="Ultra" text-anchor="middle" dominant-baseline="central" transform="rotate(-42.00 227.6 236.2)">D</text>
+<polygon points="150.0,43.0 151.9,47.5 156.7,47.8 153.0,51.0 154.1,55.7 150.0,53.1 145.9,55.7 147.0,51.0 143.3,47.8 148.1,47.5" fill="#241D18"/>
+<polygon points="150.0,243.0 151.9,247.5 156.7,247.8 153.0,251.0 154.1,255.7 150.0,253.2 145.9,255.7 147.0,251.0 143.3,247.8 148.1,247.5" fill="#241D18"/>
+</svg>
