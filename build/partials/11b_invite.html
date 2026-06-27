@@ -1,0 +1,102 @@
+<div class="page bleed">
+  <style scoped>
+    @font-face{ font-family:'Pacifico'; src:url('../assets/fonts/Pacifico.ttf'); }
+
+    .inv-photo{ position:absolute; top:0; left:0; width:210mm; height:297mm;
+                object-fit:cover; }
+    /* warm faded wash so the bone label pops */
+    .inv-wash{ position:absolute; top:0; left:0; width:210mm; height:297mm;
+               background:rgba(36,29,24,0.30); }
+    .inv-wash2{ position:absolute; top:0; left:0; width:210mm; height:297mm;
+                background:rgba(194,74,44,0.20); }
+
+    /* ornate die-cut label, centered */
+    .inv-label{ position:absolute; top:38mm; left:30mm; width:150mm; height:220mm; }
+
+    /* stacked centered text overlay */
+    .inv-txt{ position:absolute; top:38mm; left:30mm; width:150mm; height:220mm;
+              text-align:center; }
+    .inv-inner{ position:absolute; top:18mm; left:14mm; right:14mm; bottom:18mm;
+                display:flex; flex-direction:column; align-items:center;
+                justify-content:space-between; }
+
+    .iv-invited{ font-family:var(--body); font-weight:700; font-size:11pt;
+                 letter-spacing:.42em; text-transform:uppercase; color:var(--ink); }
+    .iv-to{ font-family:'Pacifico', cursive; font-size:19pt; color:var(--ink);
+            margin:1mm 0 1mm; }
+    .iv-big{ font-family:var(--display); font-size:46pt; line-height:0.9;
+             color:var(--ink); letter-spacing:.5px; }
+    .iv-amp{ font-size:34pt; }
+    .iv-sub{ font-family:var(--body); font-weight:700; font-size:15pt;
+             letter-spacing:.46em; text-transform:uppercase; color:var(--ink);
+             margin-top:2mm; }
+    .iv-orn{ font-family:var(--display); font-size:13pt; color:var(--ink);
+             letter-spacing:.3em; margin:1mm 0; }
+    .iv-tag{ font-family:'Pacifico', cursive; font-size:14pt; color:var(--ink);
+             margin-top:1.5mm; }
+    .iv-seal{ width:34mm; height:34mm; margin:0; }
+    .iv-est{ font-family:var(--body); font-weight:700; font-size:8pt;
+             letter-spacing:.40em; text-transform:uppercase; color:var(--ink);
+             margin-top:1.5mm; }
+    .iv-mid{ display:flex; flex-direction:column; align-items:center; }
+    .iv-loc{ font-family:var(--body); font-weight:700; font-size:9.5pt;
+             letter-spacing:.34em; text-transform:uppercase; color:var(--ink); }
+    .iv-dawn{ font-family:var(--display); font-size:14pt; color:var(--ink);
+              letter-spacing:.16em; margin-top:1.5mm; }
+    .iv-hr{ width:30mm; height:1.4px; background:var(--ink); margin:2.5mm auto; }
+    .iv-board{ font-family:'Pacifico', cursive; font-size:16pt; color:var(--ink); }
+    .iv-rsvp{ font-family:var(--body); font-weight:700; font-size:8.5pt;
+              letter-spacing:.30em; text-transform:uppercase; color:var(--ink);
+              margin-top:1mm; }
+    .iv-top{ display:flex; flex-direction:column; align-items:center; }
+    .iv-bot{ display:flex; flex-direction:column; align-items:center; }
+  </style>
+
+  <img class="inv-photo" src="../assets/mood/real/r6_river_sunset.jpg" alt="">
+  <div class="inv-wash"></div>
+  <div class="inv-wash2"></div>
+
+  <!-- ornate die-cut label silhouette + engraved borders -->
+  <svg class="inv-label" viewBox="0 0 600 880" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M 110 70 Q 300 48 490 70 C 508 70 530 92 530 110 Q 546 440 530 770 C 530 788 508 810 490 810 Q 300 832 110 810 C 92 810 70 788 70 770 Q 54 440 70 110 C 70 92 92 70 110 70 Z"
+          fill="#EFE3D0" stroke="#241D18" stroke-width="4"/>
+    <path d="M 120 86 Q 300 68 480 86 C 498 86 514 102 514 120 Q 527 440 514 760 C 514 778 498 794 480 794 Q 300 812 120 794 C 102 794 86 778 86 760 Q 73 440 86 120 C 86 102 102 86 120 86 Z"
+          fill="none" stroke="#241D18" stroke-width="1.4"/>
+    <path d="M 132 104 Q 300 89 468 104 C 486 104 496 114 496 132 Q 506 440 496 748 C 496 766 486 776 468 776 Q 300 791 132 776 C 114 776 104 766 104 748 Q 94 440 104 132 C 104 114 114 104 132 104 Z"
+          fill="none" stroke="#241D18" stroke-width="1.6" stroke-dasharray="1.5 4.5" stroke-linecap="round"/>
+    <!-- corner ornament diamonds -->
+    <g fill="#241D18">
+      <path d="M 120 120 l 7 7 l -7 7 l -7 -7 Z"/>
+      <path d="M 480 120 l 7 7 l -7 7 l -7 -7 Z"/>
+      <path d="M 120 760 l 7 7 l -7 7 l -7 -7 Z"/>
+      <path d="M 480 760 l 7 7 l -7 7 l -7 -7 Z"/>
+    </g>
+  </svg>
+
+  <!-- stacked vintage type -->
+  <div class="inv-txt">
+    <div class="inv-inner">
+      <div class="iv-top">
+        <div class="iv-invited">You're Invited</div>
+        <div class="iv-to">to</div>
+        <div class="iv-big">TUK <span class="iv-amp">&amp;</span> TIDE</div>
+        <div class="iv-sub">Surf Club</div>
+        <div class="iv-orn">&#10070; &nbsp; &#10070; &nbsp; &#10070;</div>
+        <div class="iv-tag">salt, sun &amp; good company</div>
+      </div>
+
+      <div class="iv-mid">
+      <svg class="iv-seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#EFE3D0" stroke="#241D18" stroke-width="3.5"/><circle cx="100" cy="100" r="82" fill="none" stroke="#241D18" stroke-width="1.2"/><line x1="119.0" y1="88.0" x2="126.0" y2="88.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="116.5" y1="97.5" x2="122.5" y2="101.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="109.5" y1="104.5" x2="113.0" y2="110.5" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="100.0" y1="107.0" x2="100.0" y2="114.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="90.5" y1="104.5" x2="87.0" y2="110.5" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="83.5" y1="97.5" x2="77.5" y2="101.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="81.0" y1="88.0" x2="74.0" y2="88.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="83.5" y1="78.5" x2="77.5" y2="75.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="90.5" y1="71.5" x2="87.0" y2="65.5" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="100.0" y1="69.0" x2="100.0" y2="62.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="109.5" y1="71.5" x2="113.0" y2="65.5" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><line x1="116.5" y1="78.5" x2="122.5" y2="75.0" stroke="#241D18" stroke-width="1.8" stroke-linecap="round"/><circle cx="100" cy="88" r="9" fill="none" stroke="#241D18" stroke-width="2.6"/><path d="M 80 112 q 6.7 -7 13.3 0 q 6.7 7 13.3 0 q 6.7 -7 13.3 0" fill="none" stroke="#241D18" stroke-width="2.6" stroke-linecap="round"/><text x="42.9" y="56.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-52.50 42.9 56.2)">W</text><text x="56.2" y="42.9" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-37.50 56.2 42.9)">E</text><text x="72.4" y="33.5" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-22.50 72.4 33.5)">L</text><text x="90.6" y="28.6" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-7.50 90.6 28.6)">I</text><text x="109.4" y="28.6" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(7.50 109.4 28.6)">G</text><text x="127.6" y="33.5" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(22.50 127.6 33.5)">A</text><text x="143.8" y="42.9" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(37.50 143.8 42.9)">M</text><text x="157.1" y="56.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(52.50 157.1 56.2)">A</text><text x="162.4" y="136.0" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-60.00 162.4 136.0)">S</text><text x="153.5" y="148.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-48.00 153.5 148.2)">O</text><text x="142.3" y="158.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-36.00 142.3 158.2)">U</text><text x="129.3" y="165.8" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-24.00 129.3 165.8)">T</text><text x="115.0" y="170.4" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(-12.00 115.0 170.4)">H</text><text x="85.0" y="170.4" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(12.00 85.0 170.4)">C</text><text x="70.7" y="165.8" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(24.00 70.7 165.8)">O</text><text x="57.7" y="158.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(36.00 57.7 158.2)">A</text><text x="46.5" y="148.2" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(48.00 46.5 148.2)">S</text><text x="37.6" y="136.0" font-size="11" fill="#241D18" font-family="DM Sans" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="0.4" transform="rotate(60.00 37.6 136.0)">T</text><circle cx="56" cy="100" r="2.1" fill="#241D18"/><circle cx="144" cy="100" r="2.1" fill="#241D18"/></svg>
+      <div class="iv-est">&#9733; &nbsp; Est. MMXXVI &nbsp; &#9733;</div>
+      </div>
+
+      <div class="iv-bot">
+        <div class="iv-loc">Weligama Bay &#183; Sri Lanka</div>
+        <div class="iv-dawn">DAWN PATROL &#183; 6 AM</div>
+        <div class="iv-hr"></div>
+        <div class="iv-board">bring a board</div>
+        <div class="iv-rsvp">RSVP &#8212; or don't ;)</div>
+      </div>
+    </div>
+  </div>
+</div>

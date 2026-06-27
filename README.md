@@ -11,15 +11,15 @@ Vintage woodcut / screenprint aesthetic · charcoal ink on terracotta.
 
 | Deliverable | File |
 |---|---|
-| **Brand Book (13pp PDF)** | `build/tuk-and-tide-surf-club-brand-kit.pdf` |
+| **Brand Book (16pp PDF)** | `build/tuk-and-tide-surf-club-brand-kit.pdf` |
 | **Sticker Pack (20 designs)** | `build/sticker-sheet.pdf` |
 | **Logo** (clean + worn + reversed + marks) | `assets/brand/` |
 | **Stickers** (SVG + die-cut PNG) | `assets/stickers/` |
 
 ### Brand book pages
 Cover · The Club · Moodboard · Manifesto interstitial · Logo System · Logo Don'ts ·
-Colour · Typography · Voice & Tone · Motifs & Icons · In the Wild (mockups) ·
-Next Steps · Back cover.
+Colour · Typography · Voice & Tone · Motifs & Icons · Where We Ride (South-Coast icons) ·
+Sticker Pack · In the Wild (photoreal mockups) · Next Steps · Invite · Back cover.
 
 ## The system
 - **Palette** — Charcoal `#241D18` · Terracotta `#C24A2C` · Bone `#EFE3D0` · Deep Clay `#9E3A20` · Surf Teal `#2F5D57`
