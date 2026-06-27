@@ -1,50 +1,50 @@
 <div class="page bone">
   <style scoped>
-    .mb-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin-top:6mm; }
-    .mb-cell{ height:51mm; border-radius:2mm; overflow:hidden; border:2px solid var(--ink);
+    .mb-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:4mm; margin-top:6mm; }
+    .mb-cell{ height:60mm; border-radius:2mm; overflow:hidden; border:2px solid var(--ink);
               position:relative; }
     .mb-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .mb-cap{ position:absolute; left:0; right:0; bottom:0; background:var(--ink); color:var(--bone);
-             font-family:var(--body); font-weight:700; font-size:6pt; letter-spacing:.1em;
-             text-transform:uppercase; padding:1.6mm 3mm; }
+    .mb-cap{ position:absolute; left:0; right:0; bottom:0;
+             background:linear-gradient(180deg, rgba(36,29,24,0) 0%, rgba(36,29,24,0.82) 100%);
+             color:var(--bone); font-family:var(--body); font-weight:700; font-size:5.6pt;
+             letter-spacing:.1em; text-transform:uppercase; padding:6mm 2.5mm 1.8mm; }
     .t-terra{ background:var(--terra); }
     .t-ink{ background:var(--ink); }
-    .pad{ padding:5mm; height:100%; }
-    .typetile{ font-family:var(--display); font-size:20pt; line-height:0.95; color:var(--ink); }
-    .chips{ display:flex; gap:1.5mm; margin-bottom:3mm; }
-    .chips span{ flex:1; height:13mm; border-radius:1.5mm; }
-    .lbl{ font-family:var(--body); font-weight:700; font-size:6pt; letter-spacing:.1em;
-          text-transform:uppercase; color:var(--ink); }
-    .kw{ font-family:var(--marker); font-size:13pt; line-height:1.45; color:var(--bone); }
+    .pad{ padding:4mm; height:100%; }
+    .typetile{ font-family:var(--display); font-size:17pt; line-height:0.94; color:var(--ink); }
+    .chips{ display:flex; flex-direction:column; gap:1.5mm; height:38mm; }
+    .chips span{ flex:1; border-radius:1.5mm; }
+    .lbl{ font-family:var(--body); font-weight:700; font-size:5.6pt; letter-spacing:.1em;
+          text-transform:uppercase; color:var(--ink); margin-top:2mm; }
+    .kw{ font-family:var(--marker); font-size:12pt; line-height:1.4; color:var(--bone); }
     .kw b{ color:var(--terra); }
     .wavemark{ height:100%; display:flex; align-items:center; justify-content:center; }
-    .wavemark img{ width:80%; height:auto; object-fit:contain; }
+    .wavemark img{ width:78%; height:auto; object-fit:contain; }
   </style>
 
-  <div class="kicker">The Feeling</div>
+  <div class="kicker">The Feeling · Our Autos</div>
   <h1 class="disp">Moodboard</h1>
 
   <div class="mb-grid">
-    <div class="mb-cell"><img src="../assets/mood/duo/06_van.jpg"><div class="mb-cap">Roll up · the fleet life</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r6_river_sunset.jpg"><div class="mb-cap">Golden hour by the river</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r3_stall.jpg"><div class="mb-cap">Roti stop · the lane</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r7_forest_stars.jpg"><div class="mb-cap">Jungle road · under stars</div></div>
     <div class="mb-cell t-terra"><div class="pad"><div class="typetile">SURF<br>RIDE<br>REPEAT</div>
-      <div class="lbl" style="margin-top:2mm;">Ultra wood-type</div></div></div>
-    <div class="mb-cell"><img src="../assets/mood/duo/05_palm.jpg"><div class="mb-cap">Palm-lined Galle Road</div></div>
+      <div class="lbl">Ultra wood-type</div></div></div>
 
-    <div class="mb-cell"><img src="../assets/mood/duo/04_tuktuk.jpg"><div class="mb-cap">Three wheels · south coast</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r9_muddy_moon.jpg"><div class="mb-cap">Monsoon tracks · moonlit</div></div>
     <div class="mb-cell"><div class="pad"><div class="chips">
         <span style="background:#241D18;"></span><span style="background:#C24A2C;"></span>
         <span style="background:#EFE3D0;border:1px solid #241D18;"></span>
         <span style="background:#9E3A20;"></span><span style="background:#2F5D57;"></span></div>
       <div class="lbl">Charcoal · Terracotta<br>Bone · Clay · Teal</div></div></div>
-    <div class="mb-cell"><img src="../assets/mood/duo/02_ocean.jpg"><div class="mb-cap">Cold water, warm light</div></div>
-
-    <div class="mb-cell"><img src="../assets/mood/duo/08_surfer.jpg"><div class="mb-cap">Out the back at dusk</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r5_stall_dusk.jpg"><div class="mb-cap">Blue-hour errands</div></div>
     <div class="mb-cell t-ink"><div class="pad"><div class="kw">sun-faded<br>hand-carved<br><b>salty &amp; analog</b></div></div></div>
-    <div class="mb-cell"><img src="../assets/mood/duo/07_sunset.jpg"><div class="mb-cap">Golden hour, every day</div></div>
 
-    <div class="mb-cell"><img src="../assets/mood/duo/01_surf.jpg"><div class="mb-cap">First-light line-up</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r8_taillights.jpg"><div class="mb-cap">Tail-lights home</div></div>
     <div class="mb-cell t-ink"><div class="wavemark"><img src="../assets/brand/mark-wave-C24A2C.png"></div></div>
-    <div class="mb-cell"><img src="../assets/mood/duo/09_srilanka.jpg"><div class="mb-cap">The deep south coast</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r2_moon.jpg"><div class="mb-cap">Clouds over Weligama</div></div>
+    <div class="mb-cell"><img src="../assets/mood/real/r4_stall2.jpg"><div class="mb-cap">Open late</div></div>
   </div>
 
   <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
