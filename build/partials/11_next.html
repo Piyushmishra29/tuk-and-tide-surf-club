@@ -1,56 +1,59 @@
 <div class="page ink">
   <style scoped>
-    .nx-intro{ max-width:150mm; margin-top:1mm; }
-    .road{ margin-top:9mm; position:relative; padding-left:13mm; }
-    /* the spine */
-    .road::before{ content:""; position:absolute; top:3mm; bottom:3mm; left:4mm;
-                   width:2px; background:rgba(239,227,208,.28); }
-    .phase{ position:relative; padding:0 0 6.5mm 0; }
-    .phase:last-child{ padding-bottom:0; }
-    /* node */
-    .node{ position:absolute; left:-13mm; top:0;
-           width:9mm; height:9mm; border-radius:50%;
-           background:var(--ink); border:2px solid var(--terra);
-           display:flex; align-items:center; justify-content:center;
-           font-family:var(--body); font-weight:700; font-size:8pt; color:var(--terra); }
-    .phase.done .node{ background:var(--terra); border-color:var(--terra);
-                       color:var(--ink); font-size:9.5pt; }
-    .ph-head{ display:flex; align-items:baseline; gap:3mm; }
-    .ph-num{ font-family:var(--display); font-size:13pt; color:var(--terra);
-             line-height:1; min-width:11mm; }
-    .ph-title{ font-family:var(--display); font-size:14pt; color:var(--bone);
-               line-height:1; }
-    .ph-tag{ font-family:var(--body); font-weight:700; font-size:6.8pt;
-             letter-spacing:.16em; text-transform:uppercase;
+    .nx-head{ position:relative; }
+    /* tuk-tuk anchors the top-right corner, bleeding off the edge */
+    .nx-tuk{ position:absolute; top:-6mm; right:-10mm; width:52mm; opacity:.92;
+             transform:rotate(-4deg); }
+    .nx-intro{ max-width:128mm; margin-top:3mm; }
+
+    .road{ position:relative; margin-top:10mm; }
+
+    .phase{ position:relative; min-height:27mm; padding:5mm 4mm 5mm 42mm;
+            border-top:1.2px solid rgba(239,227,208,.16); }
+    .phase:first-child{ border-top:none; padding-top:1mm; }
+
+    /* oversized numeral — the structural spine, hung into the left margin */
+    .pnum{ position:absolute; left:-17mm; top:3mm;
+           font-family:var(--display); font-size:50pt; line-height:.78;
+           color:var(--terra); letter-spacing:-.01em; }
+
+    .ph-head{ display:flex; align-items:baseline; gap:5mm; }
+    .ph-title{ font-family:var(--display); font-size:16pt; line-height:.96;
+               color:var(--bone); }
+    .ph-tag{ font-family:var(--body); font-weight:700; font-size:6.4pt;
+             letter-spacing:.2em; text-transform:uppercase;
              padding:1mm 3mm; border-radius:20px; margin-left:auto;
-             border:1.5px solid rgba(239,227,208,.35); color:rgba(239,227,208,.7); }
+             border:1.3px solid rgba(239,227,208,.32); color:rgba(239,227,208,.66);
+             white-space:nowrap; }
     .phase.done .ph-tag{ background:var(--terra); border-color:var(--terra);
                          color:var(--ink); }
-    .ph-desc{ font-family:var(--body); font-size:9pt; line-height:1.45;
-              color:rgba(239,227,208,.82); margin-top:2mm; max-width:140mm; }
 
-    .nx-close{ position:absolute; left:18mm; right:18mm; bottom:24mm;
-               border-top:2px solid rgba(239,227,208,.22); padding-top:6mm;
-               display:flex; align-items:center; gap:5mm; }
-    .nx-close .mk{ font-family:var(--marker); font-size:17pt; color:var(--terra);
-                   line-height:1.05; }
+    .ph-desc{ font-family:var(--body); font-size:8.8pt; line-height:1.46;
+              color:rgba(239,227,208,.8); margin-top:2.4mm; max-width:120mm; }
+    .ph-desc b{ color:var(--bone); font-weight:700; }
+
+    .nx-close{ position:absolute; left:18mm; right:18mm; bottom:22mm;
+               display:flex; align-items:center; gap:6mm; }
+    .nx-close .mk{ font-family:var(--marker); font-size:16pt; color:var(--terra);
+                   line-height:1.08; }
     .nx-close .mk b{ color:var(--bone); font-weight:400; }
-    .nx-close img{ height:15mm; opacity:.92; border-radius:1.5mm; }
+    .nx-close .wv{ height:9mm; margin-left:auto; opacity:.9; }
   </style>
 
-  <div class="kicker">Where Next</div>
-  <h1 class="disp">Next Steps</h1>
-
-  <p class="lead nx-intro">The mark&#39;s carved, the colours mixed, the voice
-  warmed up. Here&#39;s how Tuk &amp; Tide rolls off the page and into Weligama —
-  one phase at a time.</p>
+  <div class="nx-head">
+    <img class="nx-tuk" src="../assets/brand/mark-tuktuk-C24A2C.png" alt="">
+    <div class="kicker">Where Next</div>
+    <h1 class="disp">Next Steps</h1>
+    <p class="lead nx-intro">The mark&#39;s carved, the colours mixed, the voice
+    warmed up. Here&#39;s how Tuk &amp; Tide rolls off the page and into Weligama —
+    one phase at a time.</p>
+  </div>
 
   <div class="road">
 
     <div class="phase done">
-      <div class="node">&#10003;</div>
+      <span class="pnum">01</span>
       <div class="ph-head">
-        <span class="ph-num">01</span>
         <span class="ph-title">Brand Kit</span>
         <span class="ph-tag">Done</span>
       </div>
@@ -59,9 +62,8 @@
     </div>
 
     <div class="phase">
-      <div class="node">02</div>
+      <span class="pnum">02</span>
       <div class="ph-head">
-        <span class="ph-num">02</span>
         <span class="ph-title">Website</span>
         <span class="ph-tag">Up Next</span>
       </div>
@@ -71,20 +73,18 @@
     </div>
 
     <div class="phase">
-      <div class="node">03</div>
+      <span class="pnum">03</span>
       <div class="ph-head">
-        <span class="ph-num">03</span>
         <span class="ph-title">Signage &amp; Tuk Livery</span>
         <span class="ph-tag">Up Next</span>
       </div>
       <div class="ph-desc">Paint the tuks, hang the shop sign, slap on the decals.
-      Three wheels rolling billboards, charcoal-on-terracotta down every lane.</div>
+      Three-wheeled rolling billboards, charcoal-on-terracotta down every lane.</div>
     </div>
 
     <div class="phase">
-      <div class="node">04</div>
+      <span class="pnum">04</span>
       <div class="ph-head">
-        <span class="ph-num">04</span>
         <span class="ph-title">Merch &amp; Print</span>
         <span class="ph-tag">Up Next</span>
       </div>
@@ -93,21 +93,18 @@
     </div>
 
     <div class="phase">
-      <div class="node">05</div>
+      <span class="pnum">05</span>
       <div class="ph-head">
-        <span class="ph-num">05</span>
         <span class="ph-title">Social &amp; Photography</span>
         <span class="ph-tag">Up Next</span>
       </div>
-      <div class="ph-desc">Open up <b style="color:var(--bone);font-weight:700;">@tukandtide</b>
-      — sun-faded analog photos, reels of clean rides and crumbling waves. Salty,
-      slow, real.</div>
+      <div class="ph-desc">Open up <b>@tukandtide</b> — sun-faded analog photos,
+      reels of clean rides and crumbling waves. Salty, slow, real.</div>
     </div>
 
     <div class="phase">
-      <div class="node">06</div>
+      <span class="pnum">06</span>
       <div class="ph-head">
-        <span class="ph-num">06</span>
         <span class="ph-title">Launch</span>
         <span class="ph-tag">Up Next</span>
       </div>
@@ -119,7 +116,7 @@
 
   <div class="nx-close">
     <span class="mk">Grab a board, grab a tuk —<br><b>let&#39;s build it.</b></span>
-    <img src="../assets/brand/mark-tuktuk-C24A2C.png" alt="">
+    <img class="wv" src="../assets/brand/mark-wave-EFE3D0.png" alt="">
   </div>
 
   <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
