@@ -1,44 +1,61 @@
 <div class="page bone">
   <style scoped>
-    .ty-head{ margin-bottom:4mm; }
+    .ty-head{ margin-bottom:3mm; }
 
     /* ---- HERO display specimen ---- */
-    .hero{ margin-top:6mm; }
+    .hero{ margin-top:3mm; }
     .hero-tag{ font-family:var(--body); font-weight:700; letter-spacing:.30em;
                text-transform:uppercase; font-size:8.5pt; color:var(--ink-60);
-               border-bottom:1.5px solid var(--ink); padding-bottom:3mm; margin-bottom:7mm; }
+               border-bottom:1.5px solid var(--ink); padding-bottom:3mm; margin-bottom:5mm; }
     .hero-tag b{ color:var(--ink); }
     .hero-word{ font-family:var(--display); color:var(--ink);
-                font-size:128pt; line-height:0.88; letter-spacing:-.005em; }
+                font-size:96pt; line-height:0.88; letter-spacing:-.005em; }
     .hero-word .amp{ color:var(--terra); }
-    .hero-glyphs{ font-family:var(--display); font-size:13.5pt; line-height:1.3;
-                  letter-spacing:.06em; color:var(--ink-60); margin-top:8mm; }
+    .hero-glyphs{ font-family:var(--display); font-size:11.5pt; line-height:1.3;
+                  letter-spacing:.06em; color:var(--ink-60); margin-top:5mm; }
 
     /* ---- supporting specimens row ---- */
-    .sup{ display:flex; gap:9mm; margin-top:12mm; }
+    .sup{ display:flex; gap:9mm; margin-top:7mm; }
     .sup-col{ flex:1; }
     .sup-tag{ font-family:var(--body); font-weight:700; letter-spacing:.24em;
               text-transform:uppercase; font-size:8pt; color:var(--ink-60);
-              border-bottom:1px solid rgba(36,29,24,.32); padding-bottom:2.5mm; margin-bottom:4.5mm; }
+              border-bottom:1px solid rgba(36,29,24,.32); padding-bottom:2.5mm; margin-bottom:4mm; }
     .sup-tag b{ color:var(--ink); }
-    .sup-mk{ font-family:var(--marker); font-size:25pt; line-height:1.0; color:var(--ink); }
-    .sup-mk small{ display:block; font-size:16pt; color:var(--clay); margin-top:1.5mm; }
-    .sup-bh{ font-family:var(--body); font-weight:700; font-size:12.5pt; line-height:1.15;
+    .sup-mk{ font-family:var(--marker); font-size:23pt; line-height:1.0; color:var(--ink); }
+    .sup-mk small{ display:block; font-size:15pt; color:var(--clay); margin-top:1.5mm; }
+    .sup-bh{ font-family:var(--body); font-weight:700; font-size:12pt; line-height:1.15;
              color:var(--ink); margin-bottom:2.5mm; }
     .sup-bp{ font-family:var(--body); font-size:9pt; line-height:1.5; color:var(--ink); }
 
-    /* ---- baseline metadata strip ---- */
-    .meta{ position:absolute; left:18mm; right:18mm; bottom:20mm;
-           border-top:2px solid var(--ink); padding-top:4mm;
-           display:flex; }
-    .meta-cell{ flex:1; padding-right:6mm; }
-    .meta-cell + .meta-cell{ border-left:1px solid rgba(36,29,24,.28);
-                             padding-left:6mm; }
-    .meta-k{ font-family:var(--body); font-weight:700; letter-spacing:.20em;
-             text-transform:uppercase; font-size:7pt; color:var(--terra); margin-bottom:2mm; }
-    .meta-face{ font-family:var(--body); font-weight:700; font-size:9.5pt;
-                color:var(--ink); margin-bottom:1mm; }
-    .meta-line{ font-family:var(--body); font-size:7.5pt; line-height:1.45; color:var(--ink-60); }
+    /* ---- SPEC BLOCK — real, usable type specification ---- */
+    .spec{ position:absolute; left:18mm; right:18mm; bottom:18mm;
+           border-top:2px solid var(--ink); padding-top:4mm; }
+    .spec-k{ font-family:var(--body); font-weight:700; letter-spacing:.30em;
+             text-transform:uppercase; font-size:7.5pt; color:var(--terra); margin-bottom:3.5mm; }
+    .spec-grid{ display:flex; gap:8mm; align-items:flex-start; }
+
+    .spec-tbl{ flex:1.6; border-collapse:collapse; width:100%; }
+    .spec-tbl th{ font-family:var(--body); font-weight:700; letter-spacing:.16em;
+                  text-transform:uppercase; font-size:6pt; color:var(--ink-60);
+                  text-align:left; padding:0 5mm 2mm 0; border-bottom:1px solid rgba(36,29,24,.28); }
+    .spec-tbl td{ font-family:var(--body); font-size:7.6pt; line-height:1.32; color:var(--ink);
+                  padding:1.9mm 5mm 1.9mm 0; border-bottom:1px solid rgba(36,29,24,.16);
+                  vertical-align:top; }
+    .spec-tbl tr:last-child td{ border-bottom:none; }
+    .spec-tbl .role{ font-weight:700; color:var(--ink); white-space:nowrap; }
+    .spec-tbl .role span{ display:block; font-weight:400; font-size:6.4pt;
+                          color:var(--ink-60); letter-spacing:.02em; margin-top:.6mm; }
+    .spec-tbl .metric{ font-weight:700; color:var(--clay); white-space:nowrap; }
+    .spec-tbl .use{ color:var(--ink-60); }
+
+    .spec-rules{ flex:1.3; border-left:1px solid rgba(36,29,24,.28); padding-left:7mm; }
+    .spec-rules h4{ font-family:var(--body); font-weight:700; letter-spacing:.12em;
+                    text-transform:uppercase; font-size:6pt; color:var(--ink-60); margin-bottom:3mm;
+                    white-space:nowrap; }
+    .spec-rules li{ list-style:none; font-family:var(--body); font-size:7.6pt; line-height:1.4;
+                    color:var(--ink); padding-left:4mm; margin-bottom:2.2mm; position:relative; }
+    .spec-rules li::before{ content:"—"; position:absolute; left:0; color:var(--terra); font-weight:700; }
+    .spec-rules li b{ color:var(--ink); }
   </style>
 
   <div class="ty-head">
@@ -68,27 +85,57 @@
     </div>
   </div>
 
-  <!-- BASELINE META STRIP -->
-  <div class="meta">
-    <div class="meta-cell">
-      <div class="meta-k">Display</div>
-      <div class="meta-face">Ultra</div>
-      <div class="meta-line">Headlines · wordmark<br>40 / 18 pt</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-k">Accent</div>
-      <div class="meta-face">Permanent Marker</div>
-      <div class="meta-line">Taglines · use sparingly<br>13 pt</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-k">Body</div>
-      <div class="meta-face">DM Sans</div>
-      <div class="meta-line">Copy · labels · UI<br>Regular / Bold · 10.5 pt</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-k">Caption</div>
-      <div class="meta-face">DM Sans</div>
-      <div class="meta-line">Uppercase · tracked<br>8.5 pt · .18em</div>
+  <!-- SPEC BLOCK -->
+  <div class="spec">
+    <div class="spec-k">Type Specification</div>
+    <div class="spec-grid">
+      <table class="spec-tbl">
+        <thead>
+          <tr><th>Role</th><th>Typeface</th><th>Size · Leading · Tracking</th><th>Use for</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="role">Display<span>Ultra</span></td>
+            <td>Ultra · all-caps</td>
+            <td class="metric">42 pt · 0.9 · +0.5 px</td>
+            <td class="use">Headlines, posters, wordmark</td>
+          </tr>
+          <tr>
+            <td class="role">Accent<span>Permanent Marker</span></td>
+            <td>Permanent Marker / Pacifico</td>
+            <td class="metric">14–18 pt</td>
+            <td class="use">Taglines, captions, human asides — sparingly</td>
+          </tr>
+          <tr>
+            <td class="role">Body<span>DM Sans</span></td>
+            <td>DM Sans Regular</td>
+            <td class="metric">9.5 pt · 1.5</td>
+            <td class="use">Running copy, paragraphs</td>
+          </tr>
+          <tr>
+            <td class="role">Kicker / Eyebrow<span>DM Sans Bold</span></td>
+            <td>DM Sans Bold · uppercase</td>
+            <td class="metric">9 pt · .3em</td>
+            <td class="use">Eyebrows, section tags</td>
+          </tr>
+          <tr>
+            <td class="role">Label / Caption<span>DM Sans Bold</span></td>
+            <td>DM Sans Bold caps</td>
+            <td class="metric">6–9 pt · .14–.34em</td>
+            <td class="use">Kickers, captions, UI labels</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="spec-rules">
+        <h4>Pairing Rules</h4>
+        <ul>
+          <li><b>One display per page.</b> Let the Ultra headline lead.</li>
+          <li><b>Never two scripts together</b> — one marker accent at a time.</li>
+          <li><b>Body is always DM Sans.</b> No exceptions.</li>
+          <li>Tracking <b>tight</b> on display, <b>wide</b> on small caps.</li>
+        </ul>
+      </div>
     </div>
   </div>
 

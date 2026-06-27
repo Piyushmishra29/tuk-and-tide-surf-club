@@ -1,0 +1,213 @@
+<div class="page bone">
+  <style scoped>
+    .gr-head{ margin-bottom:5mm; }
+    .gr-lead{ font-family:var(--body); font-size:9.5pt; line-height:1.5; color:var(--ink-60);
+               max-width:120mm; margin-top:1mm; }
+    .gr-lead b{ color:var(--ink); }
+
+    .gr-main{ display:flex; gap:10mm; align-items:flex-start; }
+    .gr-diagram{ width:88mm; flex:0 0 88mm; }
+    .gr-dcap{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+               font-size:6.8pt; color:var(--terra); margin-top:3mm; }
+    .gr-dcap span{ color:var(--ink-60); }
+
+    .gr-specs{ flex:1; }
+    .gr-spectitle{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+                    font-size:7.5pt; color:var(--ink); border-bottom:2px solid var(--ink);
+                    padding-bottom:2.5mm; margin-bottom:3.5mm; }
+    .specrow{ display:flex; justify-content:space-between; align-items:baseline;
+               padding:2.4mm 0; border-bottom:1px solid rgba(36,29,24,.16); }
+    .specrow:last-child{ border-bottom:none; }
+    .spec-k{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+              font-size:7pt; color:var(--ink-60); }
+    .spec-v{ font-family:var(--body); font-weight:700; font-size:9pt; color:var(--ink); text-align:right; }
+    .spec-v em{ font-style:normal; color:var(--terra); }
+
+    .gr-note{ margin-top:5mm; border-left:3px solid var(--terra); padding-left:4mm; }
+    .gr-note .mk{ font-family:var(--marker); font-size:13pt; color:var(--ink); line-height:1.05; }
+    .gr-note .nt{ font-family:var(--body); font-size:7.5pt; line-height:1.5; color:var(--ink-60); margin-top:1.5mm; }
+
+    /* ---- mini layouts ---- */
+    .minis{ display:flex; gap:8mm; margin-top:8mm; }
+    .mini{ flex:1; }
+    .mini-tag{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+               font-size:6.8pt; color:var(--ink-60); padding-bottom:2mm; margin-bottom:3mm;
+               border-bottom:1px solid rgba(36,29,24,.28); }
+    .mini-tag b{ color:var(--ink); }
+    .frame{ position:relative; height:48mm; border:1.4px solid var(--ink); background:#F4EAD8;
+             padding:4mm; overflow:hidden; }
+    .gl{ position:absolute; top:0; bottom:0; width:0.3mm; background:var(--terra); opacity:.55; }
+
+    .m-disp{ font-family:var(--display); font-size:19pt; line-height:0.92; color:var(--ink); }
+    .m-disp .amp{ color:var(--terra); }
+    .m-row{ display:flex; gap:3.5mm; margin-top:3mm; }
+    .m-img{ background:#9E3A20; color:var(--bone); font-family:var(--body); font-weight:700;
+             letter-spacing:.14em; font-size:5.6pt; text-transform:uppercase;
+             display:flex; align-items:flex-end; padding:2mm; }
+    .m-body p{ font-family:var(--body); font-size:5.6pt; line-height:1.5; color:var(--ink); margin:0; }
+    .m-kick{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+              font-size:5.4pt; color:var(--terra); margin-bottom:2mm; }
+    .m-cols{ display:flex; gap:5mm; }
+    .m-cols .c{ flex:1; }
+    .m-h{ font-family:var(--body); font-weight:700; font-size:7pt; line-height:1.1; color:var(--ink); margin-bottom:1.5mm; }
+    .m-cap{ font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+             font-size:5pt; color:var(--ink-60); margin-top:2.5mm; }
+    .m-strip{ height:9mm; background:#2F5D57; margin-top:3mm; }
+  </style>
+
+  <div class="gr-head">
+    <div class="kicker">System · Layout</div>
+    <h1 class="disp">Layout &amp; Grid</h1>
+    <div class="gr-lead">Every page in this book is built on one <b>four-column A4 grid</b>.
+      Terracotta hairlines mark the live grid — they guide the work and never print.</div>
+  </div>
+
+  <div class="gr-main">
+    <div class="gr-diagram">
+    <svg viewBox="0 0 210 297" width="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="210" height="297" fill="#F4EAD8" stroke="#241D18" stroke-width="0.7"/>
+      <rect x="18" y="20" width="174" height="14" fill="#C24A2C" fill-opacity="0.14"/>
+      <rect x="18" y="278" width="174" height="12" fill="#C24A2C" fill-opacity="0.14"/>
+      <rect x="18.0" y="34" width="39.0" height="242" fill="#C24A2C" fill-opacity="0.085"/>
+      <rect x="63.0" y="34" width="39.0" height="242" fill="#C24A2C" fill-opacity="0.085"/>
+      <rect x="108.0" y="34" width="39.0" height="242" fill="#C24A2C" fill-opacity="0.085"/>
+      <rect x="153.0" y="34" width="39.0" height="242" fill="#C24A2C" fill-opacity="0.085"/>
+      <line x1="18" y1="34.0" x2="192" y2="34.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="40.0" x2="192" y2="40.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="46.0" x2="192" y2="46.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="52.0" x2="192" y2="52.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="58.0" x2="192" y2="58.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="64.0" x2="192" y2="64.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="70.0" x2="192" y2="70.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="76.0" x2="192" y2="76.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="82.0" x2="192" y2="82.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="88.0" x2="192" y2="88.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="94.0" x2="192" y2="94.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="100.0" x2="192" y2="100.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="106.0" x2="192" y2="106.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="112.0" x2="192" y2="112.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="118.0" x2="192" y2="118.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="124.0" x2="192" y2="124.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="130.0" x2="192" y2="130.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="136.0" x2="192" y2="136.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="142.0" x2="192" y2="142.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="148.0" x2="192" y2="148.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="154.0" x2="192" y2="154.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="160.0" x2="192" y2="160.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="166.0" x2="192" y2="166.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="172.0" x2="192" y2="172.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="178.0" x2="192" y2="178.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="184.0" x2="192" y2="184.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="190.0" x2="192" y2="190.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="196.0" x2="192" y2="196.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="202.0" x2="192" y2="202.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="208.0" x2="192" y2="208.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="214.0" x2="192" y2="214.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="220.0" x2="192" y2="220.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="226.0" x2="192" y2="226.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="232.0" x2="192" y2="232.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="238.0" x2="192" y2="238.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="244.0" x2="192" y2="244.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="250.0" x2="192" y2="250.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="256.0" x2="192" y2="256.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="262.0" x2="192" y2="262.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="268.0" x2="192" y2="268.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18" y1="274.0" x2="192" y2="274.0" stroke="#C24A2C" stroke-width="0.18" stroke-opacity="0.5"/>
+      <line x1="18.0" y1="34" x2="18.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="57.0" y1="34" x2="57.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="63.0" y1="34" x2="63.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="102.0" y1="34" x2="102.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="108.0" y1="34" x2="108.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="147.0" y1="34" x2="147.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="153.0" y1="34" x2="153.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <line x1="192.0" y1="34" x2="192.0" y2="276" stroke="#C24A2C" stroke-width="0.3"/>
+      <rect x="18" y="20" width="174" height="257" fill="none" stroke="#C24A2C" stroke-width="0.45" stroke-dasharray="1.6 1.6"/>
+      <text x="37.5" y="30.6" font-family="DM Sans" font-weight="700" font-size="3.6" fill="#241D18" text-anchor="middle">1</text>
+      <text x="82.5" y="30.6" font-family="DM Sans" font-weight="700" font-size="3.6" fill="#241D18" text-anchor="middle">2</text>
+      <text x="127.5" y="30.6" font-family="DM Sans" font-weight="700" font-size="3.6" fill="#241D18" text-anchor="middle">3</text>
+      <text x="172.5" y="30.6" font-family="DM Sans" font-weight="700" font-size="3.6" fill="#241D18" text-anchor="middle">4</text>
+      <text x="19.5" y="28.1" font-family="DM Sans" font-weight="700" font-size="2.5" letter-spacing="0.45" fill="#241D18">KICKER ZONE</text>
+      <text x="19.5" y="285.1" font-family="DM Sans" font-weight="700" font-size="2.5" letter-spacing="0.45" fill="#241D18">FOOTER ZONE</text>
+      <line x1="0" y1="11" x2="18" y2="11" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="0" y1="9.6" x2="0" y2="12.4" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="18" y1="9.6" x2="18" y2="12.4" stroke="#241D18" stroke-width="0.4"/>
+      <text x="9.0" y="9.2" font-family="DM Sans" font-weight="700" font-size="2.5" letter-spacing="0.3" fill="#241D18" text-anchor="middle">18</text>
+      <line x1="201" y1="0" x2="201" y2="20" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="199.6" y1="0" x2="202.4" y2="0" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="199.6" y1="20" x2="202.4" y2="20" stroke="#241D18" stroke-width="0.4"/>
+      <text x="206.5" y="10.9" font-family="DM Sans" font-weight="700" font-size="2.5" letter-spacing="0.3" fill="#241D18" text-anchor="middle" transform="rotate(90 206.5 10.0)">20</text>
+      <line x1="57.0" y1="150" x2="63.0" y2="150" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="57.0" y1="148.6" x2="57.0" y2="151.4" stroke="#241D18" stroke-width="0.4"/>
+      <line x1="63.0" y1="148.6" x2="63.0" y2="151.4" stroke="#241D18" stroke-width="0.4"/>
+      <text x="60.0" y="148.0" font-family="DM Sans" font-weight="700" font-size="2.4" letter-spacing="0.25" fill="#241D18" text-anchor="middle">6</text>
+    </svg>
+      <div class="gr-dcap">The page grid <span>· 4 columns · 6&nbsp;mm gutter · 6&nbsp;mm baseline</span></div>
+    </div>
+
+    <div class="gr-specs">
+      <div class="gr-spectitle">Grid Specification</div>
+      <div class="specrow"><span class="spec-k">Format</span><span class="spec-v">A4 · <em>210 × 297</em> mm</span></div>
+      <div class="specrow"><span class="spec-k">Outer margin</span><span class="spec-v"><em>18</em> mm · left &amp; right</span></div>
+      <div class="specrow"><span class="spec-k">Top / Foot margin</span><span class="spec-v"><em>20</em> mm</span></div>
+      <div class="specrow"><span class="spec-k">Columns</span><span class="spec-v"><em>4</em> equal</span></div>
+      <div class="specrow"><span class="spec-k">Gutter</span><span class="spec-v"><em>6</em> mm</span></div>
+      <div class="specrow"><span class="spec-k">Column width</span><span class="spec-v"><em>39</em> mm</span></div>
+      <div class="specrow"><span class="spec-k">Baseline</span><span class="spec-v"><em>6</em> mm rhythm</span></div>
+      <div class="specrow"><span class="spec-k">Kicker zone</span><span class="spec-v">Top margin band</span></div>
+      <div class="specrow"><span class="spec-k">Footer zone</span><span class="spec-v"><em>11</em> mm from foot</span></div>
+
+      <div class="gr-note">
+        <div class="mk">Anchor it, then break it.</div>
+        <div class="nt">Display can span columns and bleed; body holds the grid. One deliberate
+          break per spread — never a page that ignores it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- example mini-layouts on the grid -->
+  <div class="minis">
+    <div class="mini">
+      <div class="mini-tag"><b>Feature</b> &nbsp;·&nbsp; display spans 1–3, image holds 4</div>
+      <div class="frame">
+        <div class="gl" style="left:25%"></div>
+        <div class="gl" style="left:50%"></div>
+        <div class="gl" style="left:75%"></div>
+        <div class="m-disp">SURF<br><span class="amp">&amp;</span> SAND</div>
+        <div class="m-row">
+          <div class="m-body" style="flex:0 0 60%">
+            <p>Lessons for first-timers, rentals for the regulars. Grab a board for
+            the waves and a tuk for the road — we sort the rest. No clipboards, no rush.</p>
+            <div class="m-cap">Weligama · South Coast</div>
+          </div>
+          <div class="m-img" style="flex:1; height:18mm">Image · col 4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="mini-tag"><b>Index</b> &nbsp;·&nbsp; two text columns + footer strip</div>
+      <div class="frame">
+        <div class="gl" style="left:25%"></div>
+        <div class="gl" style="left:50%"></div>
+        <div class="gl" style="left:75%"></div>
+        <div class="m-kick">Directory · 01</div>
+        <div class="m-cols">
+          <div class="c">
+            <div class="m-h">Boards &amp; rentals</div>
+            <div class="m-body"><p>Soft-tops, fishes and longboards by the hour or the
+            day. Leash and wax thrown in. Pay at the shack.</p></div>
+          </div>
+          <div class="c">
+            <div class="m-h">Tuk &amp; transfers</div>
+            <div class="m-body"><p>Door-to-break runs and airport pickups. Same crew,
+            same smile, fixed price up front.</p></div>
+          </div>
+        </div>
+        <div class="m-strip"></div>
+        <div class="m-cap">Footer zone sits on the baseline</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

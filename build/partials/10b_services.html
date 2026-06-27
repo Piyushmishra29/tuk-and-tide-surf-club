@@ -1,0 +1,170 @@
+<div class="page bone">
+  <style scoped>
+    .svc-head{ display:flex; justify-content:space-between; align-items:flex-end; }
+    .svc-head .seal{ font-family:var(--marker); font-size:12pt; color:var(--terra);
+                     transform:rotate(-4deg); text-align:right; line-height:1.1;
+                     border:2px solid var(--terra); border-radius:30px; padding:2.5mm 5mm; }
+    .svc-intro{ font-family:var(--body); font-size:10.5pt; line-height:1.55;
+                color:var(--ink); max-width:150mm; margin:1mm 0 6mm; }
+    .svc-intro b{ font-weight:700; }
+
+    .menu{ display:flex; flex-direction:column; gap:6.5mm; }
+
+    .grp{ }
+    .grp-head{ display:flex; align-items:baseline; gap:4mm; margin-bottom:3.5mm; }
+    .grp-no{ font-family:var(--display); font-size:15pt; color:var(--terra); line-height:1; }
+    .grp-ttl{ font-family:var(--display); font-size:15pt; color:var(--ink);
+              line-height:1; letter-spacing:.005em; }
+    .grp-sub{ font-family:var(--marker); font-size:9.5pt; color:var(--teal);
+              margin-left:auto; transform:rotate(-2deg); }
+    .grp-line{ height:2px; background:var(--ink); margin-bottom:4mm; opacity:.85; }
+
+    .row{ display:flex; align-items:baseline; margin-bottom:3.2mm; }
+    .row .nm{ font-family:var(--body); font-weight:700; font-size:10.5pt;
+              color:var(--ink); white-space:nowrap; }
+    .row .ds{ font-family:var(--body); font-weight:400; font-size:8.2pt;
+              color:var(--ink-60); margin-left:3mm; white-space:nowrap; }
+    .row .led{ flex:1; margin:0 3mm 0 3.5mm; height:0;
+               border-bottom:1.5px dotted #9a8a7a; transform:translateY(-1mm); }
+    .row .pr{ font-family:var(--body); font-weight:700; font-size:10.5pt;
+              color:var(--ink); white-space:nowrap; text-align:right; }
+    .row .pr .lkr{ font-weight:400; font-size:7.8pt; color:var(--ink-60);
+                   letter-spacing:.02em; }
+    .row .pr .alt{ font-weight:700; font-size:9pt; color:var(--clay); }
+
+    .twocol{ display:flex; gap:11mm; }
+    .twocol > div{ flex:1; }
+
+    .svc-foot{ display:flex; justify-content:space-between; align-items:center;
+               border-top:2px solid var(--ink); margin-top:7mm; padding-top:3.5mm; }
+    .svc-foot .note{ font-family:var(--marker); font-size:10pt; color:var(--terra); }
+    .svc-foot .fine{ font-family:var(--body); font-size:8pt; color:var(--ink-60);
+                     letter-spacing:.04em; text-align:right; line-height:1.4; }
+  </style>
+
+  <div class="kicker">The Club · Services</div>
+  <div class="svc-head">
+    <h1 class="disp" style="margin-bottom:0;">What We Offer</h1>
+    <div class="seal">ride · rent<br>roam</div>
+  </div>
+  <div class="rule"></div>
+  <p class="svc-intro">From your first whitewater to a full south-coast dawn patrol — and a
+    rattling tuk-tuk to ferry you between the breaks. <b>Boards, lessons & wheels,</b> all
+    from one shack on the Weligama sand.</p>
+
+  <div class="menu">
+
+    <!-- 01 SURF LESSONS -->
+    <div class="grp">
+      <div class="grp-head">
+        <span class="grp-no">01</span>
+        <span class="grp-ttl">Surf Lessons</span>
+        <span class="grp-sub">qualified local coaches</span>
+      </div>
+      <div class="grp-line"></div>
+      <div class="row">
+        <span class="nm">Group Lesson</span>
+        <span class="ds">2 hrs · board + rashguard incl.</span>
+        <span class="led"></span>
+        <span class="pr">$20 <span class="lkr">(LKR 6,000)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Private 1-to-1</span>
+        <span class="ds">2 hrs · one coach, one student</span>
+        <span class="led"></span>
+        <span class="pr">$35 <span class="lkr">(LKR 10,500)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Beginner Course</span>
+        <span class="ds">3 lessons · stand up by day three</span>
+        <span class="led"></span>
+        <span class="pr">$55 <span class="lkr">(LKR 16,500)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Kids&rsquo; Lesson</span>
+        <span class="ds">90 min · ages 6&ndash;12, soft boards</span>
+        <span class="led"></span>
+        <span class="pr">$18 <span class="lkr">(LKR 5,400)</span></span>
+      </div>
+    </div>
+
+    <!-- 02 BOARD & GEAR -->
+    <div class="grp">
+      <div class="grp-head">
+        <span class="grp-no">02</span>
+        <span class="grp-ttl">Board &amp; Gear Rental</span>
+        <span class="grp-sub">weekly rates available</span>
+      </div>
+      <div class="grp-line"></div>
+      <div class="twocol">
+        <div>
+          <div class="row">
+            <span class="nm">Soft-top / Foamie</span>
+            <span class="led"></span>
+            <span class="pr"><span class="alt">$5</span><span class="lkr">/hr</span> &middot; <span class="alt">$15</span><span class="lkr">/day</span></span>
+          </div>
+          <div class="row">
+            <span class="nm">Performance Board</span>
+            <span class="led"></span>
+            <span class="pr"><span class="alt">$7</span><span class="lkr">/hr</span> &middot; <span class="alt">$20</span><span class="lkr">/day</span></span>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <span class="nm">Bodyboard</span>
+            <span class="led"></span>
+            <span class="pr"><span class="alt">$4</span><span class="lkr">/hr</span></span>
+          </div>
+          <div class="row">
+            <span class="nm">Leash · Wax · Fins</span>
+            <span class="ds">add-ons</span>
+            <span class="led"></span>
+            <span class="pr"><span class="alt">$2</span><span class="lkr">/day</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 TUK-TUK -->
+    <div class="grp">
+      <div class="grp-head">
+        <span class="grp-no">03</span>
+        <span class="grp-ttl">Tuk-Tuk &amp; Tours</span>
+        <span class="grp-sub">three wheels, one coast</span>
+      </div>
+      <div class="grp-line"></div>
+      <div class="row">
+        <span class="nm">Airport / Mirissa Transfer</span>
+        <span class="ds">CMB pickup or Mirissa hop, board rack</span>
+        <span class="led"></span>
+        <span class="pr">from $45 <span class="lkr">(LKR 13,500)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Half-Day Surf Run</span>
+        <span class="ds">Weligama &middot; Midigama &middot; Ahangama</span>
+        <span class="led"></span>
+        <span class="pr">$25 <span class="lkr">(LKR 7,500)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Full-Day South Tour</span>
+        <span class="ds">spots, lagoon &amp; lunch stop, driver-guide</span>
+        <span class="led"></span>
+        <span class="pr">$45 <span class="lkr">(LKR 13,500)</span></span>
+      </div>
+      <div class="row">
+        <span class="nm">Self-Drive Hire</span>
+        <span class="ds">per day · permit &amp; brief included</span>
+        <span class="led"></span>
+        <span class="pr">$18 <span class="lkr">(LKR 5,400)</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="svc-foot">
+    <span class="note">Walk in. Paddle out.</span>
+    <span class="fine">Indicative rates &middot; 2026 &middot; subject to season &amp; swell<br>USD &amp; LKR &middot; ask the shack for weekly &amp; group deals</span>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

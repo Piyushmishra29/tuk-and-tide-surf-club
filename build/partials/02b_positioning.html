@@ -1,0 +1,112 @@
+<div class="page bone">
+  <style scoped>
+    .pos-head{ display:flex; justify-content:space-between; align-items:baseline; }
+    .pos-est{ font-family:var(--body); font-weight:700; font-size:8pt;
+              letter-spacing:.14em; text-transform:uppercase; color:var(--ink-60); }
+    .pos-hero{ position:relative; margin:7mm 0 0; }
+    .pos-shadow{ position:absolute; top:4mm; left:4mm; right:-4mm; bottom:-4mm;
+                 background:var(--terra); border-radius:4mm; }
+    .pos-panel{ position:relative; background:var(--ink); border-radius:4mm;
+                padding:8.5mm 9mm 8mm; }
+    .pos-tag{ font-family:var(--body); font-weight:700; font-size:8pt;
+              letter-spacing:.14em; text-transform:uppercase; color:var(--terra);
+              margin-bottom:5mm; }
+    .pos-state{ font-family:var(--display); font-size:25pt; line-height:1.04;
+                color:var(--bone); }
+    .pos-state .hl{ color:var(--terra); }
+    .pos-brush{ font-family:var(--marker); font-size:13pt; color:var(--bone);
+                margin-top:5mm; opacity:.92; }
+
+    .wa-grid{ display:flex; gap:5mm; margin:7mm 0 0; }
+    .wa-card{ flex:1; border:2px solid var(--ink); border-radius:4mm; padding:5.5mm 6mm; }
+    .wa-lbl{ font-family:var(--body); font-weight:700; font-size:8pt;
+             letter-spacing:.14em; text-transform:uppercase; color:var(--ink-60);
+             margin-bottom:3mm; }
+    .wa-txt{ font-family:var(--body); font-size:11pt; line-height:1.42; color:var(--ink); }
+    .wa-txt b{ color:var(--terra); font-weight:700; }
+
+    .val-head{ display:flex; align-items:center; gap:5mm; margin:8mm 0 5mm; }
+    .val-kick{ font-family:var(--body); font-weight:700; font-size:9pt;
+               letter-spacing:.14em; text-transform:uppercase; color:var(--ink); }
+    .val-line{ flex:1; height:2px; background:var(--ink); }
+    .val-grid{ display:flex; gap:4mm; }
+    .val-card{ flex:1; border-radius:3.5mm; padding:6mm 5mm; min-height:47mm;
+               position:relative; border:2px solid var(--ink); }
+    .val-card.ink{ background:var(--ink); border-color:var(--ink); }
+    .val-card.bone{ background:transparent; }
+    .val-card.terra{ background:var(--terra); border-color:var(--ink); }
+    .val-num{ font-family:var(--marker); font-size:13pt; display:block; margin-bottom:4mm; }
+    .val-card.ink .val-num{ color:var(--terra); }
+    .val-card.bone .val-num{ color:var(--terra); }
+    .val-card.terra .val-num{ color:var(--ink); }
+    .val-t{ font-family:var(--display); font-size:13pt; line-height:1.02; }
+    .val-card.ink .val-t{ color:var(--bone); }
+    .val-card.bone .val-t{ color:var(--ink); }
+    .val-card.terra .val-t{ color:var(--ink); }
+    .val-d{ font-family:var(--body); font-size:8pt; line-height:1.42; margin-top:3.5mm; }
+    .val-card.ink .val-d{ color:var(--bone); opacity:.85; }
+    .val-card.bone .val-d{ color:var(--ink-60); }
+    .val-card.terra .val-d{ color:var(--ink); opacity:.85; }
+  </style>
+
+  <div class="pos-head">
+    <div class="kicker">Brand · Positioning</div>
+    <div class="pos-est">No. 02 · The Stance</div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="pos-hero">
+    <div class="pos-shadow"></div>
+    <div class="pos-panel">
+      <div class="pos-tag">Positioning Statement</div>
+      <div class="pos-state">The easygoing way to surf<br>Sri Lanka&#39;s south coast —<br><span class="hl">board under your arm, tuk-tuk at the curb.</span></div>
+      <div class="pos-brush">One club. Two wheels. Endless sets.</div>
+    </div>
+  </div>
+
+  <div class="wa-grid">
+    <div class="wa-card">
+      <div class="wa-lbl">What we are</div>
+      <div class="wa-txt">A <b>local surf &amp; tuk-tuk club</b> in Weligama — rentals, lessons and coast-line tours, run by people who actually live the lineup.</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-lbl">Who it&#39;s for</div>
+      <div class="wa-txt">First-timers and frequent flyers alike — anyone who wants <b>the south coast made simple</b>, salty and sincere.</div>
+    </div>
+  </div>
+
+  <div class="val-head">
+    <div class="val-kick">What we stand for</div>
+    <div class="val-line"></div>
+  </div>
+
+  <div class="val-grid">
+    <div class="val-card ink">
+      <span class="val-num">01</span>
+      <div class="val-t">Salt-cured craft</div>
+      <div class="val-d">Boards waxed, tuks tuned, routes known by heart. Nothing slapdash leaves the shed.</div>
+    </div>
+    <div class="val-card bone">
+      <span class="val-num">02</span>
+      <div class="val-t">Local &amp; proud</div>
+      <div class="val-d">Born on Weligama sand. Our crew, our reefs, our roads — shared the way a neighbour would.</div>
+    </div>
+    <div class="val-card terra">
+      <span class="val-num">03</span>
+      <div class="val-t">Easy stoke</div>
+      <div class="val-d">No ego, no rush. Good waves should feel like a long, lazy weekend.</div>
+    </div>
+    <div class="val-card bone">
+      <span class="val-num">04</span>
+      <div class="val-t">Ride anywhere</div>
+      <div class="val-d">Curb to coast on three wheels. If there&#39;s a wave worth chasing, we&#39;ll get you there.</div>
+    </div>
+    <div class="val-card ink">
+      <span class="val-num">05</span>
+      <div class="val-t">Good company</div>
+      <div class="val-d">You arrive a guest and leave a regular. The session is half the story.</div>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

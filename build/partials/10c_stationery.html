@@ -1,0 +1,155 @@
+<div class="page bone">
+  <style scoped>
+    /* ---- stage ---- */
+    .st-intro{ max-width:150mm; margin-bottom:4mm; }
+    .st-stage{ position:relative; width:174mm; height:202mm; }
+
+    /* ---- generic object + offset depth ---- */
+    .st-obj{ position:absolute; }
+    .st-shadow{ position:absolute; left:2.6mm; top:3mm; background:var(--ink);
+                border-radius:2mm; z-index:0; }
+    .st-card{ position:relative; z-index:1; overflow:hidden; }
+
+    /* ---- caption ---- */
+    .st-cap{ position:relative; z-index:2; display:flex; align-items:baseline;
+             gap:2.6mm; margin-top:3.4mm; }
+    .st-idx{ font-family:var(--display); font-size:13pt; line-height:1; color:var(--terra); }
+    .st-ct{ display:block; }
+    .st-ttl{ font-family:var(--body); font-weight:700; font-size:8pt; letter-spacing:.16em;
+             text-transform:uppercase; color:var(--ink); display:block; }
+    .st-dsc{ font-family:var(--body); font-weight:400; font-size:7pt; letter-spacing:.02em;
+             color:var(--ink-60); margin-top:0.6mm; line-height:1.3; display:block; }
+
+    /* ================= BUSINESS CARD · FRONT (charcoal) ================= */
+    .bc-front{ width:50mm; height:84mm; background:#241D18; border:0.5mm solid #241D18;
+               border-radius:2mm; padding:7mm 5mm; text-align:center;
+               display:flex; flex-direction:column; align-items:center; }
+    .bc-keyline{ position:absolute; left:2.6mm; top:2.6mm; width:44.8mm; height:78.8mm;
+                 border:0.4mm solid #C24A2C; border-radius:1.4mm; z-index:2; }
+    .bc-front .bc-top{ font-family:var(--body); font-weight:700; font-size:5pt;
+                       letter-spacing:.34em; text-transform:uppercase; color:#C24A2C;
+                       margin-top:1mm; }
+    .bc-front .bc-logo{ flex:1; display:flex; align-items:center; justify-content:center; }
+    .bc-front .bc-logo img{ width:33mm; display:block; }
+    .bc-front .bc-foot{ font-family:var(--body); font-weight:700; font-size:5pt;
+                        letter-spacing:.3em; text-transform:uppercase; color:#EFE3D0;
+                        margin-bottom:1mm; }
+
+    /* ================= BUSINESS CARD · BACK (bone) ================= */
+    .bc-back{ width:50mm; height:84mm; background:#EFE3D0; border:0.5mm solid #241D18;
+              border-radius:2mm; padding:7mm 6mm; text-align:center;
+              display:flex; flex-direction:column; align-items:center; }
+    .bc-back .bc-mark{ width:24mm; display:block; margin:0 auto; }
+    .bc-back .bc-name{ font-family:var(--body); font-weight:700; font-size:9.5pt;
+                       letter-spacing:.1em; text-transform:uppercase; color:#241D18;
+                       margin-top:4.5mm; }
+    .bc-back .bc-role{ font-family:var(--marker); font-size:9pt; color:#C24A2C;
+                       margin-top:1mm; }
+    .bc-back .bc-div{ width:14mm; height:0.5mm; background:#C24A2C; margin:4mm auto; }
+    .bc-back .bc-lines{ font-family:var(--body); font-weight:400; font-size:6.4pt;
+                        line-height:1.95; color:#241D18; letter-spacing:.02em; }
+    .bc-back .bc-lines .lab{ font-weight:700; color:#9E3A20; letter-spacing:.08em; }
+    .bc-back .bc-site{ font-family:var(--body); font-weight:700; font-size:6.4pt;
+                       letter-spacing:.22em; text-transform:uppercase; color:#2F5D57;
+                       margin-top:3.5mm; }
+
+    /* ================= HANG-TAG ================= */
+    .ht-wrap{ position:relative; width:58mm; height:120mm; }
+    .ht-svg{ position:absolute; left:0; top:0; width:58mm; height:120mm; z-index:0; }
+    .ht-body{ position:absolute; left:6mm; top:34mm; width:46mm; z-index:1;
+              text-align:center; }
+    .ht-eyebrow{ font-family:var(--body); font-weight:700; font-size:5pt;
+                 letter-spacing:.3em; text-transform:uppercase; color:#EFE3D0; }
+    .ht-word1{ font-family:var(--display); font-size:21pt; line-height:0.92; color:#EFE3D0;
+               margin-top:3mm; }
+    .ht-word2{ font-family:var(--marker); font-size:12pt; color:#241D18; margin-top:1mm; }
+    .ht-rule{ width:18mm; height:0.5mm; background:#EFE3D0; margin:4mm auto; opacity:.85; }
+    .ht-tag{ font-family:var(--body); font-weight:700; font-size:6.4pt; letter-spacing:.16em;
+             text-transform:uppercase; color:#EFE3D0; }
+    .ht-wave{ width:30mm; display:block; margin:5mm auto 0; }
+  </style>
+
+  <div class="kicker">Applications · Stationery</div>
+  <h1 class="disp">Stationery</h1>
+  <p class="st-intro lead">The handshake in print. A charcoal calling card, a bone reverse,
+    and a salt-cured swing tag — small objects that carry the whole club in the palm of a hand.</p>
+
+  <div class="st-stage">
+
+    <!-- 01 · BUSINESS CARD FRONT -->
+    <div class="st-obj" style="left:1mm; top:7mm; transform:rotate(-4deg); transform-origin:center;">
+      <div class="st-shadow" style="width:50mm; height:84mm;"></div>
+      <div class="bc-keyline"></div>
+      <div class="st-card bc-front">
+        <div class="bc-top">Weligama · South Coast</div>
+        <div class="bc-logo"><img src="../assets/brand/logo-reversed.png"></div>
+        <div class="bc-foot">Salt · Sun · Surf</div>
+      </div>
+      <div class="st-cap">
+        <span class="st-idx">01</span>
+        <span class="st-ct"><span class="st-ttl">Calling Card · Front</span>
+          <span class="st-dsc">Charcoal stock · bone lockup · terracotta keyline</span></span>
+      </div>
+    </div>
+
+    <!-- 02 · BUSINESS CARD BACK -->
+    <div class="st-obj" style="left:60mm; top:1mm; transform:rotate(3deg); transform-origin:center;">
+      <div class="st-shadow" style="width:50mm; height:84mm;"></div>
+      <div class="st-card bc-back">
+        <img class="bc-mark" src="../assets/brand/mark-tuktuk-EFE3D0.png">
+        <div class="bc-name">Arjuna Perera</div>
+        <div class="bc-role">Founder &amp; Head Coach</div>
+        <div class="bc-div"></div>
+        <div class="bc-lines">
+          <span class="lab">WA</span>&nbsp; +94 76 555 0123<br>
+          <span class="lab">IG</span>&nbsp; @tukandtide.lk<br>
+          <span class="lab">@</span>&nbsp; hello@tukandtide.lk<br>
+          Weligama Bay, Sri Lanka
+        </div>
+        <div class="bc-site">tukandtide.lk</div>
+      </div>
+      <div class="st-cap">
+        <span class="st-idx">02</span>
+        <span class="st-ct"><span class="st-ttl">Calling Card · Back</span>
+          <span class="st-dsc">Bone stock · name, role &amp; contact · tuk mark</span></span>
+      </div>
+    </div>
+
+    <!-- 03 · HANG-TAG -->
+    <div class="st-obj" style="left:116mm; top:14mm; transform:rotate(5deg); transform-origin:center;">
+      <div class="ht-wrap">
+        <svg class="ht-svg" viewBox="0 0 58 120" preserveAspectRatio="xMidYMid meet">
+          <!-- offset charcoal shadow tag -->
+          <path d="M8.6 24.6 L29.6 14.6 L50.6 24.6 L50.6 110 Q50.6 116 44.6 116 L14.6 116 Q8.6 116 8.6 110 Z"
+                fill="#241D18"/>
+          <!-- main terracotta tag -->
+          <path d="M6 22 L27 12 L48 22 L48 107 Q48 113 42 113 L12 113 Q6 113 6 107 Z"
+                fill="#C24A2C" stroke="#241D18" stroke-width="0.7"/>
+          <!-- punched hole -->
+          <circle cx="27" cy="22" r="3.1" fill="#EFE3D0" stroke="#241D18" stroke-width="0.7"/>
+          <!-- string -->
+          <path d="M24.3 21 C13 13, 24 1.5, 31 8 C37 13.5, 31 18.5, 29.4 20.4"
+                fill="none" stroke="#241D18" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M24.3 21 C13 13, 24 1.5, 31 8 C37 13.5, 31 18.5, 29.4 20.4"
+                fill="none" stroke="#EFE3D0" stroke-width="0.7" stroke-linecap="round"/>
+        </svg>
+        <div class="ht-body">
+          <div class="ht-eyebrow">Est. Weligama</div>
+          <div class="ht-word1">TUK &amp;<br>TIDE</div>
+          <div class="ht-word2">surf club</div>
+          <div class="ht-rule"></div>
+          <div class="ht-tag">salt-cured surf goods</div>
+          <img class="ht-wave" src="../assets/brand/mark-wave-C24A2C.png">
+        </div>
+      </div>
+      <div class="st-cap" style="margin-top:1mm;">
+        <span class="st-idx">03</span>
+        <span class="st-ct"><span class="st-ttl">Swing Tag</span>
+          <span class="st-dsc">Terracotta board · strung kraft · for goods &amp; gifts</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>
