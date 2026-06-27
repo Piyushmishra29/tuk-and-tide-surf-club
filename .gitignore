@@ -1,1 +1,6 @@
-build/*.pdf
+build/_*
+build/pg-*.png
+build/*.html
+build/*.output
+assets/refs/
+.DS_Store

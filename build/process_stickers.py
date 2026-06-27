@@ -12,8 +12,8 @@ ff="".join(f"@font-face{{font-family:'{k}';src:url('../assets/fonts/{v}');}}\n" 
 def sh(cmd): subprocess.run(cmd, shell=True, check=True)
 
 # shared grain + grunge textures (big; resized per sticker)
-sh(f'magick -size 1500x1500 xc:gray50 -attenuate 0.7 +noise Gaussian -blur 0x0.4 -colorspace Gray {HERE}/_grain.png')
-sh(f'magick -size 1500x1500 xc:black -attenuate 2 +noise Laplacian -blur 0x2 -auto-level -threshold 78% -negate {HERE}/_grunge.png')
+sh(f'magick -size 1500x1500 xc:gray50 -attenuate 0.5 +noise Gaussian -blur 0x0.4 -colorspace Gray {HERE}/_grain.png')
+sh(f'magick -size 1500x1500 xc:black -attenuate 2 +noise Laplacian -blur 0x2 -auto-level -threshold 86% -negate {HERE}/_grunge.png')
 
 for f in sorted(glob.glob(os.path.join(ROOT,"assets","stickers","*.svg"))):
     name=os.path.splitext(os.path.basename(f))[0]
@@ -31,9 +31,9 @@ for f in sorted(glob.glob(os.path.join(ROOT,"assets","stickers","*.svg"))):
     sh(f'magick identify -format "%wx%h" {HERE}/_pad.png > {HERE}/_dim.txt')
     dim=open(f"{HERE}/_dim.txt").read().strip(); PW,PH=[int(x) for x in dim.split("x")]
     disk=max(10,int(min(PW,PH)*0.022))                                        # border thickness ~2.2%
-    # 1) texture: slight desat + grain (multiply) + light distress, alpha preserved
-    sh(f'magick {HERE}/_pad.png \\( {HERE}/_grain.png -resize {PW}x{PH}! \\) -compose Multiply -composite '
-       f'{HERE}/_pad.png -compose CopyOpacity -composite -modulate 100,92,100 {HERE}/_tex.png')
+    # 1) texture: NEUTRAL soft-light grain (no darkening) + light distress, alpha preserved
+    sh(f'magick {HERE}/_pad.png \\( {HERE}/_grain.png -resize {PW}x{PH}! \\) -compose SoftLight -composite '
+       f'{HERE}/_pad.png -compose CopyOpacity -composite {HERE}/_tex.png')
     sh(f'magick {HERE}/_tex.png \\( {HERE}/_tex.png -alpha extract \\( {HERE}/_grunge.png -resize {PW}x{PH}! \\) '
        f'-compose Multiply -composite \\) -alpha off -compose CopyOpacity -composite {HERE}/_dis.png')
     # 2) bone kiss-cut border
