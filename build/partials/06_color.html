@@ -1,0 +1,130 @@
+<div class="page bone">
+  <style scoped>
+    .swatch-row{ display:flex; gap:4mm; margin:9mm 0 8mm; }
+    .swatch{ flex:1; height:70mm; border:2px solid var(--ink); border-radius:3mm;
+             position:relative; overflow:hidden; }
+    .swatch .lbl{ position:absolute; left:5mm; right:5mm; bottom:5mm; }
+    .swatch .role{ position:absolute; top:5mm; left:5mm;
+                   font-family:var(--marker); font-size:11pt; line-height:1; }
+    .swatch .nm{ font-family:var(--display); font-size:10.5pt; line-height:1.02;
+                 margin-bottom:2.5mm; }
+    .swatch .hx{ font-family:var(--body); font-weight:700; font-size:9.5pt;
+                 letter-spacing:.06em; }
+    .swatch .rgb{ font-family:var(--body); font-size:7.5pt; letter-spacing:.04em;
+                  margin-top:1mm; opacity:.85; }
+    /* dark swatches → bone text */
+    .s-ink{ background:var(--ink); }
+    .s-clay{ background:var(--clay); }
+    .s-teal{ background:var(--teal); }
+    .s-terra{ background:var(--terra); }
+    .s-ink .nm,.s-ink .hx,.s-ink .rgb,.s-ink .role,
+    .s-clay .nm,.s-clay .hx,.s-clay .rgb,.s-clay .role,
+    .s-teal .nm,.s-teal .hx,.s-teal .rgb,.s-teal .role,
+    .s-terra .nm,.s-terra .hx,.s-terra .rgb,.s-terra .role{ color:var(--bone); }
+    /* bone swatch → ink text */
+    .s-bone{ background:var(--bone); }
+    .s-bone .nm,.s-bone .hx,.s-bone .rgb,.s-bone .role{ color:var(--ink); }
+
+    .prop-head{ font-family:var(--body); font-weight:700; font-size:8.5pt;
+                letter-spacing:.2em; text-transform:uppercase; color:var(--ink-60);
+                margin-bottom:3mm; }
+    .prop-bar{ display:flex; height:13mm; border:2px solid var(--ink);
+               border-radius:2.5mm; overflow:hidden; }
+    .prop-bar > div{ display:flex; align-items:center; justify-content:center;
+                     font-family:var(--body); font-weight:700; font-size:7pt;
+                     letter-spacing:.1em; text-transform:uppercase; }
+    .p-terra{ flex:42; background:var(--terra); color:var(--ink); }
+    .p-ink{ flex:30; background:var(--ink); color:var(--bone); }
+    .p-bone{ flex:20; background:var(--bone); color:var(--ink); }
+    .p-clay{ flex:5; background:var(--clay); }
+    .p-teal{ flex:4; background:var(--teal); }
+
+    .pairings{ display:flex; gap:5mm; margin-top:9mm; }
+    .pair{ flex:1; border-radius:3mm; overflow:hidden; height:112mm;
+           border:2px solid #241D18; display:flex; flex-direction:column; }
+    .pair .demo{ height:56mm; flex:none; display:flex; align-items:center; justify-content:center;
+                 font-family:var(--display); font-size:34pt; }
+    .pair .cap{ flex:1; padding:5mm; background:#EFE3D0; color:#241D18; }
+    .pair .t{ font-family:var(--body); font-weight:700; font-size:11pt; margin-bottom:2mm; }
+    .pair .x{ font-family:var(--body); font-size:8pt; line-height:1.45; color:#241D18; }
+    .sig .demo{ background:#C24A2C; color:#241D18; }
+    .rev .demo{ background:#241D18; color:#EFE3D0; }
+    .spk .demo{ background:#EFE3D0; color:#2F5D57; border-bottom:2px solid #241D18; }
+  </style>
+
+  <div class="kicker">Palette</div>
+  <h1 class="disp">Colour</h1>
+  <div class="rule"></div>
+
+  <div class="swatch-row">
+    <div class="swatch s-ink">
+      <span class="role">Ink</span>
+      <div class="lbl">
+        <div class="nm">Charcoal</div>
+        <div class="hx">#241D18</div>
+        <div class="rgb">rgb(36, 29, 24)</div>
+      </div>
+    </div>
+    <div class="swatch s-terra">
+      <span class="role">Primary</span>
+      <div class="lbl">
+        <div class="nm">Terracotta</div>
+        <div class="hx">#C24A2C</div>
+        <div class="rgb">rgb(194, 74, 44)</div>
+      </div>
+    </div>
+    <div class="swatch s-bone">
+      <span class="role" style="font-family:var(--marker);color:var(--ink);">Paper</span>
+      <div class="lbl">
+        <div class="nm">Bone</div>
+        <div class="hx">#EFE3D0</div>
+        <div class="rgb">rgb(239, 227, 208)</div>
+      </div>
+    </div>
+    <div class="swatch s-clay">
+      <span class="role">Accent</span>
+      <div class="lbl">
+        <div class="nm">Deep Clay</div>
+        <div class="hx">#9E3A20</div>
+        <div class="rgb">rgb(158, 58, 32)</div>
+      </div>
+    </div>
+    <div class="swatch s-teal">
+      <span class="role">Spark</span>
+      <div class="lbl">
+        <div class="nm">Surf Teal</div>
+        <div class="hx">#2F5D57</div>
+        <div class="rgb">rgb(47, 93, 87)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-head">Proportion · how the ink sits on the page</div>
+  <div class="prop-bar">
+    <div class="p-terra">Terracotta</div>
+    <div class="p-ink">Charcoal</div>
+    <div class="p-bone">Bone</div>
+    <div class="p-clay"></div>
+    <div class="p-teal"></div>
+  </div>
+
+  <div class="pairings">
+    <div class="pair sig">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Ink on Terracotta</div>
+        <div class="x">Charcoal woodcut on sun-baked terracotta — the everyday lockup.</div></div>
+    </div>
+    <div class="pair rev">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Bone on Charcoal</div>
+        <div class="x">Sand ink on deep charcoal — for covers, night and impact.</div></div>
+    </div>
+    <div class="pair spk">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Teal, sparingly</div>
+        <div class="x">One wave, one detail. Never a background, never the hero.</div></div>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

@@ -1,0 +1,125 @@
+<div class="page">
+  <style scoped>
+    .ty-head{ margin-bottom:7mm; }
+
+    /* specimen block frame */
+    .spec{ border:2px solid var(--ink); border-radius:4mm; padding:6mm 6mm 5mm;
+           margin-bottom:5mm; background:transparent; }
+    .spec.solid{ background:var(--ink); border-color:var(--ink); }
+    .spec-top{ display:flex; justify-content:space-between; align-items:baseline;
+               border-bottom:1px solid rgba(36,29,24,.3); padding-bottom:2.5mm;
+               margin-bottom:4mm; }
+    .spec.solid .spec-top{ border-bottom:1px solid rgba(239,227,208,.3); }
+    .spec-name{ font-family:var(--body); font-weight:700; letter-spacing:.26em;
+                text-transform:uppercase; font-size:8.5pt; color:var(--ink); }
+    .spec.solid .spec-name{ color:var(--bone); }
+    .spec-meta{ font-family:var(--body); font-size:7.5pt; letter-spacing:.04em;
+                color:var(--ink); }
+    .spec.solid .spec-meta{ color:#c9b8a3; }
+
+    /* 1 — display / Ultra */
+    .ult-word{ font-family:var(--display); font-size:34pt; line-height:0.96;
+               color:var(--bone); }
+    .ult-glyphs{ font-family:var(--display); font-size:13pt; line-height:1.25;
+                 letter-spacing:.04em; color:var(--terra); margin-top:3.5mm; }
+
+    /* 2 — accent / Marker */
+    .mk-line{ font-family:var(--marker); font-size:27pt; line-height:1.02;
+              color:var(--ink); }
+    .mk-word{ font-family:var(--marker); font-size:21pt; color:var(--ink);
+              margin-top:1mm; }
+
+    /* 3 — body / DM Sans */
+    .bd-h{ font-family:var(--body); font-weight:700; font-size:14pt; color:var(--ink);
+           line-height:1.15; margin-bottom:2.5mm; }
+    .bd-p{ font-family:var(--body); font-size:9.5pt; line-height:1.55; color:var(--ink);
+           max-width:150mm; margin-bottom:3.5mm; }
+    .bd-caps{ font-family:var(--body); font-weight:700; font-size:8pt;
+              letter-spacing:.18em; text-transform:uppercase; color:var(--ink-60); }
+    .bd-caps span{ color:var(--ink); }
+
+    /* lower zone: scale + pairing */
+    .ty-low{ display:flex; gap:5mm; margin-top:1mm; }
+    .scale{ flex:1.05; border:2px solid var(--ink); border-radius:4mm; padding:5mm 6mm; }
+    .scale-h{ font-family:var(--body); font-weight:700; letter-spacing:.24em;
+              text-transform:uppercase; font-size:8pt; color:var(--ink);
+              margin-bottom:3mm; }
+    .scl-row{ display:flex; justify-content:space-between; align-items:baseline;
+              padding:2.2mm 0; border-bottom:1px solid rgba(36,29,24,.22); }
+    .scl-row:last-child{ border-bottom:none; }
+    .scl-name{ font-family:var(--display); color:var(--ink); }
+    .scl-meta{ font-family:var(--body); font-weight:700; font-size:7.5pt; letter-spacing:.04em;
+               color:var(--ink); }
+
+    .pair{ flex:1; background:var(--ink); border-radius:4mm; padding:6mm 6mm 5mm;
+           display:flex; flex-direction:column; justify-content:center; }
+    .pair-k{ font-family:var(--body); font-weight:700; letter-spacing:.24em;
+             text-transform:uppercase; font-size:7.5pt; color:var(--terra);
+             margin-bottom:3mm; }
+    .pair-mk{ font-family:var(--marker); font-size:13pt; color:var(--bone); }
+    .pair-disp{ font-family:var(--display); font-size:18pt; line-height:0.98;
+                color:var(--bone); margin:1.5mm 0 3mm; }
+    .pair-bd{ font-family:var(--body); font-size:8pt; line-height:1.45; color:#d9c8b3;
+              letter-spacing:.02em; }
+  </style>
+
+  <div class="ty-head">
+    <div class="kicker">Type</div>
+    <h1 class="disp">Typography</h1>
+  </div>
+
+  <!-- 1 · DISPLAY -->
+  <div class="spec solid">
+    <div class="spec-top">
+      <span class="spec-name">Display</span>
+      <span class="spec-meta">Ultra · headlines, wordmark</span>
+    </div>
+    <div class="ult-word">TUK &amp; TIDE</div>
+    <div class="ult-glyphs">ABCDEFGHIJKLM&nbsp;/&nbsp;NOPQRSTUVWXYZ<br>0123456789</div>
+  </div>
+
+  <!-- 2 · ACCENT -->
+  <div class="spec">
+    <div class="spec-top">
+      <span class="spec-name">Accent</span>
+      <span class="spec-meta">Permanent Marker · hand-brushed accents, taglines (use sparingly)</span>
+    </div>
+    <div class="mk-line">Surf, ride, repeat.</div>
+    <div class="mk-word">Weligama</div>
+  </div>
+
+  <!-- 3 · BODY -->
+  <div class="spec">
+    <div class="spec-top">
+      <span class="spec-name">Body</span>
+      <span class="spec-meta">DM Sans · body copy, labels, UI</span>
+    </div>
+    <div class="bd-h">A little surf club on the south coast.</div>
+    <p class="bd-p">Grab a board for the waves and a tuk for the road — we sort out the
+    rest. Lessons for first-timers, rentals for the regulars, and three-wheelers to
+    borrow when you fancy your own adventure down the coast. No clipboards, no rush.</p>
+    <div class="bd-caps"><span>Surf Lessons</span> · <span>Board Rentals</span> ·
+      <span>Tuk-Tuk Tours</span> · <span>Tuk-Tuk Rentals</span></div>
+  </div>
+
+  <!-- lower: scale + pairing -->
+  <div class="ty-low">
+    <div class="scale">
+      <div class="scale-h">Type Scale</div>
+      <div class="scl-row"><span class="scl-name" style="font-size:19pt;">Display</span><span class="scl-meta">Ultra · 40pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:15pt;">Headline</span><span class="scl-meta">Ultra · 18pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:12pt;font-family:var(--marker);">Subhead</span><span class="scl-meta">Marker · 13pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:11pt;font-family:var(--body);font-weight:700;">Body</span><span class="scl-meta">DM Sans · 10.5pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:9pt;font-family:var(--body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;">Caption</span><span class="scl-meta">DM Sans · 8.5pt</span></div>
+    </div>
+
+    <div class="pair">
+      <div class="pair-k">Pairing in action</div>
+      <div class="pair-mk">Two waves.</div>
+      <div class="pair-disp">THREE WHEELS</div>
+      <div class="pair-bd">One club on Weligama&#39;s south-coast sand — surf, ride, repeat.</div>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

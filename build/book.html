@@ -3,1044 +3,1057 @@
 <title>Tuk & Tide Club — Brand Book</title>
 <link rel="stylesheet" href="../assets/brand.css">
 </head><body>
-<div class="page bleed cover">
-  <style scoped>
-    .cover{ overflow:hidden; }
-    /* rising-sun arc behind the badge (subtle) */
-    .cover-sun{
-      position:absolute; top:24mm; left:35mm;
-      width:140mm; height:70mm;
-      background:var(--mustard);
-      border-radius:70mm 70mm 0 0;
-      opacity:0.30;
-    }
-    .cover-sun-ring{
-      position:absolute; top:33mm; left:44mm;
-      width:122mm; height:61mm;
-      border:2.5mm solid var(--mustard);
-      border-bottom:none;
-      border-radius:61mm 61mm 0 0;
-      opacity:0.22;
-    }
-    /* layered retro wave band — lower third */
-    .cover-wave{
-      position:absolute; left:0; bottom:0;
-      width:210mm; height:108mm;
-    }
-    /* centered content stack */
-    .cover-stack{
-      position:absolute; top:0; left:0; right:0;
-      padding-top:30mm;
-      display:flex; flex-direction:column; align-items:center;
-    }
-    .cover-badge{ width:76mm; height:76mm; display:block; }
-    .cover-wm{ margin-top:9mm; }
-    .cover-tag{
-      font-family:var(--display); font-weight:600;
-      font-size:19pt; color:var(--teal-deep);
-      margin-top:9mm; letter-spacing:.01em;
-    }
-    .cover-kicker{
-      font-family:var(--head); font-weight:700;
-      letter-spacing:.40em; text-transform:uppercase;
-      font-size:10pt; color:var(--teal);
-      margin-top:7mm; padding-left:.40em;
-    }
-  </style>
+<div class="page bleed" style="display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:24mm 0;">
+  <!-- inset poster frame -->
+  <div style="position:absolute; top:9mm; left:9mm; right:9mm; bottom:9mm;
+              border:2.5px solid var(--ink); border-radius:2mm;"></div>
 
-  <div class="cover-sun"></div>
-  <div class="cover-sun-ring"></div>
+  <!-- top kicker -->
+  <div style="text-align:center; z-index:2;">
+    <div class="kicker" style="font-size:11pt; letter-spacing:.42em;">Brand Kit</div>
+    <div style="height:3px; width:26mm; background:var(--ink); border-radius:2px; margin:5mm auto 0;"></div>
+  </div>
 
-  <svg class="cover-wave" viewBox="0 0 210 108" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 30 C 42 12 84 14 126 30 C 162 44 192 40 210 30 L210 108 L0 108 Z" fill="#E0A434"/>
-    <path d="M0 44 C 48 26 92 28 140 46 C 178 60 200 54 210 46 L210 108 L0 108 Z" fill="#C8502A"/>
-    <path d="M0 60 C 46 46 96 48 146 64 C 184 76 202 70 210 62 L210 108 L0 108 Z" fill="#2E7D74"/>
-    <path d="M0 78 C 56 68 110 84 160 78 C 188 75 204 76 210 78 L210 108 L0 108 Z" fill="#215A53"/>
-    <g fill="#F4EAD5">
-      <circle cx="40" cy="42" r="1.5"/><circle cx="88" cy="40" r="1.2"/>
-      <circle cx="138" cy="56" r="1.5"/><circle cx="186" cy="50" r="1.2"/>
-    </g>
-  </svg>
+  <!-- centered logo -->
+  <div style="z-index:2; text-align:center;">
+    <img src="../assets/brand/logo-terracotta-worn.png" alt="Tuk &amp; Tide Surf Club"
+         style="width:120mm; height:auto; display:block;">
+  </div>
 
-  <div class="cover-stack">
-    <img class="cover-badge" src="../assets/logo/badge.svg" alt="Tuk & Tide Club badge">
-
-    <div class="wordmark cover-wm">
-      <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
-      <div class="wm-rule"></div>
-      <div class="wm-sub">Weligama · Sri Lanka</div>
-    </div>
-
-    <div class="cover-tag">Surf, ride, repeat.</div>
-    <div class="cover-kicker">Visual Identity · Brand Book 2026</div>
+  <!-- bottom block -->
+  <div style="text-align:center; z-index:2;">
+    <div style="height:3px; width:26mm; background:var(--ink); border-radius:2px; margin:0 auto 6mm;"></div>
+    <div class="kicker" style="font-size:10pt; letter-spacing:.34em;">Weligama &middot; Sri Lanka &middot; Est. 2026</div>
+    <div class="marker" style="font-size:17pt; margin-top:6mm;">Surf, ride, repeat.</div>
   </div>
 </div>
-<div class="page">
+<div class="page bone">
+  <style scoped>
+    .story-lead{ max-width:150mm; }
+    .bigline{ font-family:var(--display); font-size:46pt; line-height:0.96;
+              color:var(--terra); margin:11mm 0 9mm; }
+    .svc-grid{ display:flex; gap:5mm; }
+    .svc-card{ flex:1; border:2px solid var(--ink); border-radius:4mm;
+               padding:6mm 5mm; background:transparent; }
+    .svc-card .n{ font-family:var(--display); font-size:15pt; color:var(--ink);
+                  line-height:1; }
+    .svc-card .d{ font-family:var(--body); font-size:8.5pt; line-height:1.4;
+                  color:var(--ink-60); margin-top:3mm; }
+    .svc-num{ font-family:var(--marker); font-size:11pt; color:var(--terra);
+              display:block; margin-bottom:3mm; }
+  </style>
+
   <div class="kicker">The Club</div>
-  <h1 class="sec">We're Tuk &amp; Tide Club.</h1>
-  <div class="divider"></div>
+  <h1 class="disp">We&#39;re Tuk &amp; Tide.</h1>
+  <div class="rule"></div>
 
-  <p class="lead" style="margin-bottom:5mm;">Born on the warm sand of Weligama, we're the
-    crew that hands you a board for the waves and a tuk-tuk for the road — then gets out of
-    your way so you can have a good time.</p>
+  <p class="lead story-lead">We&#39;re a little surf club on Weligama&#39;s south-coast
+  sand — the kind of place where you grab a board for the waves and a tuk for the
+  road, and we sort out the rest.</p>
 
-  <p style="margin-bottom:0;">We're locals at heart, the kind who know which break is firing,
-    where the best roti stop hides, and how to dodge the afternoon traffic. No stiff counters,
-    no fine print, no stress. Just sand, surf and three wheels — and a friendly face who'll
-    sort the rest. Come for the swell, stay for the ride. We'll make your trip easy, salty
-    and a whole lot of fun.</p>
+  <p class="story-lead" style="margin-top:5mm;">Lessons for first-timers, rentals
+  for the ones who already know the drill, tuk-tuk tours out to the good stuff and
+  three-wheelers to borrow when you fancy your own adventure. Everything here is
+  hand-run by locals who&#39;ve grown up reading these breaks and these back-roads —
+  no clipboards, no rush, no nonsense. Just salt in the air, sand on the floor and
+  someone who&#39;ll point you at the right wave. Roll in a stranger, leave with a
+  story and a tan. That&#39;s the whole plan.</p>
 
-  <div class="oneliner">Surf, ride, repeat.</div>
+  <div class="bigline">Surf, ride, repeat.</div>
 
-  <div class="svc-row">
-    <div class="svc">
-      <div class="svc-no">01</div>
-      <div class="svc-title">Surf Lessons</div>
-      <div class="svc-desc">From first pop-up to clean lines.</div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <span class="svc-num">01</span>
+      <div class="n">Surf<br>Lessons</div>
+      <div class="d">First wave to first cutback — patient locals, soft boards.</div>
     </div>
-    <div class="svc">
-      <div class="svc-no">02</div>
-      <div class="svc-title">Board Rentals</div>
-      <div class="svc-desc">Grab a stick, hit the water.</div>
+    <div class="svc-card">
+      <span class="svc-num">02</span>
+      <div class="n">Board<br>Rentals</div>
+      <div class="d">Foamies to fishes, by the hour or the whole salty day.</div>
     </div>
-    <div class="svc">
-      <div class="svc-no">03</div>
-      <div class="svc-title">Tuk-Tuk Tours</div>
-      <div class="svc-desc">Local routes, hidden gems.</div>
+    <div class="svc-card">
+      <span class="svc-num">03</span>
+      <div class="n">Tuk-Tuk<br>Tours</div>
+      <div class="d">Hidden coves, jungle roads and the best roti in town.</div>
     </div>
-    <div class="svc">
-      <div class="svc-no">04</div>
-      <div class="svc-title">Tuk-Tuk Rentals</div>
-      <div class="svc-desc">Three wheels, total freedom.</div>
+    <div class="svc-card">
+      <span class="svc-num">04</span>
+      <div class="n">Tuk-Tuk<br>Rentals</div>
+      <div class="d">Three wheels, your route — go chase the south coast.</div>
     </div>
   </div>
 
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
+  <div style="margin-top:10mm;background:var(--ink);border-radius:5mm;padding:8mm 9mm;
+              display:flex;align-items:center;justify-content:space-between;gap:8mm;">
+    <div>
+      <div style="font-family:var(--marker);font-size:19pt;color:var(--bone);line-height:1.15;">
+        &ldquo;Grab a board, grab a tuk —<br>we&rsquo;ll sort the rest.&rdquo;</div>
+      <div style="font-family:var(--body);font-weight:700;font-size:7.5pt;letter-spacing:.2em;
+                  text-transform:uppercase;color:var(--terra);margin-top:4mm;">The house promise</div>
+    </div>
+    <img src="../assets/brand/mark-tuktuk-EFE3D0.png" style="height:30mm;flex:none;" alt="">
+  </div>
 
-  <style scoped>
-    .oneliner{
-      font-family:var(--display); font-weight:700; color:var(--terracotta);
-      font-size:46pt; line-height:0.98; margin:11mm 0 9mm;
-    }
-    .svc-row{ display:flex; gap:5mm; }
-    .svc{
-      flex:1; background:var(--cream-deep); border-radius:5mm;
-      padding:6mm 5mm; position:relative;
-      border:2px solid var(--mustard);
-    }
-    .svc-no{
-      font-family:var(--display); font-weight:700; font-size:13pt;
-      color:var(--teal); margin-bottom:3mm;
-    }
-    .svc-title{
-      font-family:var(--head); font-weight:800; font-size:11.5pt;
-      color:var(--cacao); line-height:1.1; margin-bottom:2.5mm;
-    }
-    .svc-desc{
-      font-family:var(--body); font-size:8.5pt; line-height:1.4;
-      color:#6c5a4a;
-    }
-  </style>
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
 </div>
-<div class="page">
+<div class="page bone">
   <style scoped>
-    .ls-head{ margin-bottom:7mm; }
-    .ls-head .kicker{ margin-bottom:2mm; }
-
-    /* hero row: primary badge + wordmark */
-    .ls-hero{ display:flex; gap:7mm; margin-bottom:7mm; }
-    .ls-hero .panel{ display:flex; flex-direction:column; align-items:center;
-                     justify-content:center; padding:9mm 6mm; }
-    .ls-hero .primary{ width:78mm; }
-    .ls-hero .word{ flex:1; }
-    .ls-cap{ font-family:var(--head); font-weight:700; font-size:8pt;
-             letter-spacing:.18em; text-transform:uppercase; color:var(--teal);
-             margin-bottom:5mm; align-self:flex-start; }
-    .ls-badge-primary{ display:block; width:55mm; height:55mm; }
-
-    /* compact wordmark variant (reuses .wordmark structure) */
-    .wm-compact .wm-main{ font-size:24pt; }
-    .wm-compact .wm-rule{ width:30mm; height:3px; margin:1.8mm auto; }
-    .wm-compact .wm-sub{ font-size:7pt; letter-spacing:.26em; }
-    .wm-mini .wm-main{ font-size:15pt; white-space:nowrap; }
-    .wm-mini .wm-rule{ width:22mm; height:2px; margin:1.4mm auto; }
-    .wm-mini .wm-sub{ font-size:5.5pt; letter-spacing:.2em; }
-
-    /* lockups grid */
-    .ls-locks{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; margin-bottom:6mm; }
-    .lock{ background:var(--cream-deep); border-radius:6mm; padding:6mm;
-           display:flex; flex-direction:column; height:49mm; }
-    .lock .body{ flex:1; display:flex; align-items:center; justify-content:center; }
-    .lock-cap{ font-family:var(--head); font-weight:700; font-size:7.5pt;
-               letter-spacing:.14em; text-transform:uppercase; color:var(--terracotta-deep);
-               margin-top:4mm; text-align:center; }
-    .lock.stamp{ background:var(--terracotta); }
-    .lock.stamp .lock-cap{ color:var(--cream); }
-
-    /* horizontal lockup */
-    .lk-h{ display:flex; align-items:center; gap:5mm; }
-    .lk-h img{ width:26mm; height:26mm; display:block; }
-    .lk-h .wm-compact{ text-align:left; }
-    .lk-h .wm-compact .wm-rule{ margin:1.8mm 0; }
-    .lk-h .wm-compact .wm-sub{ padding-left:0; }
-
-    /* stacked lockup */
-    .lk-s{ display:flex; flex-direction:column; align-items:center; gap:3mm; }
-    .lk-s img{ width:24mm; height:24mm; display:block; }
-
-    /* badge only */
-    .lk-b img{ width:30mm; height:30mm; display:block; }
-
-    /* stamp tile */
-    .stamp-tile{ background:var(--cream); border-radius:4mm; padding:4mm;
-                 display:flex; align-items:center; justify-content:center; }
-    .stamp-tile img{ width:20mm; height:20mm; display:block; }
-
-    /* notes */
-    .ls-notes{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
-    .ls-notes .note{ border-left:3px solid var(--mustard); padding-left:5mm; }
-    .ls-notes h3{ font-family:var(--head); font-weight:800; font-size:10pt;
-                  color:var(--cacao); margin-bottom:1.5mm; letter-spacing:.02em; }
+    .mb-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin-top:6mm; }
+    .mb-cell{ height:51mm; border-radius:2mm; overflow:hidden; border:2px solid var(--ink);
+              position:relative; }
+    .mb-cell img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .mb-cap{ position:absolute; left:0; right:0; bottom:0; background:var(--ink); color:var(--bone);
+             font-family:var(--body); font-weight:700; font-size:6pt; letter-spacing:.1em;
+             text-transform:uppercase; padding:1.6mm 3mm; }
+    .t-terra{ background:var(--terra); }
+    .t-ink{ background:var(--ink); }
+    .pad{ padding:5mm; height:100%; }
+    .typetile{ font-family:var(--display); font-size:20pt; line-height:0.95; color:var(--ink); }
+    .chips{ display:flex; gap:1.5mm; margin-bottom:3mm; }
+    .chips span{ flex:1; height:13mm; border-radius:1.5mm; }
+    .lbl{ font-family:var(--body); font-weight:700; font-size:6pt; letter-spacing:.1em;
+          text-transform:uppercase; color:var(--ink); }
+    .kw{ font-family:var(--marker); font-size:13pt; line-height:1.45; color:var(--bone); }
+    .kw b{ color:var(--terra); }
+    .wavemark{ height:100%; display:flex; align-items:center; justify-content:center; }
+    .wavemark img{ width:80%; height:auto; object-fit:contain; }
   </style>
 
-  <div class="ls-head">
-    <div class="kicker">Identity</div>
-    <h1 class="sec">The Logo System</h1>
+  <div class="kicker">The Feeling</div>
+  <h1 class="disp">Moodboard</h1>
+
+  <div class="mb-grid">
+    <div class="mb-cell"><img src="../assets/mood/graded/06_van.jpg"><div class="mb-cap">Roll up · the fleet life</div></div>
+    <div class="mb-cell t-terra"><div class="pad"><div class="typetile">SURF<br>RIDE<br>REPEAT</div>
+      <div class="lbl" style="margin-top:2mm;">Ultra wood-type</div></div></div>
+    <div class="mb-cell"><img src="../assets/mood/graded/05_palm.jpg"><div class="mb-cap">Palm-lined Galle Road</div></div>
+
+    <div class="mb-cell"><img src="../assets/mood/graded/04_tuktuk.jpg"><div class="mb-cap">Three wheels · south coast</div></div>
+    <div class="mb-cell"><div class="pad"><div class="chips">
+        <span style="background:#241D18;"></span><span style="background:#C24A2C;"></span>
+        <span style="background:#EFE3D0;border:1px solid #241D18;"></span>
+        <span style="background:#9E3A20;"></span><span style="background:#2F5D57;"></span></div>
+      <div class="lbl">Charcoal · Terracotta<br>Bone · Clay · Teal</div></div></div>
+    <div class="mb-cell"><img src="../assets/mood/graded/02_ocean.jpg"><div class="mb-cap">Cold water, warm light</div></div>
+
+    <div class="mb-cell"><img src="../assets/mood/graded/08_surfer.jpg"><div class="mb-cap">Out the back at dusk</div></div>
+    <div class="mb-cell t-ink"><div class="pad"><div class="kw">sun-faded<br>hand-carved<br><b>salty &amp; analog</b></div></div></div>
+    <div class="mb-cell"><img src="../assets/mood/graded/07_sunset.jpg"><div class="mb-cap">Golden hour, every day</div></div>
+
+    <div class="mb-cell"><img src="../assets/mood/graded/01_surf.jpg"><div class="mb-cap">First-light line-up</div></div>
+    <div class="mb-cell t-ink"><div class="wavemark"><img src="../assets/brand/mark-wave-C24A2C.png"></div></div>
+    <div class="mb-cell"><img src="../assets/mood/graded/09_srilanka.jpg"><div class="mb-cap">The deep south coast</div></div>
   </div>
 
-  <!-- HERO: primary badge + wordmark -->
-  <div class="ls-hero">
-    <div class="panel primary">
-      <div class="ls-cap">Primary Badge</div>
-      <img class="ls-badge-primary" src="../assets/logo/badge.svg" alt="Tuk &amp; Tide Club badge">
-    </div>
-    <div class="panel word">
-      <div class="ls-cap">Wordmark</div>
-      <div class="wordmark wm-compact" style="margin:auto 0;">
-        <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
-        <div class="wm-rule"></div>
-        <div class="wm-sub">Weligama · Sri Lanka</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOCKUPS -->
-  <div class="ls-locks">
-    <div class="lock">
-      <div class="body">
-        <div class="lk-h">
-          <img src="../assets/logo/badge.svg" alt="badge">
-          <div class="wordmark wm-mini">
-            <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
-            <div class="wm-rule"></div>
-            <div class="wm-sub">Weligama · Sri Lanka</div>
-          </div>
-        </div>
-      </div>
-      <div class="lock-cap">A · Horizontal Lockup</div>
-    </div>
-
-    <div class="lock">
-      <div class="body">
-        <div class="lk-s">
-          <img src="../assets/logo/badge.svg" alt="badge">
-          <div class="wordmark wm-mini">
-            <div class="wm-main">Tuk <span class="amp">&amp;</span> Tide Club</div>
-            <div class="wm-rule"></div>
-            <div class="wm-sub">Weligama · Sri Lanka</div>
-          </div>
-        </div>
-      </div>
-      <div class="lock-cap">B · Stacked Lockup</div>
-    </div>
-
-    <div class="lock">
-      <div class="body lk-b">
-        <img src="../assets/logo/badge.svg" alt="badge">
-      </div>
-      <div class="lock-cap">C · Badge Only</div>
-    </div>
-
-    <div class="lock stamp">
-      <div class="body">
-        <div class="stamp-tile">
-          <img src="../assets/logo/badge.svg" alt="badge stamp">
-        </div>
-      </div>
-      <div class="lock-cap">D · One-colour / Stamp Use</div>
-    </div>
-  </div>
-
-  <!-- NOTES -->
-  <div class="ls-notes">
-    <div class="note">
-      <h3>Clear Space</h3>
-      <p class="small">Keep breathing room equal to the height of the wordmark's
-        <strong>&amp;</strong> on all sides of any lockup. Nothing — type, edges or
-        other marks — enters that zone.</p>
-    </div>
-    <div class="note">
-      <h3>Minimum Size</h3>
-      <p class="small">Badge never smaller than <strong>16&nbsp;mm</strong> wide;
-        wordmark never below <strong>30&nbsp;mm</strong> wide. Stamp use stands in for a
-        single-ink reproduction where colour printing isn't possible.</p>
-    </div>
-  </div>
-
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
 </div>
-<div class="page">
+<div class="page bone">
   <div class="kicker">Identity</div>
-  <h1 class="sec">Logo Don'ts</h1>
-  <div class="divider"></div>
+  <h1 class="disp">The Logo</h1>
+  <div class="rule"></div>
+  <p style="margin-bottom:7mm;">One club, two stories — the tuk and the tide. The full lockup is the
+     signature; the marks ride solo when space is tight.</p>
 
-  <p style="margin-bottom:8mm;">The badge works hard for us — so treat it kindly. Keep its
-    shape, its colours and its breathing room intact. Here's what to never do.</p>
+  <!-- PRIMARY + REVERSED row -->
+  <div style="display:flex; gap:7mm; margin-bottom:7mm;">
+    <!-- PRIMARY hero on terracotta -->
+    <div style="flex:1.55; background:var(--terra); border:2px solid var(--ink); border-radius:4mm;
+                padding:9mm 7mm; display:flex; flex-direction:column; align-items:center;
+                justify-content:center;">
+      <img src="../assets/brand/logo-terracotta.png" alt="Primary lockup"
+           style="width:62mm; height:auto; display:block;">
+      <div class="kicker" style="margin-top:8mm; font-size:8.5pt; letter-spacing:.3em;">Primary Lockup</div>
+    </div>
+    <!-- REVERSED on charcoal -->
+    <div style="flex:1; background:var(--ink); border-radius:4mm;
+                padding:9mm 7mm; display:flex; flex-direction:column; align-items:center;
+                justify-content:center;">
+      <img src="../assets/brand/logo-reversed.png" alt="Reversed lockup"
+           style="width:44mm; height:auto; display:block;">
+      <div class="kicker" style="margin-top:8mm; font-size:8.5pt; letter-spacing:.3em; color:var(--terra);">Reversed</div>
+    </div>
+  </div>
+
+  <!-- THE TWO MARKS -->
+  <div style="display:flex; gap:7mm; margin-bottom:7mm;">
+    <!-- The Tuk on charcoal -->
+    <div style="flex:1; background:var(--ink); border-radius:4mm; padding:8mm 7mm 6mm;
+                display:flex; flex-direction:column; align-items:center;">
+      <div style="flex:1; display:flex; align-items:center;">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="The Tuk mark"
+             style="width:46mm; height:auto; display:block;">
+      </div>
+      <div class="kicker" style="margin-top:6mm; font-size:8.5pt; letter-spacing:.3em; color:var(--terra);">The Tuk</div>
+    </div>
+    <!-- The Wave on bone -->
+    <div style="flex:1; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                padding:8mm 7mm 6mm; display:flex; flex-direction:column; align-items:center;">
+      <div style="flex:1; display:flex; align-items:center;">
+        <img src="../assets/brand/mark-wave-C24A2C.png" alt="The Wave mark"
+             style="width:52mm; height:auto; display:block;">
+      </div>
+      <div class="kicker" style="margin-top:6mm; font-size:8.5pt; letter-spacing:.3em;">The Wave</div>
+    </div>
+  </div>
+
+  <!-- NOTES: clear space + minimum size -->
+  <div style="display:flex; gap:7mm;">
+    <div class="panel" style="flex:1; border:none; border-left:5px solid var(--terra);
+                border-radius:0; padding:2mm 0 2mm 6mm;">
+      <div class="kicker" style="font-size:8.5pt; letter-spacing:.26em;">Clear Space</div>
+      <p class="small" style="margin-top:3mm; font-size:9pt; line-height:1.55;">
+        Keep breathing room equal to the cap-height of <strong>TIDE</strong> on all
+        four sides. Nothing crowds the mark — let it sit and sun itself.</p>
+    </div>
+    <div class="panel" style="flex:1; border:none; border-left:5px solid var(--teal);
+                border-radius:0; padding:2mm 0 2mm 6mm;">
+      <div class="kicker" style="font-size:8.5pt; letter-spacing:.26em;">Minimum Size</div>
+      <p class="small" style="margin-top:3mm; font-size:9pt; line-height:1.55;">
+        Full lockup never below <strong>28&nbsp;mm</strong> wide. The tuk mark never
+        below <strong>14&nbsp;mm</strong>. Below that the carve fills in.</p>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit &middot; Weligama</span></div>
+</div>
+<div class="page">
+  <style scoped>
+    .donts-intro{ max-width:150mm; margin-bottom:7mm; }
+
+    .dont-grid{
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:6mm 6mm;
+    }
+    .dont-card{
+      position:relative;
+      background:var(--bone);
+      border:2px solid var(--ink);
+      border-radius:4mm;
+      padding:5mm 5mm 4mm;
+      overflow:hidden;
+    }
+    /* demo stage: where the misused mark lives */
+    .demo{
+      position:relative;
+      height:33mm;
+      border:2px solid var(--ink);
+      border-radius:3mm;
+      background:var(--bone);
+      overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:4mm;
+    }
+    .demo img{ display:block; }
+
+    /* ✗ badge */
+    .nope{
+      position:absolute; top:-2mm; right:-2mm; z-index:5;
+      width:9mm; height:9mm; border-radius:50%;
+      background:var(--clay); border:2px solid var(--bone);
+      color:var(--bone); font-family:var(--body); font-weight:700;
+      font-size:11pt; line-height:1;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    .cap-t{ font-family:var(--display); font-size:11.5pt; line-height:1;
+            color:var(--ink); }
+    .cap-d{ font-family:var(--body); font-size:7.8pt; line-height:1.4;
+            color:var(--ink-60); margin-top:2mm; }
+
+    /* 1 — stretch */
+    .d-stretch img{ width:54mm; height:16mm; transform:scaleX(1.05); }
+    /* 2 — rotate */
+    .d-rotate img{ height:24mm; transform:rotate(-13deg); }
+    /* 3 — off-brand colour */
+    .d-colour{ background:#FF2D8E; }
+    .d-colour img{ height:23mm; }
+    /* 4 — effects / glow / outline (fake glow via concentric rings) */
+    .d-fx .fx-glow{
+      border:2.4mm solid #FF2D8E; border-radius:5mm; padding:2mm;
+    }
+    .d-fx .fx-wrap{
+      border:3px dashed var(--teal); border-radius:3mm; padding:2.5mm;
+      background:var(--bone);
+    }
+    .d-fx img{ height:15mm; }
+    /* 5 — crowd it */
+    .d-crowd{ flex-direction:row; gap:1mm; padding:0 2mm; }
+    .d-crowd img{ height:20mm; }
+    .d-crowd .crowd-tx{ font-family:var(--display); font-size:9pt;
+                        line-height:1; color:var(--ink); }
+    /* 6 — too small */
+    .d-tiny img{ height:6mm; }
+  </style>
+
+  <div class="kicker">Identity</div>
+  <h1 class="disp">Logo Don&#39;ts</h1>
+  <div class="rule"></div>
+
+  <p class="lead donts-intro">The mark is hand-carved and sun-faded — treat it that
+  way. Six quick ways to wreck it. Don&#39;t.</p>
 
   <div class="dont-grid">
 
+    <!-- 1 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage">
-        <img src="../assets/logo/badge.svg" class="dont-badge stretch" alt="">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-stretch">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
       </div>
-      <div class="dont-cap">Don't stretch or distort the badge.</div>
+      <div class="cap-t">Don&#39;t stretch it.</div>
+      <div class="cap-d">Never squash or stretch the mark. Keep it locked to its
+      original proportions.</div>
     </div>
 
+    <!-- 2 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage">
-        <img src="../assets/logo/badge.svg" class="dont-badge rotate" alt="">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-rotate">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
       </div>
-      <div class="dont-cap">Don't rotate or tilt it off level.</div>
+      <div class="cap-t">Don&#39;t tilt it.</div>
+      <div class="cap-d">No rotating, angling or jaunty tilts. The tuk rolls level,
+      always.</div>
     </div>
 
+    <!-- 3 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage clash">
-        <img src="../assets/logo/badge.svg" class="dont-badge" alt="">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-colour">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
       </div>
-      <div class="dont-cap">Don't drop it on clashing colours.</div>
+      <div class="cap-t">Don&#39;t go off-brand.</div>
+      <div class="cap-d">No clashing backgrounds or recoloured ink. Stick to the five
+      heritage tones.</div>
     </div>
 
+    <!-- 4 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage crowd">
-        <img src="../assets/logo/badge.svg" class="dont-badge" alt="">
-        <span class="crowd-text">RENT NOW!</span>
+      <div class="nope">&#10007;</div>
+      <div class="demo d-fx">
+        <div class="fx-glow">
+          <div class="fx-wrap">
+            <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+          </div>
+        </div>
       </div>
-      <div class="dont-cap">Don't crowd it — give it space.</div>
+      <div class="cap-t">Don&#39;t add effects.</div>
+      <div class="cap-d">No glows, drop-shadows, outlines or gradients. The screenprint
+      is flat by design.</div>
     </div>
 
+    <!-- 5 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage">
-        <span class="fx-box"><img src="../assets/logo/badge.svg" class="dont-badge" alt=""></span>
+      <div class="nope">&#10007;</div>
+      <div class="demo d-crowd">
+        <span class="crowd-tx">SURF<br>RIDE</span>
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+        <span class="crowd-tx">THREE<br>WHEELS</span>
       </div>
-      <div class="dont-cap">Don't add outlines, glows or effects.</div>
+      <div class="cap-t">Don&#39;t crowd it.</div>
+      <div class="cap-d">Give the mark room to breathe. Keep type and edges clear of
+      its safe space.</div>
     </div>
 
+    <!-- 6 -->
     <div class="dont-card">
-      <div class="dont-x">&#10007;</div>
-      <div class="dont-stage">
-        <img src="../assets/logo/badge.svg" class="dont-badge tiny" alt="">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-tiny">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
       </div>
-      <div class="dont-cap">Don't shrink below the minimum size.</div>
+      <div class="cap-t">Don&#39;t shrink it small.</div>
+      <div class="cap-d">Below the minimum size the carving turns to mud. Hold the
+      floor and the detail.</div>
     </div>
 
   </div>
 
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
-
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>
+<div class="page bone">
   <style scoped>
-    .dont-grid{
-      display:flex; flex-wrap:wrap; gap:5mm;
-    }
-    .dont-card{
-      width:calc((100% - 10mm) / 3);
-      background:var(--cream-deep);
-      border-radius:5mm;
-      padding:5mm 4mm 4mm;
-      position:relative;
-      border:1.5px solid rgba(166,62,30,0.40);
-    }
-    .dont-x{
-      position:absolute; top:3mm; right:4mm; z-index:5;
-      width:7mm; height:7mm;
-      background:#C0392B; color:var(--cream);
-      border-radius:50%;
-      font-family:var(--display); font-weight:700;
-      font-size:11pt; line-height:7mm; text-align:center;
-    }
-    .dont-stage{
-      height:34mm;
-      display:flex; align-items:center; justify-content:center;
-      overflow:hidden;
-      border-radius:3mm;
-      margin-bottom:4mm;
-    }
-    .dont-badge{
-      display:block; width:28mm; height:28mm;
-    }
-    /* 1 — stretch */
-    .dont-badge.stretch{ transform:scaleX(1.55) scaleY(0.82); }
-    /* 2 — rotate */
-    .dont-badge.rotate{ transform:rotate(18deg); }
-    /* 3 — clash background */
-    .dont-stage.clash{ background:#E91E8C; }
-    /* 4 — crowd */
-    .dont-stage.crowd{ justify-content:flex-start; padding-left:3mm; }
-    .dont-stage.crowd .dont-badge{ width:24mm; height:24mm; }
-    .crowd-text{
-      font-family:var(--display); font-weight:700;
-      font-size:16pt; color:var(--terracotta);
-      line-height:1.0;
-    }
-    /* 5 — effects (ugly heavy border stand-in) */
-    .fx-box{
-      display:inline-block; padding:2mm;
-      border:5px double #6c5a4a;
-      outline:2px solid var(--teal);
-      outline-offset:2px;
-      border-radius:2mm;
-      background:#d8c6a4;
-    }
-    .fx-box .dont-badge{ width:22mm; height:22mm; }
-    /* 6 — too small */
-    .dont-badge.tiny{ width:10mm; height:10mm; }
+    .swatch-row{ display:flex; gap:4mm; margin:9mm 0 8mm; }
+    .swatch{ flex:1; height:70mm; border:2px solid var(--ink); border-radius:3mm;
+             position:relative; overflow:hidden; }
+    .swatch .lbl{ position:absolute; left:5mm; right:5mm; bottom:5mm; }
+    .swatch .role{ position:absolute; top:5mm; left:5mm;
+                   font-family:var(--marker); font-size:11pt; line-height:1; }
+    .swatch .nm{ font-family:var(--display); font-size:10.5pt; line-height:1.02;
+                 margin-bottom:2.5mm; }
+    .swatch .hx{ font-family:var(--body); font-weight:700; font-size:9.5pt;
+                 letter-spacing:.06em; }
+    .swatch .rgb{ font-family:var(--body); font-size:7.5pt; letter-spacing:.04em;
+                  margin-top:1mm; opacity:.85; }
+    /* dark swatches → bone text */
+    .s-ink{ background:var(--ink); }
+    .s-clay{ background:var(--clay); }
+    .s-teal{ background:var(--teal); }
+    .s-terra{ background:var(--terra); }
+    .s-ink .nm,.s-ink .hx,.s-ink .rgb,.s-ink .role,
+    .s-clay .nm,.s-clay .hx,.s-clay .rgb,.s-clay .role,
+    .s-teal .nm,.s-teal .hx,.s-teal .rgb,.s-teal .role,
+    .s-terra .nm,.s-terra .hx,.s-terra .rgb,.s-terra .role{ color:var(--bone); }
+    /* bone swatch → ink text */
+    .s-bone{ background:var(--bone); }
+    .s-bone .nm,.s-bone .hx,.s-bone .rgb,.s-bone .role{ color:var(--ink); }
 
-    .dont-cap{
-      font-family:var(--head); font-weight:700;
-      font-size:9pt; line-height:1.25;
-      color:var(--cacao);
-    }
+    .prop-head{ font-family:var(--body); font-weight:700; font-size:8.5pt;
+                letter-spacing:.2em; text-transform:uppercase; color:var(--ink-60);
+                margin-bottom:3mm; }
+    .prop-bar{ display:flex; height:13mm; border:2px solid var(--ink);
+               border-radius:2.5mm; overflow:hidden; }
+    .prop-bar > div{ display:flex; align-items:center; justify-content:center;
+                     font-family:var(--body); font-weight:700; font-size:7pt;
+                     letter-spacing:.1em; text-transform:uppercase; }
+    .p-terra{ flex:42; background:var(--terra); color:var(--ink); }
+    .p-ink{ flex:30; background:var(--ink); color:var(--bone); }
+    .p-bone{ flex:20; background:var(--bone); color:var(--ink); }
+    .p-clay{ flex:5; background:var(--clay); }
+    .p-teal{ flex:4; background:var(--teal); }
+
+    .pairings{ display:flex; gap:5mm; margin-top:9mm; }
+    .pair{ flex:1; border-radius:3mm; overflow:hidden; height:112mm;
+           border:2px solid #241D18; display:flex; flex-direction:column; }
+    .pair .demo{ height:56mm; flex:none; display:flex; align-items:center; justify-content:center;
+                 font-family:var(--display); font-size:34pt; }
+    .pair .cap{ flex:1; padding:5mm; background:#EFE3D0; color:#241D18; }
+    .pair .t{ font-family:var(--body); font-weight:700; font-size:11pt; margin-bottom:2mm; }
+    .pair .x{ font-family:var(--body); font-size:8pt; line-height:1.45; color:#241D18; }
+    .sig .demo{ background:#C24A2C; color:#241D18; }
+    .rev .demo{ background:#241D18; color:#EFE3D0; }
+    .spk .demo{ background:#EFE3D0; color:#2F5D57; border-bottom:2px solid #241D18; }
   </style>
+
+  <div class="kicker">Palette</div>
+  <h1 class="disp">Colour</h1>
+  <div class="rule"></div>
+
+  <div class="swatch-row">
+    <div class="swatch s-ink">
+      <span class="role">Ink</span>
+      <div class="lbl">
+        <div class="nm">Charcoal</div>
+        <div class="hx">#241D18</div>
+        <div class="rgb">rgb(36, 29, 24)</div>
+      </div>
+    </div>
+    <div class="swatch s-terra">
+      <span class="role">Primary</span>
+      <div class="lbl">
+        <div class="nm">Terracotta</div>
+        <div class="hx">#C24A2C</div>
+        <div class="rgb">rgb(194, 74, 44)</div>
+      </div>
+    </div>
+    <div class="swatch s-bone">
+      <span class="role" style="font-family:var(--marker);color:var(--ink);">Paper</span>
+      <div class="lbl">
+        <div class="nm">Bone</div>
+        <div class="hx">#EFE3D0</div>
+        <div class="rgb">rgb(239, 227, 208)</div>
+      </div>
+    </div>
+    <div class="swatch s-clay">
+      <span class="role">Accent</span>
+      <div class="lbl">
+        <div class="nm">Deep Clay</div>
+        <div class="hx">#9E3A20</div>
+        <div class="rgb">rgb(158, 58, 32)</div>
+      </div>
+    </div>
+    <div class="swatch s-teal">
+      <span class="role">Spark</span>
+      <div class="lbl">
+        <div class="nm">Surf Teal</div>
+        <div class="hx">#2F5D57</div>
+        <div class="rgb">rgb(47, 93, 87)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prop-head">Proportion · how the ink sits on the page</div>
+  <div class="prop-bar">
+    <div class="p-terra">Terracotta</div>
+    <div class="p-ink">Charcoal</div>
+    <div class="p-bone">Bone</div>
+    <div class="p-clay"></div>
+    <div class="p-teal"></div>
+  </div>
+
+  <div class="pairings">
+    <div class="pair sig">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Ink on Terracotta</div>
+        <div class="x">Charcoal woodcut on sun-baked terracotta — the everyday lockup.</div></div>
+    </div>
+    <div class="pair rev">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Bone on Charcoal</div>
+        <div class="x">Sand ink on deep charcoal — for covers, night and impact.</div></div>
+    </div>
+    <div class="pair spk">
+      <div class="demo">Aa</div>
+      <div class="cap"><div class="t">Teal, sparingly</div>
+        <div class="x">One wave, one detail. Never a background, never the hero.</div></div>
+    </div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
 </div>
 <div class="page">
   <style scoped>
-    .col-swatches{ display:flex; gap:5mm; margin-top:7mm; }
-    .col-card{ flex:1; background:var(--cream-deep); border-radius:4mm; overflow:hidden;
-               display:flex; flex-direction:column; }
-    .col-block{ height:34mm; position:relative; }
-    .col-role{ position:absolute; top:3mm; left:3mm; font-family:var(--head); font-weight:700;
-               font-size:6.5pt; letter-spacing:.1em; text-transform:uppercase;
-               padding:1mm 2.4mm; border-radius:20px; }
-    .col-info{ padding:4mm 3.5mm 5mm; }
-    .col-name{ font-family:var(--display); font-weight:700; font-size:10.5pt; color:var(--cacao);
-               line-height:1.05; margin-bottom:2.5mm; }
-    .col-spec{ font-family:var(--body); font-size:7.6pt; line-height:1.7; color:#6c5a4a; }
-    .col-spec b{ color:var(--cacao); font-weight:700; }
+    .ty-head{ margin-bottom:7mm; }
 
-    .prop-wrap{ margin-top:11mm; }
-    .prop-bar{ display:flex; height:13mm; border-radius:7mm; overflow:hidden;
-               border:1px solid #d8c8a8; }
-    .prop-seg{ display:flex; align-items:center; justify-content:center;
-               font-family:var(--head); font-weight:700; font-size:8.5pt; }
-    .prop-legend{ display:flex; gap:9mm; margin-top:4mm; flex-wrap:wrap; }
-    .prop-item{ display:flex; align-items:center; font-family:var(--body); font-size:8.5pt;
-                color:var(--cacao); }
-    .prop-dot{ width:3.6mm; height:3.6mm; border-radius:50%; margin-right:2mm; }
+    /* specimen block frame */
+    .spec{ border:2px solid var(--ink); border-radius:4mm; padding:6mm 6mm 5mm;
+           margin-bottom:5mm; background:transparent; }
+    .spec.solid{ background:var(--ink); border-color:var(--ink); }
+    .spec-top{ display:flex; justify-content:space-between; align-items:baseline;
+               border-bottom:1px solid rgba(36,29,24,.3); padding-bottom:2.5mm;
+               margin-bottom:4mm; }
+    .spec.solid .spec-top{ border-bottom:1px solid rgba(239,227,208,.3); }
+    .spec-name{ font-family:var(--body); font-weight:700; letter-spacing:.26em;
+                text-transform:uppercase; font-size:8.5pt; color:var(--ink); }
+    .spec.solid .spec-name{ color:var(--bone); }
+    .spec-meta{ font-family:var(--body); font-size:7.5pt; letter-spacing:.04em;
+                color:var(--ink); }
+    .spec.solid .spec-meta{ color:#c9b8a3; }
 
-    .col-note{ margin-top:10mm; background:var(--terracotta); border-radius:4mm;
-               padding:6mm 7mm; }
-    .col-note p{ font-family:var(--display); font-weight:600; font-size:13pt;
-                 color:var(--cream); line-height:1.35; max-width:none; }
+    /* 1 — display / Ultra */
+    .ult-word{ font-family:var(--display); font-size:34pt; line-height:0.96;
+               color:var(--bone); }
+    .ult-glyphs{ font-family:var(--display); font-size:13pt; line-height:1.25;
+                 letter-spacing:.04em; color:var(--terra); margin-top:3.5mm; }
+
+    /* 2 — accent / Marker */
+    .mk-line{ font-family:var(--marker); font-size:27pt; line-height:1.02;
+              color:var(--ink); }
+    .mk-word{ font-family:var(--marker); font-size:21pt; color:var(--ink);
+              margin-top:1mm; }
+
+    /* 3 — body / DM Sans */
+    .bd-h{ font-family:var(--body); font-weight:700; font-size:14pt; color:var(--ink);
+           line-height:1.15; margin-bottom:2.5mm; }
+    .bd-p{ font-family:var(--body); font-size:9.5pt; line-height:1.55; color:var(--ink);
+           max-width:150mm; margin-bottom:3.5mm; }
+    .bd-caps{ font-family:var(--body); font-weight:700; font-size:8pt;
+              letter-spacing:.18em; text-transform:uppercase; color:var(--ink-60); }
+    .bd-caps span{ color:var(--ink); }
+
+    /* lower zone: scale + pairing */
+    .ty-low{ display:flex; gap:5mm; margin-top:1mm; }
+    .scale{ flex:1.05; border:2px solid var(--ink); border-radius:4mm; padding:5mm 6mm; }
+    .scale-h{ font-family:var(--body); font-weight:700; letter-spacing:.24em;
+              text-transform:uppercase; font-size:8pt; color:var(--ink);
+              margin-bottom:3mm; }
+    .scl-row{ display:flex; justify-content:space-between; align-items:baseline;
+              padding:2.2mm 0; border-bottom:1px solid rgba(36,29,24,.22); }
+    .scl-row:last-child{ border-bottom:none; }
+    .scl-name{ font-family:var(--display); color:var(--ink); }
+    .scl-meta{ font-family:var(--body); font-weight:700; font-size:7.5pt; letter-spacing:.04em;
+               color:var(--ink); }
+
+    .pair{ flex:1; background:var(--ink); border-radius:4mm; padding:6mm 6mm 5mm;
+           display:flex; flex-direction:column; justify-content:center; }
+    .pair-k{ font-family:var(--body); font-weight:700; letter-spacing:.24em;
+             text-transform:uppercase; font-size:7.5pt; color:var(--terra);
+             margin-bottom:3mm; }
+    .pair-mk{ font-family:var(--marker); font-size:13pt; color:var(--bone); }
+    .pair-disp{ font-family:var(--display); font-size:18pt; line-height:0.98;
+                color:var(--bone); margin:1.5mm 0 3mm; }
+    .pair-bd{ font-family:var(--body); font-size:8pt; line-height:1.45; color:#d9c8b3;
+              letter-spacing:.02em; }
   </style>
 
-  <div class="kicker">Foundations</div>
-  <h1 class="sec">Colour</h1>
-  <div class="divider"></div>
+  <div class="ty-head">
+    <div class="kicker">Type</div>
+    <h1 class="disp">Typography</h1>
+  </div>
 
-  <div class="col-swatches">
-    <div class="col-card">
-      <div class="col-block" style="background:#C8502A;">
-        <span class="col-role" style="background:rgba(244,234,213,.85); color:#A63E1E;">Primary</span>
-      </div>
-      <div class="col-info">
-        <div class="col-name">Tuk-Tuk<br>Terracotta</div>
-        <div class="col-spec"><b>HEX</b> #C8502A<br><b>RGB</b> 200·80·42<br><b>CMYK</b> 0·60·79·22</div>
-      </div>
+  <!-- 1 · DISPLAY -->
+  <div class="spec solid">
+    <div class="spec-top">
+      <span class="spec-name">Display</span>
+      <span class="spec-meta">Ultra · headlines, wordmark</span>
+    </div>
+    <div class="ult-word">TUK &amp; TIDE</div>
+    <div class="ult-glyphs">ABCDEFGHIJKLM&nbsp;/&nbsp;NOPQRSTUVWXYZ<br>0123456789</div>
+  </div>
+
+  <!-- 2 · ACCENT -->
+  <div class="spec">
+    <div class="spec-top">
+      <span class="spec-name">Accent</span>
+      <span class="spec-meta">Permanent Marker · hand-brushed accents, taglines (use sparingly)</span>
+    </div>
+    <div class="mk-line">Surf, ride, repeat.</div>
+    <div class="mk-word">Weligama</div>
+  </div>
+
+  <!-- 3 · BODY -->
+  <div class="spec">
+    <div class="spec-top">
+      <span class="spec-name">Body</span>
+      <span class="spec-meta">DM Sans · body copy, labels, UI</span>
+    </div>
+    <div class="bd-h">A little surf club on the south coast.</div>
+    <p class="bd-p">Grab a board for the waves and a tuk for the road — we sort out the
+    rest. Lessons for first-timers, rentals for the regulars, and three-wheelers to
+    borrow when you fancy your own adventure down the coast. No clipboards, no rush.</p>
+    <div class="bd-caps"><span>Surf Lessons</span> · <span>Board Rentals</span> ·
+      <span>Tuk-Tuk Tours</span> · <span>Tuk-Tuk Rentals</span></div>
+  </div>
+
+  <!-- lower: scale + pairing -->
+  <div class="ty-low">
+    <div class="scale">
+      <div class="scale-h">Type Scale</div>
+      <div class="scl-row"><span class="scl-name" style="font-size:19pt;">Display</span><span class="scl-meta">Ultra · 40pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:15pt;">Headline</span><span class="scl-meta">Ultra · 18pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:12pt;font-family:var(--marker);">Subhead</span><span class="scl-meta">Marker · 13pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:11pt;font-family:var(--body);font-weight:700;">Body</span><span class="scl-meta">DM Sans · 10.5pt</span></div>
+      <div class="scl-row"><span class="scl-name" style="font-size:9pt;font-family:var(--body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;">Caption</span><span class="scl-meta">DM Sans · 8.5pt</span></div>
     </div>
 
-    <div class="col-card">
-      <div class="col-block" style="background:#E0A434;">
-        <span class="col-role" style="background:rgba(46,33,26,.82); color:#F4EAD5;">Secondary</span>
-      </div>
-      <div class="col-info">
-        <div class="col-name">Golden<br>Mustard</div>
-        <div class="col-spec"><b>HEX</b> #E0A434<br><b>RGB</b> 224·164·52<br><b>CMYK</b> 0·27·77·12</div>
-      </div>
-    </div>
-
-    <div class="col-card">
-      <div class="col-block" style="background:#2E7D74;">
-        <span class="col-role" style="background:rgba(244,234,213,.9); color:#215A53;">Accent</span>
-      </div>
-      <div class="col-info">
-        <div class="col-name">Ocean<br>Teal</div>
-        <div class="col-spec"><b>HEX</b> #2E7D74<br><b>RGB</b> 46·125·116<br><b>CMYK</b> 63·0·7·51</div>
-      </div>
-    </div>
-
-    <div class="col-card">
-      <div class="col-block" style="background:#F4EAD5; border-bottom:1px solid #d8c8a8;">
-        <span class="col-role" style="background:rgba(46,33,26,.1); color:#2E211A;">Background</span>
-      </div>
-      <div class="col-info">
-        <div class="col-name">Sand<br>Cream</div>
-        <div class="col-spec"><b>HEX</b> #F4EAD5<br><b>RGB</b> 244·234·213<br><b>CMYK</b> 0·4·13·4</div>
-      </div>
-    </div>
-
-    <div class="col-card">
-      <div class="col-block" style="background:#2E211A;">
-        <span class="col-role" style="background:rgba(244,234,213,.16); color:#F4EAD5;">Text</span>
-      </div>
-      <div class="col-info">
-        <div class="col-name">Deep<br>Cacao</div>
-        <div class="col-spec"><b>HEX</b> #2E211A<br><b>RGB</b> 46·33·26<br><b>CMYK</b> 0·28·43·82</div>
-      </div>
+    <div class="pair">
+      <div class="pair-k">Pairing in action</div>
+      <div class="pair-mk">Two waves.</div>
+      <div class="pair-disp">THREE WHEELS</div>
+      <div class="pair-bd">One club on Weligama&#39;s south-coast sand — surf, ride, repeat.</div>
     </div>
   </div>
 
-  <div class="prop-wrap">
-    <h2 class="sub">Recommended balance</h2>
-    <div class="prop-bar">
-      <div class="prop-seg" style="width:55%; background:#F4EAD5; color:#2E211A;">55%</div>
-      <div class="prop-seg" style="width:20%; background:#C8502A; color:#F4EAD5;">20%</div>
-      <div class="prop-seg" style="width:12%; background:#2E7D74; color:#F4EAD5;">12%</div>
-      <div class="prop-seg" style="width:9%; background:#E0A434; color:#2E211A;">9%</div>
-      <div class="prop-seg" style="width:4%; background:#2E211A; color:#F4EAD5;">4%</div>
-    </div>
-    <div class="prop-legend">
-      <span class="prop-item"><span class="prop-dot" style="background:#F4EAD5; border:1px solid #d8c8a8;"></span>Sand Cream</span>
-      <span class="prop-item"><span class="prop-dot" style="background:#C8502A;"></span>Terracotta</span>
-      <span class="prop-item"><span class="prop-dot" style="background:#2E7D74;"></span>Ocean Teal</span>
-      <span class="prop-item"><span class="prop-dot" style="background:#E0A434;"></span>Golden Mustard</span>
-      <span class="prop-item"><span class="prop-dot" style="background:#2E211A;"></span>Deep Cacao</span>
-    </div>
-  </div>
-
-  <div class="col-note">
-    <p>Let cream do the heavy lifting, splash terracotta like sunset on a tuk — teal and mustard are the trims, cacao just keeps the words clear.</p>
-  </div>
-
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
 </div>
 <div class="page">
-  <div class="kicker">Foundations</div>
-  <h1 class="sec">Typography</h1>
-  <div class="divider"></div>
-
-  <div class="ty-specimens">
-    <div class="ty-spec">
-      <div class="ty-aa ty-aa-display">Aa</div>
-      <div class="ty-meta">
-        <div class="ty-name" style="font-family:var(--display);">Fredoka</div>
-        <div class="ty-role">Display &amp; Wordmark</div>
-        <div class="ty-sample" style="font-family:var(--display);font-weight:700;color:var(--terracotta);">Surf, ride, repeat.</div>
-        <div class="ty-note">Headlines, logo, big numbers.</div>
-      </div>
-    </div>
-
-    <div class="ty-spec">
-      <div class="ty-aa ty-aa-head">Aa</div>
-      <div class="ty-meta">
-        <div class="ty-name" style="font-family:var(--head);">Bricolage</div>
-        <div class="ty-role">Subheads &amp; Labels</div>
-        <div class="ty-sample" style="font-family:var(--head);font-weight:800;color:var(--cacao);">Grab a board, grab a tuk.</div>
-        <div class="ty-note">Subheads, captions, kickers.</div>
-      </div>
-    </div>
-
-    <div class="ty-spec">
-      <div class="ty-aa ty-aa-body">Aa</div>
-      <div class="ty-meta">
-        <div class="ty-name" style="font-family:var(--body);">DM Sans</div>
-        <div class="ty-role">Body</div>
-        <div class="ty-sample ty-sample-body" style="font-family:var(--body);">No stress — just sand, surf
-          and three wheels. We hand you the gear and get out of your way.</div>
-        <div class="ty-note">Body copy, long text.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ty-lower">
-    <div class="ty-scale">
-      <div class="ty-block-label">Type Scale</div>
-      <div class="ty-row">
-        <span class="ty-spec-txt" style="font-family:var(--display);font-weight:700;font-size:34pt;color:var(--terracotta);line-height:1;">Display</span>
-        <span class="ty-row-spec">Fredoka · 34pt · 700</span>
-      </div>
-      <div class="ty-row">
-        <span class="ty-spec-txt" style="font-family:var(--head);font-weight:700;font-size:16pt;color:var(--cacao);">Heading 2</span>
-        <span class="ty-row-spec">Bricolage · 16pt · 700</span>
-      </div>
-      <div class="ty-row">
-        <span class="ty-spec-txt" style="font-family:var(--display);font-weight:600;font-size:11pt;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);">Kicker</span>
-        <span class="ty-row-spec">Fredoka · 11pt · 600</span>
-      </div>
-      <div class="ty-row">
-        <span class="ty-spec-txt" style="font-family:var(--body);font-weight:400;font-size:11pt;color:var(--cacao);">Body copy</span>
-        <span class="ty-row-spec">DM Sans · 11pt · 400</span>
-      </div>
-      <div class="ty-row ty-row-last">
-        <span class="ty-spec-txt" style="font-family:var(--body);font-weight:400;font-size:9pt;color:#6c5a4a;">Caption text</span>
-        <span class="ty-row-spec">DM Sans · 9pt · 400</span>
-      </div>
-    </div>
-
-    <div class="ty-pairing">
-      <div class="ty-block-label">In Use · Pairing</div>
-      <div class="ty-pair-card">
-        <div class="ty-pair-head">Catch your first wave.</div>
-        <div class="ty-pair-body">Fredoka leads with a warm, rounded headline; DM Sans carries the
-          calm, readable detail underneath. Together they keep every page friendly, salty and easy
-          to scan — never corporate, always ready to go.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
-
   <style scoped>
-    .ty-specimens{ display:flex; flex-direction:column; gap:4mm; margin-top:1mm; }
-    .ty-spec{
-      display:flex; align-items:center; gap:7mm;
-      background:var(--cream-deep); border-radius:5mm;
-      padding:5mm 7mm; border-left:4px solid var(--mustard);
-    }
-    .ty-aa{
-      width:34mm; text-align:center; line-height:0.9;
-      font-size:42pt;
-    }
-    .ty-aa-display{ font-family:var(--display); font-weight:700; color:var(--terracotta); }
-    .ty-aa-head{ font-family:var(--head); font-weight:800; color:var(--teal); }
-    .ty-aa-body{ font-family:var(--body); font-weight:700; color:var(--cacao); }
-    .ty-meta{ flex:1; }
-    .ty-name{ font-size:15pt; font-weight:700; color:var(--cacao); line-height:1; }
-    .ty-role{
-      font-family:var(--head); font-weight:700; font-size:8pt;
-      letter-spacing:.16em; text-transform:uppercase; color:var(--teal);
-      margin:1.5mm 0 2.5mm;
-    }
-    .ty-sample{ font-size:19pt; line-height:1.05; }
-    .ty-sample-body{ font-size:11.5pt; line-height:1.4; color:var(--cacao); font-weight:400; max-width:120mm; }
-    .ty-note{
-      font-family:var(--body); font-size:8pt; color:#6c5a4a; margin-top:2mm;
-    }
+    .v-pills{ display:flex; gap:3mm; margin:6mm 0 9mm; }
+    .v-pills .chip{ background:transparent; }
+    .say-grid{ display:flex; gap:6mm; }
+    .say-col{ flex:1; border:2px solid var(--ink); border-radius:4mm; padding:6mm 6mm 7mm; }
+    .say-col.no{ background:var(--clay); border-color:var(--clay); color:var(--bone); }
+    .say-col h2{ font-family:var(--display); font-size:15pt; color:var(--ink);
+                 margin-bottom:4mm; }
+    .say-col.no h2{ color:var(--bone); }
+    .say-col ul{ list-style:none; }
+    .say-col li{ font-family:var(--body); font-size:10pt; line-height:1.35;
+                 color:var(--ink); padding:3mm 0; border-bottom:1px solid rgba(36,29,24,.28); }
+    .say-col li:last-child{ border-bottom:none; }
+    .say-col.no li{ color:var(--bone); border-bottom:1px solid rgba(239,227,208,.3); }
+    .say-col .mk{ font-family:var(--body); font-weight:700; font-size:11pt; margin-right:2.5mm; }
+    .say-col.yes .mk{ color:var(--ink); }
+    .say-col.no .mk{ color:var(--bone); }
 
-    .ty-lower{ display:flex; gap:6mm; margin-top:7mm; }
-    .ty-block-label{
-      font-family:var(--head); font-weight:700; font-size:8pt;
-      letter-spacing:.16em; text-transform:uppercase; color:var(--teal);
-      margin-bottom:4mm;
-    }
-    .ty-scale{
-      flex:1.1; background:var(--cream-deep); border-radius:5mm; padding:6mm 7mm;
-    }
-    .ty-row{
-      display:flex; align-items:baseline; justify-content:space-between;
-      padding:2.5mm 0; border-bottom:1px solid rgba(46,33,26,0.12);
-    }
-    .ty-row-last{ border-bottom:none; padding-bottom:0; }
-    .ty-spec-txt{ flex:1; }
-    .ty-row-spec{
-      font-family:var(--body); font-size:8pt; color:#6c5a4a; text-align:right;
-      white-space:nowrap; padding-left:4mm;
-    }
-
-    .ty-pairing{ flex:1; }
-    .ty-pair-card{
-      background:var(--teal); border-radius:5mm; padding:7mm;
-      height:calc(100% - 9mm);
-    }
-    .ty-pair-head{
-      font-family:var(--display); font-weight:700; font-size:23pt;
-      color:var(--cream); line-height:1.0; margin-bottom:4mm;
-    }
-    .ty-pair-body{
-      font-family:var(--body); font-size:9.5pt; line-height:1.55;
-      color:var(--cream);
-    }
+    .wall-label{ font-family:var(--body); font-weight:700; letter-spacing:.22em;
+                 text-transform:uppercase; font-size:8.5pt; color:var(--ink);
+                 margin:10mm 0 4mm; }
+    .wall{ display:flex; gap:4mm; }
+    .tile{ flex:1; border-radius:4mm; padding:8mm 6mm; min-height:34mm;
+           display:flex; align-items:center; justify-content:center; text-align:center; }
+    .tile span{ font-family:var(--marker); font-size:15pt; line-height:1.12; }
+    .tile.ink{ background:var(--ink); }
+    .tile.ink span{ color:var(--bone); }
+    .tile.terra{ background:var(--clay); }
+    .tile.terra span{ color:var(--bone); }
+    .tile.bone{ background:var(--bone); }
+    .tile.bone span{ color:var(--ink); }
   </style>
-</div>
-<div class="page">
+
   <div class="kicker">How We Sound</div>
-  <h1 class="sec">Voice &amp; Tone</h1>
-  <div class="divider"></div>
+  <h1 class="disp">Voice &amp; Tone</h1>
 
-  <p class="lead" style="margin-bottom:6mm;">Laid-back local soul with a let's-go grin.
-    We sound salty, friendly and a touch cheeky — like a mate handing you a board, never a
-    counter reading you the terms. Warm over slick, easy over pushy, always.</p>
+  <p class="lead">We talk like the friend who already lives here — salty, warm and
+  grinning, ready to point you at the right wave. Short sentences, real words, a
+  touch cheeky. Never corporate, never a brochure.</p>
 
-  <div class="dials">
-    <span class="dial">Warm <em>not slick</em></span>
-    <span class="dial">Playful <em>not silly</em></span>
-    <span class="dial">Local <em>not touristy</em></span>
-    <span class="dial">Easy <em>not pushy</em></span>
+  <div class="v-pills">
+    <span class="chip">Warm</span>
+    <span class="chip">Playful</span>
+    <span class="chip">Local</span>
+    <span class="chip">Easy</span>
   </div>
 
-  <div class="saysplit">
-    <div class="col col-say">
-      <div class="col-head">We say</div>
-      <div class="say-row">"Grab a board, grab a tuk, we'll sort the rest."</div>
-      <div class="say-row">"No stress — just sand, surf and three wheels."</div>
-      <div class="say-row">"Tell us your vibe, we'll point you at the right wave."</div>
-      <div class="say-row">"First time up? We've got you. Pop-up's easier than it looks."</div>
+  <div class="say-grid">
+    <div class="say-col yes">
+      <h2>We say</h2>
+      <ul>
+        <li><span class="mk">&#10003;</span>Grab a board, grab a tuk, we&#39;ll sort the rest.</li>
+        <li><span class="mk">&#10003;</span>No stress — just sand, surf and three wheels.</li>
+        <li><span class="mk">&#10003;</span>First time? Perfect. Everyone starts here.</li>
+        <li><span class="mk">&#10003;</span>Roll in a stranger, leave with a story.</li>
+      </ul>
     </div>
-    <div class="col col-dont">
-      <div class="col-head">We don't say</div>
-      <div class="dont-row">"Our premium rental solutions optimise your itinerary."</div>
-      <div class="dont-row">"Kindly note our terms and conditions apply."</div>
-      <div class="dont-row">"Please select from our curated package tiers below."</div>
-      <div class="dont-row">"Our certified instructors guarantee maximum results."</div>
+    <div class="say-col no">
+      <h2>We don&#39;t say</h2>
+      <ul>
+        <li><span class="mk">&#10007;</span>Please refer to our terms &amp; conditions.</li>
+        <li><span class="mk">&#10007;</span>Our premium solutions maximise your experience.</li>
+        <li><span class="mk">&#10007;</span>Kindly proceed to the booking portal.</li>
+        <li><span class="mk">&#10007;</span>We are committed to exceeding expectations.</li>
+      </ul>
     </div>
   </div>
 
-  <div class="bubble-head">Lines we'd put on the wall</div>
-  <div class="bubbles">
-    <div class="bubble b-terra">Surf, ride, repeat.</div>
-    <div class="bubble b-teal">Two waves. Three wheels. One club.</div>
-    <div class="bubble b-mustard">Weligama, your way.</div>
+  <div class="wall-label">Lines for the wall</div>
+  <div class="wall">
+    <div class="tile ink"><span>Surf,<br>ride,<br>repeat.</span></div>
+    <div class="tile terra"><span>Two waves.<br>Three wheels.<br>One club.</span></div>
+    <div class="tile bone"><span>No stress —<br>just sand and<br>three wheels.</span></div>
   </div>
 
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
-
-  <style scoped>
-    .dials{ display:flex; gap:4mm; margin-bottom:9mm; }
-    .dial{
-      flex:1; text-align:center; background:var(--cream-deep);
-      border-radius:12px; padding:4.5mm 2mm;
-      border:2px solid var(--mustard);
-      font-family:var(--head); font-weight:800; font-size:9.5pt;
-      color:var(--terracotta); line-height:1.2;
-    }
-    .dial em{ display:block; font-style:normal; font-weight:700;
-      font-size:7.5pt; color:#6c5a4a; margin-top:1.6mm; }
-
-    .saysplit{ display:flex; gap:5mm; margin-bottom:9mm; }
-    .col{ flex:1; border-radius:5mm; padding:6mm 5mm; }
-    .col-say{ background:#E6EEEC; border:2px solid var(--teal); }
-    .col-dont{ background:var(--cream-deep); border:2px solid #b9a98c; }
-    .col-head{
-      font-family:var(--display); font-weight:700; font-size:14pt;
-      margin-bottom:4mm;
-    }
-    .col-say .col-head{ color:var(--teal-deep); }
-    .col-dont .col-head{ color:#8a7a64; }
-    .say-row, .dont-row{
-      font-family:var(--body); font-size:9.5pt; line-height:1.4;
-      padding:3mm 0; border-top:1px solid rgba(46,33,26,0.10);
-    }
-    .say-row:first-of-type, .dont-row:first-of-type{ border-top:none; }
-    .say-row{ color:var(--cacao); font-weight:500; }
-    .dont-row{ color:#8a7a64; }
-
-    .bubble-head{
-      font-family:var(--head); font-weight:800; font-size:11pt;
-      color:var(--cacao); margin-bottom:5mm;
-      letter-spacing:.04em;
-    }
-    .bubbles{ display:flex; gap:4mm; }
-    .bubble{
-      flex:1; border-radius:5mm; padding:7mm 5mm;
-      text-align:center;
-      font-family:var(--display); font-weight:700; font-size:15pt;
-      line-height:1.05;
-    }
-    .b-terra{ background:var(--terracotta); color:var(--cream); }
-    .b-teal{ background:var(--teal); color:var(--cream); }
-    .b-mustard{ background:var(--mustard); color:var(--cacao); }
-  </style>
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
 </div>
-<div class="page">
+<div class="page bone">
   <style scoped>
-    .mk-grid{ display:flex; flex-direction:column; gap:6mm; margin-top:6mm; }
-    .mk-row{ display:flex; gap:6mm; }
-
-    .tile{ background:var(--cream-deep); border-radius:6mm; padding:6mm;
-           display:flex; flex-direction:column; overflow:hidden; }
-    .tile .scene{ position:relative; flex:1; border-radius:4mm; overflow:hidden; }
-    .tile .scene svg{ position:absolute; top:0; left:0; width:100%; height:100%; display:block; }
-
-    .cap{ margin-top:4.5mm; display:flex; align-items:flex-start; }
-    .cap .no{ font-family:var(--head); font-weight:800; font-size:8pt; color:var(--cream);
-              background:var(--terracotta); border-radius:20px; padding:0.6mm 2.4mm;
-              margin-right:3mm; margin-top:0.6mm; letter-spacing:.04em; }
-    .cap .ct{ flex:1; }
-    .cap .ct .t{ font-family:var(--head); font-weight:800; font-size:10pt; color:var(--cacao);
-                 letter-spacing:.02em; line-height:1.05; }
-    .cap .ct .d{ font-family:var(--body); font-size:7.4pt; color:#6c5a4a; line-height:1.4;
-                 margin-top:1mm; }
-
-    /* hero tuk-tuk */
-    .t-hero{ flex:1.5; }
-    .t-hero .scene{ background:#F7EFDD; }
-    .t-hero .badge-on-tuk{ position:absolute; left:27%; top:35%; width:23mm; height:23mm; }
-
-    /* right column (sticker + tee) */
-    .col{ flex:1; display:flex; flex-direction:column; gap:6mm; }
-    .col .tile{ flex:1; }
-    .t-sticker .scene{ background:#F7EFDD; }
-    .t-tee .scene{ background:#E6F0EC; }
-
-    /* bottom row */
-    .t-board{ flex:1; }
-    .t-board .scene{ background:#EEF4F0; }
-    .t-sign{ flex:1.4; }
-    .t-sign .scene{ background:#F7EFDD; }
-
-    .badge-mini{ display:block; }
+    .intro{ max-width:150mm; margin-bottom:6mm; }
+    .marks{ display:flex; gap:5mm; margin-bottom:7mm; }
+    .markcard{ flex:1; border:2px solid var(--ink); border-radius:3mm; padding:5mm;
+                display:flex; align-items:center; gap:5mm; }
+    .markcard img{ height:20mm; }
+    .markcard .mc-t{ font-family:var(--display); font-size:13pt; }
+    .markcard .mc-s{ font-family:var(--body); font-size:8pt; color:var(--ink-60); }
+    .icgrid{ display:grid; grid-template-columns:repeat(5,1fr); gap:3.5mm; margin-bottom:7mm; }
+    .ic{ border-radius:2.5mm; height:30mm; border:2px solid var(--ink);
+          display:flex; align-items:center; justify-content:center; }
+    .ic-in{ width:60%; height:60%; }
+    .lower{ display:flex; gap:5mm; align-items:flex-start; }
+    .block{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; width:74mm; }
+    .bsq{ height:33mm; border:3px solid var(--ink); border-radius:2mm; padding:6mm;
+           background:var(--bone); color:var(--ink);
+           display:flex; align-items:center; justify-content:center; }
+    .lower-x{ flex:1; }
+    .pat{ display:flex; gap:0; background:var(--ink); border-radius:3mm; padding:5mm 4mm;
+           overflow:hidden; }
+    .pat span{ width:17mm; height:15mm; flex:none; display:flex; align-items:center; justify-content:center; }
+    .pat span svg{ width:11mm; }
   </style>
 
+  <div class="kicker">Toolkit</div>
+  <h1 class="disp">Motifs &amp; Icons</h1>
+  <p class="intro">A hand-carved kit for tees, stickers, stamps and signage. Block-print
+    icons, the two signature marks, and a repeat that runs down the whole lane.</p>
+
+  <div class="marks">
+    <div class="markcard"><img src="../assets/brand/mark-tuktuk-EFE3D0.png"
+      style="background:var(--ink);border-radius:2mm;padding:2mm;" alt="">
+      <div><div class="mc-t">The Tuk</div><div class="mc-s">Primary mark · the road</div></div></div>
+    <div class="markcard"><img src="../assets/brand/mark-wave-C24A2C.png" alt="">
+      <div><div class="mc-t">The Wave</div><div class="mc-s">Secondary mark · the tide</div></div></div>
+  </div>
+
+  <div class="icgrid"><div class="ic" style="background:#EFE3D0;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><circle cx="32" cy="32" r="12"/><path d="M 47.0 35.0 L 61.0 32.0 L 47.0 29.0 Z"/><path d="M 43.5 42.1 L 57.1 46.5 L 46.5 36.9 Z"/><path d="M 36.9 46.5 L 46.5 57.1 L 42.1 43.5 Z"/><path d="M 29.0 47.0 L 32.0 61.0 L 35.0 47.0 Z"/><path d="M 21.9 43.5 L 17.5 57.1 L 27.1 46.5 Z"/><path d="M 17.5 36.9 L 6.9 46.5 L 20.5 42.1 Z"/><path d="M 17.0 29.0 L 3.0 32.0 L 17.0 35.0 Z"/><path d="M 20.5 21.9 L 6.9 17.5 L 17.5 27.1 Z"/><path d="M 27.1 17.5 L 17.5 6.9 L 21.9 20.5 Z"/><path d="M 35.0 17.0 L 32.0 3.0 L 29.0 17.0 Z"/><path d="M 42.1 20.5 L 46.5 6.9 L 36.9 17.5 Z"/><path d="M 46.5 27.1 L 57.1 17.5 L 43.5 21.9 Z"/></svg></div></div><div class="ic" style="background:#241D18;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#EFE3D0"><path d="M4 42 q8 -15 16 0 q8 -15 16 0 q8 -15 16 0 l0 8 l-48 0 Z"/></svg></div></div><div class="ic" style="background:#C24A2C;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M14 50 C 14 28 26 12 46 10 C 40 24 40 40 50 50 Z"/></svg></div></div><div class="ic" style="background:#EFE3D0;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M32 4 C 44 16 44 48 32 60 C 20 48 20 16 32 4 Z"/><rect x="30.5" y="14" width="3" height="36" rx="1.5" fill="#EFE3D0"/></svg></div></div><div class="ic" style="background:#241D18;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#EFE3D0"><path d="M29 58 C 29 44 30 36 32 29 l4 1 C 34 37 33 46 35 58 Z"/><path d="M32 29 C 19 21 9 22 3 29 C 12 17 26 21 32 29 Z"/><path d="M32 29 C 45 21 55 22 61 29 C 52 17 38 21 32 29 Z"/><path d="M32 29 C 23 17 15 11 8 10 C 22 10 30 19 32 29 Z"/><path d="M32 29 C 41 17 49 11 56 10 C 42 10 34 19 32 29 Z"/><path d="M32 29 C 30 16 30 9 32 3 C 36 11 35 21 32 29 Z"/><circle cx="32" cy="29" r="4"/></svg></div></div><div class="ic" style="background:#C24A2C;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><ellipse cx="32.0" cy="19.0" rx="9" ry="12" transform="rotate(0 32.0 19.0)"/><ellipse cx="44.4" cy="28.0" rx="9" ry="12" transform="rotate(72 44.4 28.0)"/><ellipse cx="39.6" cy="42.5" rx="9" ry="12" transform="rotate(144 39.6 42.5)"/><ellipse cx="24.4" cy="42.5" rx="9" ry="12" transform="rotate(216 24.4 42.5)"/><ellipse cx="19.6" cy="28.0" rx="9" ry="12" transform="rotate(288 19.6 28.0)"/><circle cx="32" cy="32" r="5"/></svg></div></div><div class="ic" style="background:#EFE3D0;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M4 38 Q 18 24 31 36 Q 44 24 58 38 Q 44 30 31 39 Q 18 30 4 38 Z"/></svg></div></div><div class="ic" style="background:#241D18;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#EFE3D0"><path d="M6 32 a26 26 0 0 1 52 0 Z"/><rect x="30" y="32" width="4" height="26" rx="2"/><path d="M34 56 a6 6 0 0 0 10 0" stroke="#241D18" stroke-width="3" fill="none"/></svg></div></div><div class="ic" style="background:#C24A2C;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M6 32 C 18 18 40 18 50 32 C 40 46 18 46 6 32 Z"/><path d="M50 32 L 60 22 L 58 32 L 60 42 Z"/><circle cx="18" cy="30" r="3" fill="#C24A2C"/></svg></div></div><div class="ic" style="background:#EFE3D0;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M36 4 L 16 36 L 28 36 L 24 60 L 48 26 L 34 26 Z"/></svg></div></div><div class="ic" style="background:#241D18;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#EFE3D0"><path d="M32 3 L37 27 L61 32 L37 37 L32 61 L27 37 L3 32 L27 27 Z"/><circle cx="32" cy="32" r="4"/></svg></div></div><div class="ic" style="background:#C24A2C;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M6 26 h22 a3 3 0 0 1 3 3 v6 a8 8 0 0 1 -16 0 v-6 Z"/><path d="M58 26 h-22 a3 3 0 0 0 -3 3 v6 a8 8 0 0 0 16 0 v-6 Z"/><rect x="29" y="27" width="6" height="3"/></svg></div></div><div class="ic" style="background:#EFE3D0;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M32 60 C 14 46 12 18 32 4 C 52 18 50 46 32 60 Z"/><path d="M30.5 12 L33.5 12 L33.5 54 L30.5 54 Z" fill="#EFE3D0"/><path d="M32 22 L22 16 M32 30 L20 26 M32 38 L23 36" stroke="#EFE3D0" stroke-width="2" fill="none"/><path d="M32 22 L42 16 M32 30 L44 26 M32 38 L41 36" stroke="#EFE3D0" stroke-width="2" fill="none"/></svg></div></div><div class="ic" style="background:#241D18;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#EFE3D0"><path d="M8 46 C 8 22 30 12 46 20 C 36 16 26 24 28 34 C 30 42 40 42 44 36 C 42 46 30 50 22 46 C 34 50 46 44 46 34 L 56 40 C 54 52 36 58 22 54 C 14 52 8 50 8 46 Z"/></svg></div></div><div class="ic" style="background:#C24A2C;"><div class="ic-in"><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#241D18"><path d="M6 40 a26 26 0 0 1 52 0 Z"/><rect x="4" y="44" width="56" height="4" rx="2"/></svg></div></div></div>
+
+  <h2 class="sub" style="margin-top:1mm;">Repeat &amp; Pattern</h2>
+  <p style="font-size:9.5pt;margin-bottom:4mm;">Tile the icons into a carved block-print repeat —
+    for tee backs, totes, board bags and signage that runs down the whole lane.</p>
+  <div class="pat"><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><circle cx="32" cy="32" r="12"/><path d="M 47.0 35.0 L 61.0 32.0 L 47.0 29.0 Z"/><path d="M 43.5 42.1 L 57.1 46.5 L 46.5 36.9 Z"/><path d="M 36.9 46.5 L 46.5 57.1 L 42.1 43.5 Z"/><path d="M 29.0 47.0 L 32.0 61.0 L 35.0 47.0 Z"/><path d="M 21.9 43.5 L 17.5 57.1 L 27.1 46.5 Z"/><path d="M 17.5 36.9 L 6.9 46.5 L 20.5 42.1 Z"/><path d="M 17.0 29.0 L 3.0 32.0 L 17.0 35.0 Z"/><path d="M 20.5 21.9 L 6.9 17.5 L 17.5 27.1 Z"/><path d="M 27.1 17.5 L 17.5 6.9 L 21.9 20.5 Z"/><path d="M 35.0 17.0 L 32.0 3.0 L 29.0 17.0 Z"/><path d="M 42.1 20.5 L 46.5 6.9 L 36.9 17.5 Z"/><path d="M 46.5 27.1 L 57.1 17.5 L 43.5 21.9 Z"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M4 42 q8 -15 16 0 q8 -15 16 0 q8 -15 16 0 l0 8 l-48 0 Z"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M14 50 C 14 28 26 12 46 10 C 40 24 40 40 50 50 Z"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M32 4 C 44 16 44 48 32 60 C 20 48 20 16 32 4 Z"/><rect x="30.5" y="14" width="3" height="36" rx="1.5" fill="#241D18"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M29 58 C 29 44 30 36 32 29 l4 1 C 34 37 33 46 35 58 Z"/><path d="M32 29 C 19 21 9 22 3 29 C 12 17 26 21 32 29 Z"/><path d="M32 29 C 45 21 55 22 61 29 C 52 17 38 21 32 29 Z"/><path d="M32 29 C 23 17 15 11 8 10 C 22 10 30 19 32 29 Z"/><path d="M32 29 C 41 17 49 11 56 10 C 42 10 34 19 32 29 Z"/><path d="M32 29 C 30 16 30 9 32 3 C 36 11 35 21 32 29 Z"/><circle cx="32" cy="29" r="4"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><ellipse cx="32.0" cy="19.0" rx="9" ry="12" transform="rotate(0 32.0 19.0)"/><ellipse cx="44.4" cy="28.0" rx="9" ry="12" transform="rotate(72 44.4 28.0)"/><ellipse cx="39.6" cy="42.5" rx="9" ry="12" transform="rotate(144 39.6 42.5)"/><ellipse cx="24.4" cy="42.5" rx="9" ry="12" transform="rotate(216 24.4 42.5)"/><ellipse cx="19.6" cy="28.0" rx="9" ry="12" transform="rotate(288 19.6 28.0)"/><circle cx="32" cy="32" r="5"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M4 38 Q 18 24 31 36 Q 44 24 58 38 Q 44 30 31 39 Q 18 30 4 38 Z"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M6 32 a26 26 0 0 1 52 0 Z"/><rect x="30" y="32" width="4" height="26" rx="2"/><path d="M34 56 a6 6 0 0 0 10 0" stroke="#C24A2C" stroke-width="3" fill="none"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M6 32 C 18 18 40 18 50 32 C 40 46 18 46 6 32 Z"/><path d="M50 32 L 60 22 L 58 32 L 60 42 Z"/><circle cx="18" cy="30" r="3" fill="#241D18"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M36 4 L 16 36 L 28 36 L 24 60 L 48 26 L 34 26 Z"/></svg></span><span><svg viewBox="0 0 64 64" style="width:100%;height:100%;display:block;" fill="#C24A2C"><path d="M32 3 L37 27 L61 32 L37 37 L32 61 L27 37 L3 32 L27 27 Z"/><circle cx="32" cy="32" r="4"/></svg></span></div>
+  <div style="font-family:var(--body);font-weight:700;font-size:7pt;letter-spacing:.16em;
+              text-transform:uppercase;color:var(--ink-60);margin-top:2.5mm;">Repeat pattern · endless lane</div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>
+<div class="page bone">
   <div class="kicker">Applications</div>
-  <h1 class="sec">In the Wild</h1>
-  <div class="divider"></div>
+  <h1 class="disp">In the Wild</h1>
+  <div class="rule"></div>
+  <p style="margin-bottom:6mm; max-width:150mm;">Ink on cotton, vinyl on three wheels, terracotta swinging
+     over the lane. The marks were carved to live out here — sun-faded, salty and worn-in.</p>
 
-  <div class="mk-grid">
+  <!-- ============ ROW A : TEE HERO + STACK ============ -->
+  <div style="display:flex; gap:6mm; margin-bottom:6mm;">
 
-    <!-- ROW 1 -->
-    <div class="mk-row" style="height:118mm;">
-
-      <!-- 1 · TUK-TUK LIVERY (hero) -->
-      <div class="tile t-hero">
-        <div class="scene">
-          <svg viewBox="0 0 460 300" preserveAspectRatio="xMidYMid meet">
-            <!-- ground line -->
-            <line x1="20" y1="252" x2="440" y2="252" stroke="#E0A434" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
-            <!-- canopy roof -->
-            <path d="M70 78 Q70 44 112 44 L338 44 Q372 44 372 82 L372 92 L70 92 Z" fill="#E0A434"/>
-            <!-- roof scallop fringe -->
-            <g fill="#A63E1E">
-              <path d="M82 92 a12 12 0 0 0 24 0 z"/>
-              <path d="M130 92 a12 12 0 0 0 24 0 z"/>
-              <path d="M178 92 a12 12 0 0 0 24 0 z"/>
-              <path d="M226 92 a12 12 0 0 0 24 0 z"/>
-              <path d="M274 92 a12 12 0 0 0 24 0 z"/>
-              <path d="M322 92 a12 12 0 0 0 24 0 z"/>
-            </g>
-            <!-- cabin body -->
-            <path d="M70 100 L372 100 L372 214 Q372 230 354 230 L300 230
-                     L300 226 Q300 200 274 200 Q248 200 248 226 L248 230
-                     L162 230 L162 226 Q162 200 136 200 Q110 200 110 226 L110 230
-                     L88 230 Q70 230 70 212 Z" fill="#C8502A"/>
-            <!-- driver front pod + windshield -->
-            <path d="M372 110 Q418 116 422 168 L422 214 Q422 230 404 230 L372 230 Z" fill="#A63E1E"/>
-            <path d="M378 122 Q404 128 408 162 L378 162 Z" fill="#2E7D74"/>
-            <!-- headlight -->
-            <circle cx="416" cy="196" r="7" fill="#E0A434"/>
-            <!-- wheels -->
-            <circle cx="136" cy="228" r="30" fill="#2E211A"/>
-            <circle cx="136" cy="228" r="11" fill="#F4EAD5"/>
-            <circle cx="274" cy="228" r="30" fill="#2E211A"/>
-            <circle cx="274" cy="228" r="11" fill="#F4EAD5"/>
-          </svg>
-          <img class="badge-on-tuk" src="../assets/logo/badge.svg" alt="badge">
-        </div>
-        <div class="cap">
-          <span class="no">01</span>
-          <span class="ct"><span class="t">TUK-TUK LIVERY</span>
-            <span class="d">Terracotta body, golden canopy, badge riding shotgun on the side panel.</span></span>
-        </div>
+    <!-- 1 · CLUB TEE (hero) -->
+    <div style="flex:1.55; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                padding:6mm 6mm 5mm; display:flex; flex-direction:column; align-items:center;">
+      <!-- relative (non-flex) overlay box: SVG tee + printed logo -->
+      <div style="position:relative; width:96mm; height:84mm;">
+        <svg viewBox="0 0 240 210" width="96mm" height="84mm" style="display:block;">
+          <path d="M82 12 L98 12 Q120 34 142 12 L158 12 L222 54 L198 88 L176 72 L176 200
+                   L64 200 L64 72 L42 88 L18 54 Z"
+                fill="#241D18"/>
+          <path d="M98 12 Q120 34 142 12" fill="none" stroke="#EFE3D0" stroke-width="3"/>
+        </svg>
+        <img src="../assets/brand/logo-reversed.png" alt="Club tee print"
+             style="position:absolute; top:22mm; left:27mm; width:42mm; height:auto;">
       </div>
-
-      <!-- right column: sticker + tee -->
-      <div class="col">
-
-        <!-- 2 · STICKER SHEET -->
-        <div class="tile t-sticker">
-          <div class="scene">
-            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
-              <!-- pill sticker mustard -->
-              <g transform="rotate(-5 96 42)">
-                <rect x="10" y="22" width="172" height="40" rx="20" fill="#E0A434" stroke="#F4EAD5" stroke-width="5"/>
-                <text x="96" y="47" font-family="Fredoka, sans-serif" font-weight="700" font-size="17"
-                      fill="#2E211A" text-anchor="middle">Surf, ride, repeat.</text>
-              </g>
-              <!-- pill sticker teal -->
-              <g transform="rotate(4 158 116)">
-                <rect x="72" y="96" width="172" height="40" rx="20" fill="#2E7D74" stroke="#F4EAD5" stroke-width="5"/>
-                <text x="158" y="121" font-family="Fredoka, sans-serif" font-weight="700" font-size="17"
-                      fill="#F4EAD5" text-anchor="middle">Surf, ride, repeat.</text>
-              </g>
-            </svg>
-            <img src="../assets/logo/badge.svg" alt="badge" style="position:absolute; right:3%; top:5%; width:15mm; height:15mm;">
-            <img src="../assets/logo/badge.svg" alt="badge" style="position:absolute; left:2%; bottom:4%; width:12mm; height:12mm;">
-          </div>
-          <div class="cap">
-            <span class="no">02</span>
-            <span class="ct"><span class="t">STICKER SHEET</span>
-              <span class="d">Die-cut badges + slogan pills for boards, helmets &amp; coolers.</span></span>
-          </div>
-        </div>
-
-        <!-- 3 · T-SHIRT -->
-        <div class="tile t-tee">
-          <div class="scene">
-            <svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMid meet">
-              <path d="M112 24 Q150 46 188 24 L232 50 Q236 52 233 60 L218 92
-                       L206 86 L206 150 Q206 156 198 156 L102 156 Q94 156 94 150
-                       L94 86 L82 92 L67 60 Q64 52 68 50 Z" fill="#2E7D74"/>
-              <path d="M112 24 Q150 46 188 24 L178 36 Q150 52 122 36 Z" fill="#215A53"/>
-            </svg>
-            <img src="../assets/logo/badge.svg" alt="badge" style="position:absolute; left:50%; top:46%; width:18mm; height:18mm; margin-left:-9mm; margin-top:-9mm;">
-          </div>
-          <div class="cap">
-            <span class="no">03</span>
-            <span class="ct"><span class="t">CLUB TEE</span>
-              <span class="d">Ocean-teal cotton, badge on the chest. Staff &amp; merch.</span></span>
-          </div>
-        </div>
-
-      </div>
+      <div class="marker" style="font-size:15pt; margin-top:3mm;">The Club Tee</div>
+      <div class="small" style="font-size:8pt; letter-spacing:.04em; margin-top:1mm;">Reversed lockup · charcoal heavyweight cotton</div>
     </div>
 
-    <!-- ROW 2 -->
-    <div class="mk-row" style="height:80mm;">
+    <!-- right stack -->
+    <div style="flex:1; display:flex; flex-direction:column; gap:6mm;">
 
-      <!-- 4 · SURFBOARD -->
-      <div class="tile t-board">
-        <div class="scene">
-          <svg viewBox="0 0 160 280" preserveAspectRatio="xMidYMid meet">
-            <!-- board body -->
-            <path d="M80 8 Q120 70 120 158 Q120 232 80 270 Q40 232 40 158 Q40 70 80 8 Z"
-                  fill="#F4EAD5" stroke="#215A53" stroke-width="3"/>
-            <!-- teal stringer stripe -->
-            <rect x="76" y="60" width="8" height="200" rx="4" fill="#2E7D74"/>
-            <!-- tail accent -->
-            <path d="M52 250 Q80 264 108 250 Q80 232 52 250 Z" fill="#E0A434" opacity="0.85"/>
-          </svg>
-          <img src="../assets/logo/badge.svg" alt="badge" style="position:absolute; left:50%; top:13%; width:20mm; height:20mm; margin-left:-10mm;">
+      <!-- 2 · STICKER SHEET -->
+      <div style="flex:1; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                  padding:5mm 5mm 4mm;">
+        <div style="display:flex; align-items:center; gap:4mm; margin-bottom:4mm;">
+          <!-- tuk sticker -->
+          <div style="width:24mm; height:18mm; background:var(--terra); border:2.5px solid var(--ink);
+                      border-radius:3mm; overflow:hidden;
+                      display:flex; align-items:center; justify-content:center;">
+            <img src="../assets/brand/mark-tuktuk-C24A2C.png" alt="Tuk sticker" style="width:22mm; display:block;">
+          </div>
+          <!-- wave sticker -->
+          <div style="width:24mm; height:18mm; background:var(--bone); border:2.5px solid var(--ink);
+                      border-radius:3mm; overflow:hidden;
+                      display:flex; align-items:center; justify-content:center;">
+            <img src="../assets/brand/mark-wave-EFE3D0.png" alt="Wave sticker" style="width:22mm; display:block;">
+          </div>
         </div>
-        <div class="cap">
-          <span class="no">04</span>
-          <span class="ct"><span class="t">RENTAL BOARD</span>
-            <span class="d">Cream deck, teal stringer, badge up top.</span></span>
-        </div>
+        <!-- pill sticker -->
+        <div style="display:inline-block; background:var(--terra); color:var(--bone);
+                    border:2px solid var(--ink); border-radius:30px; padding:2mm 6mm;
+                    font-family:var(--marker); font-size:12pt;">Surf, ride, repeat.</div>
+        <div class="small" style="font-size:8pt; margin-top:4mm;">Die-cut vinyl sticker sheet</div>
       </div>
 
-      <!-- 5 · SIGNAGE / TOTE -->
-      <div class="tile t-sign">
-        <div class="scene">
-          <svg viewBox="0 0 360 170" preserveAspectRatio="xMidYMid meet">
-            <!-- hanging bracket -->
-            <rect x="40" y="8" width="6" height="30" rx="3" fill="#2E211A"/>
-            <line x1="46" y1="14" x2="120" y2="14" stroke="#2E211A" stroke-width="6" stroke-linecap="round"/>
-            <line x1="70" y1="14" x2="70" y2="34" stroke="#2E211A" stroke-width="4"/>
-            <line x1="100" y1="14" x2="100" y2="34" stroke="#2E211A" stroke-width="4"/>
-            <!-- sign board -->
-            <rect x="30" y="34" width="300" height="120" rx="12" fill="#C8502A"/>
-            <rect x="40" y="44" width="280" height="100" rx="8" fill="none" stroke="#E0A434" stroke-width="3"/>
-            <text x="180" y="92" font-family="Fredoka, sans-serif" font-weight="700" font-size="34"
-                  fill="#F4EAD5" text-anchor="middle">Tuk <tspan fill="#E0A434">&amp;</tspan> Tide</text>
-            <text x="180" y="124" font-family="Bricolage Grotesque, sans-serif" font-weight="700"
-                  font-size="13" letter-spacing="6" fill="#F4EAD5" text-anchor="middle">CLUB · WELIGAMA</text>
-          </svg>
+      <!-- 3 · TUK-TUK DOOR DECAL -->
+      <div style="flex:1; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                  padding:5mm;">
+        <!-- charcoal door panel with bone badge (relative, non-flex) -->
+        <div style="position:relative; background:var(--ink); border-radius:3mm; height:30mm; overflow:hidden;">
+          <!-- bone badge holding tuk mark -->
+          <div style="position:absolute; top:3.5mm; left:4mm; width:23mm; height:23mm;
+                      background:var(--bone); border-radius:50%; overflow:hidden;
+                      border:2px solid var(--terra);">
+            <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="Tuk decal"
+                 style="position:absolute; top:7mm; left:1.5mm; width:20mm;">
+          </div>
+          <div style="position:absolute; top:8.5mm; left:29mm;
+                      font-family:var(--display); color:var(--bone); font-size:11pt; line-height:1.05;">TUK&nbsp;&amp;<br>TIDE</div>
         </div>
-        <div class="cap">
-          <span class="no">05</span>
-          <span class="ct"><span class="t">SHOPFRONT SIGN</span>
-            <span class="d">Hand-painted hanging board — the wordmark, sun-faded and proud.</span></span>
-        </div>
+        <div class="small" style="font-size:8pt; margin-top:3.5mm;">Vinyl door decal · the fleet</div>
       </div>
 
     </div>
   </div>
 
-  <div class="pgmark"><span>Tuk &amp; Tide Club</span><span>Brand Book · Weligama</span></div>
+  <!-- ============ ROW B : BOARD · SIGN · TOTE ============ -->
+  <div style="display:flex; gap:6mm;">
+
+    <!-- 4 · SURFBOARD -->
+    <div style="flex:1; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                padding:5mm 5mm 4mm; display:flex; flex-direction:column; align-items:center;">
+      <div style="position:relative; width:34mm; height:62mm;">
+        <svg viewBox="0 0 70 250" width="34mm" height="62mm" style="display:block;">
+          <!-- board -->
+          <path d="M35 4 C52 46 54 150 46 210 C43 234 38 246 35 246 C32 246 27 234 24 210
+                   C16 150 18 46 35 4 Z" fill="#EFE3D0" stroke="#241D18" stroke-width="3.5"/>
+          <!-- teal stripe -->
+          <rect x="31" y="120" width="8" height="104" rx="4" fill="#2F5D57"/>
+          <!-- stringer -->
+          <line x1="35" y1="60" x2="35" y2="236" stroke="#241D18" stroke-width="1.4"/>
+        </svg>
+        <!-- wave mark (bone bg matches board fill, blends) -->
+        <img src="../assets/brand/mark-wave-EFE3D0.png" alt="Board wave"
+             style="position:absolute; top:14mm; left:11mm; width:12mm;">
+      </div>
+      <div class="marker" style="font-size:13pt; margin-top:3mm;">Rental Board</div>
+      <div class="small" style="font-size:8pt; margin-top:1mm;">Teal stringer · the line-up</div>
+    </div>
+
+    <!-- 5 · HANGING SHOP SIGN -->
+    <div style="flex:1.15; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                padding:4mm 5mm; display:flex; flex-direction:column; align-items:center;">
+      <div style="position:relative; width:52mm; height:62mm;">
+        <!-- bracket -->
+        <div style="position:absolute; top:0; left:3mm; width:3mm; height:50mm; background:var(--ink);"></div>
+        <div style="position:absolute; top:0; left:3mm; width:34mm; height:3mm; background:var(--ink);"></div>
+        <!-- hangers -->
+        <div style="position:absolute; top:3mm; left:13mm; width:2mm; height:7mm; background:var(--ink);"></div>
+        <div style="position:absolute; top:3mm; left:31mm; width:2mm; height:7mm; background:var(--ink);"></div>
+        <!-- the sign -->
+        <div style="position:absolute; top:9mm; left:4mm; width:44mm; height:30mm;
+                    background:var(--terra); border:2.5px solid var(--ink); border-radius:3mm;
+                    display:flex; flex-direction:column; align-items:center; justify-content:center;">
+          <div style="font-family:var(--display); color:var(--bone); font-size:15pt; line-height:1.0; text-align:center;">TUK&nbsp;&amp;&nbsp;TIDE</div>
+          <div style="font-family:var(--marker); color:var(--bone); font-size:9.5pt; margin-top:1.5mm;">surf club</div>
+        </div>
+      </div>
+      <div class="marker" style="font-size:13pt; margin-top:1mm;">Shop Sign</div>
+      <div class="small" style="font-size:8pt; margin-top:1mm;">Hand-painted · the lane</div>
+    </div>
+
+    <!-- 6 · TOTE -->
+    <div style="flex:1; background:var(--bone); border:2px solid var(--ink); border-radius:4mm;
+                padding:5mm 5mm 4mm; display:flex; flex-direction:column; align-items:center;">
+      <div style="position:relative; width:40mm; height:62mm;">
+        <svg viewBox="0 0 200 280" width="40mm" height="58mm" style="display:block; position:absolute; top:2mm; left:0;">
+          <!-- handles -->
+          <path d="M58 60 C58 18 92 18 92 60" fill="none" stroke="#241D18" stroke-width="7"/>
+          <path d="M108 60 C108 18 142 18 142 60" fill="none" stroke="#241D18" stroke-width="7"/>
+          <!-- bag body -->
+          <rect x="30" y="52" width="140" height="180" rx="8" fill="#EFE3D0" stroke="#241D18" stroke-width="4"/>
+        </svg>
+        <!-- terracotta print patch with tuk mark (relative box) -->
+        <div style="position:absolute; top:24mm; left:9mm; width:23mm; height:18mm;
+                    background:var(--terra); border-radius:2mm; overflow:hidden;
+                    display:flex; align-items:center; justify-content:center;">
+          <img src="../assets/brand/mark-tuktuk-C24A2C.png" alt="Tote print" style="width:21mm; display:block;">
+        </div>
+      </div>
+      <div class="marker" style="font-size:13pt; margin-top:2mm;">Beach Tote</div>
+      <div class="small" style="font-size:8pt; margin-top:1mm;">Natural canvas · the carry-all</div>
+    </div>
+
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit &middot; Weligama</span></div>
 </div>
-<div class="page bleed back-cover">
-  <!-- top accent: rising-sun rays motif echoed simply -->
-  <div class="bc-rays"></div>
+<div class="page ink">
+  <style scoped>
+    .nx-intro{ max-width:150mm; margin-top:1mm; }
+    .road{ margin-top:9mm; position:relative; padding-left:13mm; }
+    /* the spine */
+    .road::before{ content:""; position:absolute; top:3mm; bottom:3mm; left:4mm;
+                   width:2px; background:rgba(239,227,208,.28); }
+    .phase{ position:relative; padding:0 0 6.5mm 0; }
+    .phase:last-child{ padding-bottom:0; }
+    /* node */
+    .node{ position:absolute; left:-13mm; top:0;
+           width:9mm; height:9mm; border-radius:50%;
+           background:var(--ink); border:2px solid var(--terra);
+           display:flex; align-items:center; justify-content:center;
+           font-family:var(--body); font-weight:700; font-size:8pt; color:var(--terra); }
+    .phase.done .node{ background:var(--terra); border-color:var(--terra);
+                       color:var(--ink); font-size:9.5pt; }
+    .ph-head{ display:flex; align-items:baseline; gap:3mm; }
+    .ph-num{ font-family:var(--display); font-size:13pt; color:var(--terra);
+             line-height:1; min-width:11mm; }
+    .ph-title{ font-family:var(--display); font-size:14pt; color:var(--bone);
+               line-height:1; }
+    .ph-tag{ font-family:var(--body); font-weight:700; font-size:6.8pt;
+             letter-spacing:.16em; text-transform:uppercase;
+             padding:1mm 3mm; border-radius:20px; margin-left:auto;
+             border:1.5px solid rgba(239,227,208,.35); color:rgba(239,227,208,.7); }
+    .phase.done .ph-tag{ background:var(--terra); border-color:var(--terra);
+                         color:var(--ink); }
+    .ph-desc{ font-family:var(--body); font-size:9pt; line-height:1.45;
+              color:rgba(239,227,208,.82); margin-top:2mm; max-width:140mm; }
 
-  <div class="bc-inner">
-    <img class="bc-badge" src="../assets/logo/badge.svg" alt="Tuk &amp; Tide Club badge">
+    .nx-close{ position:absolute; left:18mm; right:18mm; bottom:24mm;
+               border-top:2px solid rgba(239,227,208,.22); padding-top:6mm;
+               display:flex; align-items:center; gap:5mm; }
+    .nx-close .mk{ font-family:var(--marker); font-size:17pt; color:var(--terra);
+                   line-height:1.05; }
+    .nx-close .mk b{ color:var(--bone); font-weight:400; }
+    .nx-close img{ height:15mm; opacity:.92; border-radius:1.5mm; }
+  </style>
 
-    <div class="bc-signoff">Surf, ride, repeat.</div>
+  <div class="kicker">Where Next</div>
+  <h1 class="disp">Next Steps</h1>
 
-    <div class="bc-rule"></div>
+  <p class="lead nx-intro">The mark&#39;s carved, the colours mixed, the voice
+  warmed up. Here&#39;s how Tuk &amp; Tide rolls off the page and into Weligama —
+  one phase at a time.</p>
 
-    <div class="bc-contact">
-      <div class="bc-row"><span class="bc-label">WhatsApp</span><span class="bc-val">+94 7X XXX XXXX</span></div>
-      <div class="bc-row"><span class="bc-label">Instagram</span><span class="bc-val">@tukandtideclub</span></div>
-      <div class="bc-row"><span class="bc-label">Find us</span><span class="bc-val">Weligama, Sri Lanka</span></div>
+  <div class="road">
+
+    <div class="phase done">
+      <div class="node">&#10003;</div>
+      <div class="ph-head">
+        <span class="ph-num">01</span>
+        <span class="ph-title">Brand Kit</span>
+        <span class="ph-tag">Done</span>
+      </div>
+      <div class="ph-desc">Logo, palette, type and motifs locked. The heritage
+      woodcut system you&#39;re holding right now — ready to print, paint and post.</div>
     </div>
 
-    <div class="bc-rule"></div>
+    <div class="phase">
+      <div class="node">02</div>
+      <div class="ph-head">
+        <span class="ph-num">02</span>
+        <span class="ph-title">Website</span>
+        <span class="ph-tag">Up Next</span>
+      </div>
+      <div class="ph-desc">A single-page heritage site — surf lessons, board &amp;
+      tuk rentals, tours, and WhatsApp-only booking. Cut from the same cloth as the
+      club&#39;s siblings down the coast in Weligama and Midigama.</div>
+    </div>
 
-    <div class="bc-closing">Come say hi — the kettle's on and the surf's up.</div>
+    <div class="phase">
+      <div class="node">03</div>
+      <div class="ph-head">
+        <span class="ph-num">03</span>
+        <span class="ph-title">Signage &amp; Tuk Livery</span>
+        <span class="ph-tag">Up Next</span>
+      </div>
+      <div class="ph-desc">Paint the tuks, hang the shop sign, slap on the decals.
+      Three wheels rolling billboards, charcoal-on-terracotta down every lane.</div>
+    </div>
+
+    <div class="phase">
+      <div class="node">04</div>
+      <div class="ph-head">
+        <span class="ph-num">04</span>
+        <span class="ph-title">Merch &amp; Print</span>
+        <span class="ph-tag">Up Next</span>
+      </div>
+      <div class="ph-desc">Screenprint the tees, cut the stickers, sew the board
+      bags, set the price cards. Hand-made goods that smell like sunscreen and ink.</div>
+    </div>
+
+    <div class="phase">
+      <div class="node">05</div>
+      <div class="ph-head">
+        <span class="ph-num">05</span>
+        <span class="ph-title">Social &amp; Photography</span>
+        <span class="ph-tag">Up Next</span>
+      </div>
+      <div class="ph-desc">Open up <b style="color:var(--bone);font-weight:700;">@tukandtide</b>
+      — sun-faded analog photos, reels of clean rides and crumbling waves. Salty,
+      slow, real.</div>
+    </div>
+
+    <div class="phase">
+      <div class="node">06</div>
+      <div class="ph-head">
+        <span class="ph-num">06</span>
+        <span class="ph-title">Launch</span>
+        <span class="ph-tag">Up Next</span>
+      </div>
+      <div class="ph-desc">Soft open. Line up the local partners, pour the first
+      arrack, and ride out the first season together.</div>
+    </div>
+
   </div>
 
-  <!-- bottom wave motif -->
-  <svg class="bc-wave" viewBox="0 0 600 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 46 q60 -34 120 -8 q60 26 120 2 q60 -24 120 6 q60 30 120 0 q60 -30 120 -6 l0 56 l-720 0 z" fill="#A63E1E"/>
-    <path d="M0 60 q75 -22 150 2 q75 24 150 0 q75 -24 150 0 q75 24 150 0 l0 28 l-720 0 z" fill="#E0A434" opacity="0.55"/>
-  </svg>
+  <div class="nx-close">
+    <span class="mk">Grab a board, grab a tuk —<br><b>let&#39;s build it.</b></span>
+    <img src="../assets/brand/mark-tuktuk-C24A2C.png" alt="">
+  </div>
 
-  <style scoped>
-    .back-cover{
-      background:var(--terracotta);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .bc-rays{
-      position:absolute; top:-70mm; left:50%; margin-left:-70mm;
-      width:140mm; height:140mm; border-radius:50%;
-      background:var(--terracotta-deep);
-      opacity:0.55;
-    }
-    .bc-inner{
-      position:relative;
-      width:150mm;
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .bc-badge{
-      width:50mm; height:50mm; display:block;
-      margin-bottom:11mm;
-    }
-    .bc-signoff{
-      font-family:var(--display); font-weight:700;
-      font-size:40pt; line-height:0.98;
-      color:var(--cream);
-    }
-    .bc-rule{
-      height:3px; width:34mm; background:var(--mustard);
-      border-radius:2px; margin:9mm 0;
-    }
-    .bc-contact{
-      width:78mm;
-    }
-    .bc-row{
-      display:flex; justify-content:space-between; align-items:baseline;
-      padding:2.6mm 0;
-      border-bottom:1px solid rgba(244,234,213,0.28);
-    }
-    .bc-row:last-child{ border-bottom:none; }
-    .bc-label{
-      font-family:var(--head); font-weight:700;
-      font-size:9pt; letter-spacing:.16em; text-transform:uppercase;
-      color:var(--mustard);
-    }
-    .bc-val{
-      font-family:var(--body); font-size:11pt;
-      color:var(--cream);
-    }
-    .bc-closing{
-      font-family:var(--display); font-weight:600;
-      font-size:14pt; line-height:1.35;
-      color:var(--cream);
-      max-width:120mm;
-      margin-top:1mm;
-    }
-    .bc-wave{
-      position:absolute; bottom:0; left:0;
-      width:100%; height:34mm; display:block;
-    }
-  </style>
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>
+<div class="page ink bleed" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:26mm 0;">
+  <!-- inset poster frame -->
+  <div style="position:absolute; top:9mm; left:9mm; right:9mm; bottom:9mm;
+              border:2.5px solid var(--terra); border-radius:2mm;"></div>
+
+  <!-- reversed logo -->
+  <div style="z-index:2; text-align:center;">
+    <img src="../assets/brand/logo-reversed.png" alt="Tuk &amp; Tide Surf Club"
+         style="width:95mm; height:auto; display:block;">
+  </div>
+
+  <!-- divider -->
+  <div style="height:3px; width:26mm; background:var(--terra); border-radius:2px; margin:11mm auto 9mm; z-index:2;"></div>
+
+  <!-- contact block -->
+  <div style="z-index:2; text-align:center; max-width:150mm;">
+    <div style="font-family:var(--body); font-weight:700; font-size:9.5pt; letter-spacing:.06em;
+                line-height:2.1; color:var(--bone); text-transform:none;">
+      WhatsApp +94 7X XXX XXXX<br>
+      Instagram @tukandtide<br>
+      hello@tukandtide.lk &middot; tukandtide.lk
+    </div>
+  </div>
+
+  <!-- sign-off -->
+  <div style="z-index:2; text-align:center; margin-top:13mm;">
+    <div class="marker" style="font-size:19pt; color:var(--terra);">Surf, ride, repeat.</div>
+  </div>
 </div>
 </body></html>

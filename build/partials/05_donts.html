@@ -1,0 +1,154 @@
+<div class="page">
+  <style scoped>
+    .donts-intro{ max-width:150mm; margin-bottom:7mm; }
+
+    .dont-grid{
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:6mm 6mm;
+    }
+    .dont-card{
+      position:relative;
+      background:var(--bone);
+      border:2px solid var(--ink);
+      border-radius:4mm;
+      padding:5mm 5mm 4mm;
+      overflow:hidden;
+    }
+    /* demo stage: where the misused mark lives */
+    .demo{
+      position:relative;
+      height:33mm;
+      border:2px solid var(--ink);
+      border-radius:3mm;
+      background:var(--bone);
+      overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:4mm;
+    }
+    .demo img{ display:block; }
+
+    /* ✗ badge */
+    .nope{
+      position:absolute; top:-2mm; right:-2mm; z-index:5;
+      width:9mm; height:9mm; border-radius:50%;
+      background:var(--clay); border:2px solid var(--bone);
+      color:var(--bone); font-family:var(--body); font-weight:700;
+      font-size:11pt; line-height:1;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    .cap-t{ font-family:var(--display); font-size:11.5pt; line-height:1;
+            color:var(--ink); }
+    .cap-d{ font-family:var(--body); font-size:7.8pt; line-height:1.4;
+            color:var(--ink-60); margin-top:2mm; }
+
+    /* 1 — stretch */
+    .d-stretch img{ width:54mm; height:16mm; transform:scaleX(1.05); }
+    /* 2 — rotate */
+    .d-rotate img{ height:24mm; transform:rotate(-13deg); }
+    /* 3 — off-brand colour */
+    .d-colour{ background:#FF2D8E; }
+    .d-colour img{ height:23mm; }
+    /* 4 — effects / glow / outline (fake glow via concentric rings) */
+    .d-fx .fx-glow{
+      border:2.4mm solid #FF2D8E; border-radius:5mm; padding:2mm;
+    }
+    .d-fx .fx-wrap{
+      border:3px dashed var(--teal); border-radius:3mm; padding:2.5mm;
+      background:var(--bone);
+    }
+    .d-fx img{ height:15mm; }
+    /* 5 — crowd it */
+    .d-crowd{ flex-direction:row; gap:1mm; padding:0 2mm; }
+    .d-crowd img{ height:20mm; }
+    .d-crowd .crowd-tx{ font-family:var(--display); font-size:9pt;
+                        line-height:1; color:var(--ink); }
+    /* 6 — too small */
+    .d-tiny img{ height:6mm; }
+  </style>
+
+  <div class="kicker">Identity</div>
+  <h1 class="disp">Logo Don&#39;ts</h1>
+  <div class="rule"></div>
+
+  <p class="lead donts-intro">The mark is hand-carved and sun-faded — treat it that
+  way. Six quick ways to wreck it. Don&#39;t.</p>
+
+  <div class="dont-grid">
+
+    <!-- 1 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-stretch">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+      </div>
+      <div class="cap-t">Don&#39;t stretch it.</div>
+      <div class="cap-d">Never squash or stretch the mark. Keep it locked to its
+      original proportions.</div>
+    </div>
+
+    <!-- 2 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-rotate">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+      </div>
+      <div class="cap-t">Don&#39;t tilt it.</div>
+      <div class="cap-d">No rotating, angling or jaunty tilts. The tuk rolls level,
+      always.</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-colour">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+      </div>
+      <div class="cap-t">Don&#39;t go off-brand.</div>
+      <div class="cap-d">No clashing backgrounds or recoloured ink. Stick to the five
+      heritage tones.</div>
+    </div>
+
+    <!-- 4 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-fx">
+        <div class="fx-glow">
+          <div class="fx-wrap">
+            <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="cap-t">Don&#39;t add effects.</div>
+      <div class="cap-d">No glows, drop-shadows, outlines or gradients. The screenprint
+      is flat by design.</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-crowd">
+        <span class="crowd-tx">SURF<br>RIDE</span>
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+        <span class="crowd-tx">THREE<br>WHEELS</span>
+      </div>
+      <div class="cap-t">Don&#39;t crowd it.</div>
+      <div class="cap-d">Give the mark room to breathe. Keep type and edges clear of
+      its safe space.</div>
+    </div>
+
+    <!-- 6 -->
+    <div class="dont-card">
+      <div class="nope">&#10007;</div>
+      <div class="demo d-tiny">
+        <img src="../assets/brand/mark-tuktuk-EFE3D0.png" alt="">
+      </div>
+      <div class="cap-t">Don&#39;t shrink it small.</div>
+      <div class="cap-d">Below the minimum size the carving turns to mud. Hold the
+      floor and the detail.</div>
+    </div>
+
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>

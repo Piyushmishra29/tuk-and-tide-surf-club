@@ -1,0 +1,78 @@
+<div class="page">
+  <style scoped>
+    .v-pills{ display:flex; gap:3mm; margin:6mm 0 9mm; }
+    .v-pills .chip{ background:transparent; }
+    .say-grid{ display:flex; gap:6mm; }
+    .say-col{ flex:1; border:2px solid var(--ink); border-radius:4mm; padding:6mm 6mm 7mm; }
+    .say-col.no{ background:var(--clay); border-color:var(--clay); color:var(--bone); }
+    .say-col h2{ font-family:var(--display); font-size:15pt; color:var(--ink);
+                 margin-bottom:4mm; }
+    .say-col.no h2{ color:var(--bone); }
+    .say-col ul{ list-style:none; }
+    .say-col li{ font-family:var(--body); font-size:10pt; line-height:1.35;
+                 color:var(--ink); padding:3mm 0; border-bottom:1px solid rgba(36,29,24,.28); }
+    .say-col li:last-child{ border-bottom:none; }
+    .say-col.no li{ color:var(--bone); border-bottom:1px solid rgba(239,227,208,.3); }
+    .say-col .mk{ font-family:var(--body); font-weight:700; font-size:11pt; margin-right:2.5mm; }
+    .say-col.yes .mk{ color:var(--ink); }
+    .say-col.no .mk{ color:var(--bone); }
+
+    .wall-label{ font-family:var(--body); font-weight:700; letter-spacing:.22em;
+                 text-transform:uppercase; font-size:8.5pt; color:var(--ink);
+                 margin:10mm 0 4mm; }
+    .wall{ display:flex; gap:4mm; }
+    .tile{ flex:1; border-radius:4mm; padding:8mm 6mm; min-height:34mm;
+           display:flex; align-items:center; justify-content:center; text-align:center; }
+    .tile span{ font-family:var(--marker); font-size:15pt; line-height:1.12; }
+    .tile.ink{ background:var(--ink); }
+    .tile.ink span{ color:var(--bone); }
+    .tile.terra{ background:var(--clay); }
+    .tile.terra span{ color:var(--bone); }
+    .tile.bone{ background:var(--bone); }
+    .tile.bone span{ color:var(--ink); }
+  </style>
+
+  <div class="kicker">How We Sound</div>
+  <h1 class="disp">Voice &amp; Tone</h1>
+
+  <p class="lead">We talk like the friend who already lives here — salty, warm and
+  grinning, ready to point you at the right wave. Short sentences, real words, a
+  touch cheeky. Never corporate, never a brochure.</p>
+
+  <div class="v-pills">
+    <span class="chip">Warm</span>
+    <span class="chip">Playful</span>
+    <span class="chip">Local</span>
+    <span class="chip">Easy</span>
+  </div>
+
+  <div class="say-grid">
+    <div class="say-col yes">
+      <h2>We say</h2>
+      <ul>
+        <li><span class="mk">&#10003;</span>Grab a board, grab a tuk, we&#39;ll sort the rest.</li>
+        <li><span class="mk">&#10003;</span>No stress — just sand, surf and three wheels.</li>
+        <li><span class="mk">&#10003;</span>First time? Perfect. Everyone starts here.</li>
+        <li><span class="mk">&#10003;</span>Roll in a stranger, leave with a story.</li>
+      </ul>
+    </div>
+    <div class="say-col no">
+      <h2>We don&#39;t say</h2>
+      <ul>
+        <li><span class="mk">&#10007;</span>Please refer to our terms &amp; conditions.</li>
+        <li><span class="mk">&#10007;</span>Our premium solutions maximise your experience.</li>
+        <li><span class="mk">&#10007;</span>Kindly proceed to the booking portal.</li>
+        <li><span class="mk">&#10007;</span>We are committed to exceeding expectations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wall-label">Lines for the wall</div>
+  <div class="wall">
+    <div class="tile ink"><span>Surf,<br>ride,<br>repeat.</span></div>
+    <div class="tile terra"><span>Two waves.<br>Three wheels.<br>One club.</span></div>
+    <div class="tile bone"><span>No stress —<br>just sand and<br>three wheels.</span></div>
+  </div>
+
+  <div class="pgmark"><span>Tuk &amp; Tide Surf Club</span><span>Brand Kit · Weligama</span></div>
+</div>
