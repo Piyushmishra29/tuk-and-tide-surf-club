@@ -1,0 +1,167 @@
+<div class="page bone">
+  <style>
+    .atl{ position:absolute; top:0; left:0; width:210mm; height:297mm; }
+
+    /* simulated drop shadows (offset charcoal panels behind frames) */
+    .sh{ position:absolute; background:rgba(36,29,24,0.22); }
+    .sh-map{ top:66.6mm; left:16.8mm; width:99mm; height:151mm; transform:rotate(-2deg); }
+    .sh-lino{ top:208.6mm; left:129.8mm; width:66mm; height:81.5mm; transform:rotate(3deg); }
+    .sh-stamp{ top:47.6mm; left:91.8mm; width:27mm; height:31mm; transform:rotate(-8deg); }
+
+    /* masthead */
+    .atl-mast{ position:absolute; top:15mm; left:16mm; right:16mm;
+               display:flex; justify-content:space-between; align-items:flex-end; }
+    .atl-mast .m-l{ font-family:var(--body); font-weight:700; font-size:10pt;
+                    letter-spacing:.30em; text-transform:uppercase; color:var(--ink); }
+    .atl-mast .m-c{ font-family:var(--body); font-weight:700; font-size:9pt;
+                    letter-spacing:.34em; text-transform:uppercase; color:var(--terra); }
+    .atl-mast .m-r{ font-family:var(--body); font-weight:700; font-size:9pt;
+                    letter-spacing:.24em; text-transform:uppercase; color:var(--ink-60); }
+    .atl-rule{ position:absolute; top:21mm; left:16mm; right:16mm;
+               height:1.6px; background:var(--ink); }
+
+    /* headline */
+    .atl-kick{ position:absolute; top:24.5mm; left:16mm; font-family:var(--body);
+               font-weight:700; font-size:9pt; letter-spacing:.30em;
+               text-transform:uppercase; color:var(--clay); }
+    .atl-head{ position:absolute; top:29.5mm; left:15.5mm; width:150mm;
+               font-family:var(--display); font-size:37pt; line-height:0.92;
+               color:var(--ink); letter-spacing:-.3px; }
+
+    /* hero map frame */
+    .atl-map{ position:absolute; top:64mm; left:15mm; width:99mm;
+              background:var(--bone); padding:3.5mm 3.5mm 9mm;
+              border:1px solid var(--ink);
+              box-shadow:0 8px 22px rgba(36,29,24,0.32);
+              transform:rotate(-2deg); }
+    .atl-map img{ display:block; width:100%; height:auto; border:1px solid #c9bca6; }
+    .atl-map .cap{ position:absolute; left:3.5mm; right:3.5mm; bottom:3mm;
+                   font-family:var(--marker); font-size:11.5pt; color:var(--clay);
+                   text-align:center; }
+
+    /* postage stamp */
+    .atl-stamp{ position:absolute; top:45mm; left:90mm; width:27mm;
+                background:var(--bone); padding:2mm;
+                box-shadow:0 4px 12px rgba(36,29,24,0.36);
+                transform:rotate(-8deg); }
+    .atl-stamp img{ display:block; width:100%; height:auto; }
+
+    /* right editorial column */
+    .atl-col{ position:absolute; top:57mm; left:121mm; width:75mm; }
+    .atl-lead{ font-family:var(--body); font-size:10.5pt; line-height:1.5;
+               color:var(--ink); margin-bottom:5mm; }
+    .atl-lead .drop{ font-family:var(--display); font-size:15pt; color:var(--terra); }
+
+    .brk{ margin-bottom:4.2mm; }
+    .brk .n{ font-family:var(--marker); font-size:13pt; color:var(--terra);
+             margin-right:2mm; }
+    .brk .nm{ font-family:var(--body); font-weight:700; font-size:10.5pt;
+              letter-spacing:.10em; text-transform:uppercase; color:var(--ink); }
+    .brk .ds{ font-family:var(--body); font-size:9pt; line-height:1.45;
+              color:var(--ink-60); margin-top:.6mm; }
+
+    .atl-tuk{ margin-top:5mm; border-top:1.6px solid var(--ink); padding-top:3mm;
+              font-family:var(--body); font-size:9pt; line-height:1.5;
+              color:var(--ink); }
+    .atl-tuk b{ color:var(--clay); letter-spacing:.04em; }
+
+    /* linocut sheet frame */
+    .atl-lino{ position:absolute; top:206mm; left:128mm; width:66mm;
+               background:var(--bone); padding:3mm 3mm 3mm;
+               border:1px solid var(--ink);
+               box-shadow:0 7px 18px rgba(36,29,24,0.30);
+               transform:rotate(3deg); }
+    .atl-lino img{ display:block; width:100%; height:auto; }
+    .atl-lino .tag{ position:absolute; top:-7mm; left:6mm;
+                    background:var(--ink); color:var(--bone);
+                    font-family:var(--body); font-weight:700; font-size:7pt;
+                    letter-spacing:.22em; text-transform:uppercase;
+                    padding:1.4mm 3mm; transform:rotate(-3deg); }
+
+    /* pull quote */
+    .atl-quote{ position:absolute; top:218mm; left:15mm; width:104mm; }
+    .atl-quote .q{ font-family:var(--marker); font-size:30pt; line-height:1.02;
+                   color:var(--terra); }
+    .atl-quote .by{ font-family:var(--body); font-weight:700; font-size:8.5pt;
+                    letter-spacing:.26em; text-transform:uppercase; color:var(--ink-60);
+                    margin-top:4mm; }
+    .atl-quote .deco{ width:30mm; height:2.4px; background:var(--ink); margin-top:5mm; }
+  </style>
+
+  <div class="atl">
+    <!-- masthead -->
+    <div class="atl-mast">
+      <div class="m-l">Tuk &amp; Tide</div>
+      <div class="m-c">Island Atlas &#8212; Vol. 01</div>
+      <div class="m-r">Weligama &#183; South Coast</div>
+    </div>
+    <div class="atl-rule"></div>
+
+    <!-- headline -->
+    <div class="atl-kick">A field guide to home waters</div>
+    <h1 class="atl-head">The South<br>Coast</h1>
+
+    <!-- hero map -->
+    <div class="sh sh-map"></div>
+    <div class="atl-map">
+      <img src="../assets/mag/m4.jpg" alt="Illustrated map of Sri Lanka">
+      <div class="cap">our island, hand-painted</div>
+    </div>
+
+    <!-- postage stamp -->
+    <div class="sh sh-stamp"></div>
+    <div class="atl-stamp">
+      <img src="../assets/mag/m2.jpg" alt="Vintage Sri Lanka stamp">
+    </div>
+
+    <!-- editorial column -->
+    <div class="atl-col">
+      <div class="atl-lead"><span class="drop">T</span>wenty kilometres of warm
+        reef, point and beach-break, strung between palm and paddy along the
+        deep south. Pick a wave, flag a three-wheeler, and chase the swell.</div>
+
+      <div class="brk">
+        <span class="n">1</span><span class="nm">Weligama Bay</span>
+        <div class="ds">Soft, forgiving sand-bottom rollers &#8212; where almost
+          everyone stands up for the first time. Our home water.</div>
+      </div>
+      <div class="brk">
+        <span class="n">2</span><span class="nm">Mirissa</span>
+        <div class="ds">Mornings for blue whales offshore; evenings for the
+          longest, reddest sunsets on the coast.</div>
+      </div>
+      <div class="brk">
+        <span class="n">3</span><span class="nm">Midigama</span>
+        <div class="ds">The Lazy Left and Ram&#8217;s Right &#8212; shallow reef,
+          quick walls, for when you&#8217;re ready to graduate.</div>
+      </div>
+      <div class="brk">
+        <span class="n">4</span><span class="nm">Ahangama</span>
+        <div class="ds">Long, peeling points that keep going well past
+          breakfast. Patience and a good paddle.</div>
+      </div>
+
+      <div class="atl-tuk">Boards on the roof-rack, salt in your hair &#8212;
+        the <b>tuk-tuk</b> is simply how you get from one break to the next.</div>
+    </div>
+
+    <!-- linocut sheet -->
+    <div class="sh sh-lino"></div>
+    <div class="atl-lino">
+      <div class="tag">Island Iconography</div>
+      <img src="../assets/mag/m8.jpg" alt="Sri Lanka linocut iconography">
+    </div>
+
+    <!-- pull quote -->
+    <div class="atl-quote">
+      <div class="q">&#8220;Always somewhere<br>between here and<br>the next break.&#8221;</div>
+      <div class="by">&#9733; &nbsp; Tuk &amp; Tide Surf Club &#183; Est. MMXXVI</div>
+      <div class="deco"></div>
+    </div>
+  </div>
+
+  <div class="pgmark">
+    <span>Tuk &amp; Tide Surf Club</span>
+    <span>Island Atlas</span>
+  </div>
+</div>
