@@ -1,24 +1,38 @@
-<div class="page bleed" style="display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:24mm 0;">
-  <!-- inset poster frame -->
-  <div style="position:absolute; top:9mm; left:9mm; right:9mm; bottom:9mm;
-              border:2.5px solid var(--ink); border-radius:2mm;"></div>
+<div class="page bleed">
+  <style scoped>
+    .reg{ position:absolute; width:7mm; height:7mm; }
+    .reg::before,.reg::after{ content:""; position:absolute; background:var(--ink); }
+    .reg::before{ left:50%; top:0; width:1px; height:100%; margin-left:-0.5px; }
+    .reg::after{ top:50%; left:0; height:1px; width:100%; margin-top:-0.5px; }
+    .cv-frame{ position:absolute; top:13mm; left:13mm; right:13mm; bottom:13mm;
+               border:1.5px solid var(--ink); }
+    .cv-mast{ position:absolute; top:20mm; left:20mm; right:20mm; display:flex;
+              justify-content:space-between; align-items:center;
+              font-family:var(--body); font-weight:700; font-size:8.5pt;
+              letter-spacing:.34em; text-transform:uppercase; color:var(--ink); }
+    .cv-mid{ position:absolute; top:0; left:0; right:0; bottom:0; display:flex;
+             align-items:center; justify-content:center; }
+    .cv-mid img{ width:138mm; display:block; }
+    .cv-foot{ position:absolute; bottom:24mm; left:20mm; right:20mm; text-align:center; }
+    .cv-rule{ height:1.5px; width:40mm; background:var(--ink); margin:0 auto 6mm; }
+    .cv-loc{ font-family:var(--body); font-weight:700; font-size:8pt; letter-spacing:.34em;
+             text-transform:uppercase; color:var(--ink); }
+    .cv-tag{ font-family:var(--marker); font-size:15pt; color:var(--ink); margin-top:5mm; }
+  </style>
 
-  <!-- top kicker -->
-  <div style="text-align:center; z-index:2;">
-    <div class="kicker" style="font-size:11pt; letter-spacing:.42em;">Brand Kit</div>
-    <div style="height:3px; width:26mm; background:var(--ink); border-radius:2px; margin:5mm auto 0;"></div>
-  </div>
+  <div class="reg" style="top:6mm;left:6mm;"></div>
+  <div class="reg" style="top:6mm;right:6mm;"></div>
+  <div class="reg" style="bottom:6mm;left:6mm;"></div>
+  <div class="reg" style="bottom:6mm;right:6mm;"></div>
+  <div class="cv-frame"></div>
 
-  <!-- centered logo -->
-  <div style="z-index:2; text-align:center;">
-    <img src="../assets/brand/logo-terracotta-worn.png" alt="Tuk &amp; Tide Surf Club"
-         style="width:120mm; height:auto; display:block;">
-  </div>
+  <div class="cv-mast"><span>Vol. 01</span><span>Brand Book</span><span>Est. MMXXVI</span></div>
 
-  <!-- bottom block -->
-  <div style="text-align:center; z-index:2;">
-    <div style="height:3px; width:26mm; background:var(--ink); border-radius:2px; margin:0 auto 6mm;"></div>
-    <div class="kicker" style="font-size:10pt; letter-spacing:.34em;">Weligama &middot; Sri Lanka &middot; Est. 2026</div>
-    <div class="marker" style="font-size:17pt; margin-top:6mm;">Surf, ride, repeat.</div>
+  <div class="cv-mid"><img src="../assets/brand/logo-terracotta.png" alt="Tuk &amp; Tide Surf Club"></div>
+
+  <div class="cv-foot">
+    <div class="cv-rule"></div>
+    <div class="cv-loc">Weligama · Sri Lanka · South Coast</div>
+    <div class="cv-tag">Surf, ride, repeat.</div>
   </div>
 </div>
