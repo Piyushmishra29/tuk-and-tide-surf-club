@@ -1,15 +1,12 @@
 {
-  "name": "site",
+  "name": "tuk-and-tide-club",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tuk & Tide Surf Club — static website",
+  "private": true,
   "scripts": {
+    "build": "python3 build.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "puppeteer-core": "^25.2.1"
   }
