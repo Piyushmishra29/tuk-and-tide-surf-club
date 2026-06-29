@@ -86,7 +86,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; text-transform:uppercase;
 .bg-bone2{ background:var(--bone-2); color:var(--ink); }
 .bg-teal{ background:var(--teal); color:var(--bone); }
 .grain::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.06;
-   background-image:url("../img/tex/paper-ink.jpg"); background-size:480px; mix-blend-mode:multiply; }
+   background-image:url("../img/tex/paper-ink.webp"); background-size:480px; mix-blend-mode:multiply; }
 
 /* ---------- buttons ---------- */
 .btn{ position:relative; isolation:isolate; overflow:hidden;

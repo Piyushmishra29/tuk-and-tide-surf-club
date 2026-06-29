@@ -30,12 +30,12 @@ html,body{ font-family:var(--body); color:var(--ink); }
 
 .page{
   position:relative; width:210mm; height:297mm; overflow:hidden;
-  background:var(--terra) url('tex/paper-terra.jpg') center/cover no-repeat; color:var(--ink);
+  background:var(--terra) url('tex/paper-terra.webp') center/cover no-repeat; color:var(--ink);
   page-break-after:always; padding:20mm 18mm;
 }
 .page:last-child{ page-break-after:auto; }
-.page.bone{ background:var(--bone) url('tex/paper-bone.jpg') center/cover no-repeat; }
-.page.ink{ background:var(--ink) url('tex/paper-ink.jpg') center/cover no-repeat; color:var(--bone); }
+.page.bone{ background:var(--bone) url('tex/paper-bone.webp') center/cover no-repeat; }
+.page.ink{ background:var(--ink) url('tex/paper-ink.webp') center/cover no-repeat; color:var(--bone); }
 .page.bleed{ padding:0; }
 
 /* ---- Type helpers ---- */
@@ -69,11 +69,11 @@ p{ font-family:var(--body); font-size:10.5pt; line-height:1.6; max-width:150mm; 
 .page.ink .pgmark{ color:var(--terra); }
 
 /* ---- Brand asset paths (relative to build/book.html):
-   ../assets/brand/logo-terracotta.png   full lockup on terracotta
-   ../assets/brand/logo-reversed.png     full lockup on charcoal (bone ink)
-   ../assets/brand/logo-terracotta-worn.png  worn screenprint version
-   ../assets/brand/mark-tuktuk-C24A2C.png  tuk-tuk mark on terracotta
-   ../assets/brand/mark-tuktuk-EFE3D0.png  tuk-tuk mark on bone
-   ../assets/brand/mark-wave-C24A2C.png    wave mark on terracotta
-   ../assets/brand/mark-wave-EFE3D0.png    wave mark on bone
+   ../assets/brand/logo-terracotta.webp   full lockup on terracotta
+   ../assets/brand/logo-reversed.webp     full lockup on charcoal (bone ink)
+   ../assets/brand/logo-terracotta-worn.webp  worn screenprint version
+   ../assets/brand/mark-tuktuk-C24A2C.webp  tuk-tuk mark on terracotta
+   ../assets/brand/mark-tuktuk-EFE3D0.webp  tuk-tuk mark on bone
+   ../assets/brand/mark-wave-C24A2C.webp    wave mark on terracotta
+   ../assets/brand/mark-wave-EFE3D0.webp    wave mark on bone
 ---- */
