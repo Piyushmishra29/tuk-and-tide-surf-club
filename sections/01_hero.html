@@ -1,0 +1,158 @@
+<section id="hero" class="hero">
+  <style>
+  /* ===== HERO — Tuk & Tide signature moment ===== */
+  .hero{ position:relative; min-height:100svh; min-height:100vh; overflow:hidden;
+         background:var(--ink); color:var(--bone);
+         display:flex; isolation:isolate; }
+  .hero *{ position:relative; }
+
+  /* background photo + parallax layer */
+  .hero-bg{ position:absolute; inset:-8% 0; z-index:0; will-change:transform; }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:58% 42%; }
+
+  /* charcoal scrim for legibility (bottom + side + soft top + radial darken behind title) */
+  .hero-scrim{ position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(120% 78% at 30% 64%, rgba(36,29,24,.62) 0%, rgba(36,29,24,.28) 38%, rgba(36,29,24,0) 66%),
+      linear-gradient(180deg, rgba(20,16,13,.52) 0%, rgba(20,16,13,0) 20%, rgba(20,16,13,0) 30%, rgba(20,16,13,.74) 76%, rgba(20,16,13,.96) 100%),
+      linear-gradient(90deg, rgba(36,29,24,.72) 0%, rgba(36,29,24,.32) 42%, rgba(36,29,24,0) 70%); }
+  .hero-grain{ position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.12;
+    background-image:url('assets/img/tex/grain.png'); background-size:320px; mix-blend-mode:overlay; }
+
+  /* content shell */
+  .hero-inner{ position:relative; z-index:3; width:100%; max-width:var(--maxw);
+    margin-inline:auto; padding-inline:var(--gut);
+    padding-block:clamp(96px,13vh,132px) clamp(64px,9vh,92px);
+    display:flex; flex-direction:column; min-height:100svh; min-height:100vh; }
+
+  .hero-top{ display:flex; }
+  .hero-pill{ color:var(--bone); border-color:var(--bone-70);
+    background:rgba(20,16,13,.28); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+  .hero-pill .hero-dot{ width:7px; height:7px; border-radius:50%; background:var(--terra); flex:none; }
+
+  .hero-main{ margin-top:auto; }
+  .hero-eyebrow{ color:var(--bone-70); margin-bottom:clamp(14px,2vh,22px);
+    display:inline-flex; align-items:center; gap:.9em; }
+  .hero-eyebrow::before{ content:""; width:clamp(28px,4vw,52px); height:2px; background:var(--terra); }
+
+  .hero-title{ font-size:clamp(62px,16.5vw,236px); line-height:.80; letter-spacing:1px;
+    color:var(--bone); text-shadow:0 2px 40px rgba(20,16,13,.35);
+    margin:0; }
+  .hero-line{ display:block; }
+  .hero-amp{ color:var(--terra); }
+  .hero-marker{ font-family:var(--marker); text-transform:none; color:var(--terra);
+    font-size:.20em; letter-spacing:0; display:inline-block; transform:rotate(-6deg) translateY(-.55em);
+    margin-left:.18em; line-height:1; text-shadow:0 2px 18px rgba(20,16,13,.4); }
+
+  .hero-bottom{ display:flex; align-items:flex-end; justify-content:space-between;
+    gap:clamp(22px,4vw,56px); margin-top:clamp(20px,3.4vh,40px); flex-wrap:wrap; }
+  .hero-pitch{ max-width:50ch; }
+  .hero-lead{ color:var(--bone); margin-bottom:clamp(20px,3vh,30px);
+    text-shadow:0 1px 16px rgba(20,16,13,.5); }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:14px; }
+  .hero-cta .btn{ box-shadow:0 14px 34px rgba(20,16,13,.32); }
+
+  /* scroll cue */
+  .hero-scroll{ display:inline-flex; flex-direction:column; align-items:center; gap:12px;
+    color:var(--bone-70); font-family:var(--body); font-weight:700; font-size:11px;
+    letter-spacing:.26em; text-transform:uppercase; padding-bottom:4px; transition:color .35s var(--ease); }
+  .hero-scroll:hover{ color:var(--bone); }
+  .hero-scroll .hero-scroll-line{ position:relative; width:2px; height:54px;
+    background:linear-gradient(var(--bone-70), rgba(239,227,208,0)); overflow:hidden; }
+  .hero-scroll .hero-scroll-line::after{ content:""; position:absolute; top:-40%; left:0; width:100%;
+    height:40%; background:var(--terra); animation:hero-scroll-run 1.9s var(--ease) infinite; }
+  @keyframes hero-scroll-run{ 0%{ transform:translateY(-100%); opacity:0; }
+    25%{ opacity:1; } 80%{ opacity:1; } 100%{ transform:translateY(360%); opacity:0; } }
+
+  /* slim trust bar — full-width strip pinned to bottom of hero */
+  .hero-trust{ position:absolute; left:0; right:0; bottom:0; z-index:4;
+    border-top:1px solid rgba(239,227,208,.14);
+    background:linear-gradient(180deg, rgba(20,16,13,0) 0%, rgba(20,16,13,.52) 36%, rgba(20,16,13,.80) 100%);
+    backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px); }
+  .hero-trust-row{ width:100%; max-width:var(--maxw); margin-inline:auto;
+    padding-inline:var(--gut); padding-block:clamp(11px,1.6vh,15px);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+    gap:clamp(10px,2vw,30px);
+    font-family:var(--body); font-weight:600; font-size:clamp(11.5px,1.05vw,13.5px);
+    letter-spacing:.02em; color:var(--bone); }
+  .hero-trust-item{ display:inline-flex; align-items:center; gap:.5em; white-space:nowrap;
+    text-shadow:0 1px 10px rgba(20,16,13,.6); }
+  .hero-trust-item .hero-trust-star{ color:var(--terra); font-size:1.05em; line-height:1; }
+  .hero-trust-item .hero-trust-rate{ font-weight:800; }
+  .hero-trust-item .hero-trust-mut{ color:var(--bone-70); font-weight:600; }
+  .hero-trust-sep{ width:4px; height:4px; border-radius:50%; background:var(--bone-70); opacity:.6; flex:none; }
+
+  /* ambient idle accents (reduced-motion safe) */
+  @media (prefers-reduced-motion:no-preference){
+    .hero-dot{ animation:hero-dot-pulse 2.6s var(--ease) infinite; }
+    .hero-scroll{ animation:hero-scroll-bob 3.2s var(--ease) infinite; }
+  }
+  @keyframes hero-dot-pulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(194,74,44,.5); }
+    55%{ box-shadow:0 0 0 6px rgba(194,74,44,0); } }
+  @keyframes hero-scroll-bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(5px); } }
+
+  @media (max-width:760px){
+    .hero-bg img{ object-position:60% 40%; }
+    .hero-title{ font-size:clamp(62px,19vw,108px); line-height:.84; }
+    .hero-marker{ font-size:.26em; transform:rotate(-6deg) translateY(-.3em); }
+    .hero-bottom{ align-items:flex-start; }
+    .hero-scroll{ display:none; }
+    .hero-cta .btn{ flex:1 1 auto; justify-content:center; }
+    .hero-trust-row{ gap:7px 14px; padding-block:10px; line-height:1.2; }
+    .hero-trust-sep{ display:none; }
+    .hero-trust-item{ font-size:11.5px; }
+  }
+  @media (prefers-reduced-motion:reduce){ .hero-scroll .hero-scroll-line::after{ animation:none; } }
+  </style>
+
+  <div class="hero-bg" data-parallax="0.18">
+    <img src="assets/img/photos/r10_sunset_front.jpg" alt="A blue tuk-tuk parked on a Weligama beach road at sunset, headlights glowing over the south-coast surf" loading="eager" fetchpriority="high">
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-inner" data-reveal-group>
+    <div class="hero-top">
+      <span class="pill hero-pill" data-reveal="up"><span class="hero-dot"></span>Weligama Bay · Sri Lanka</span>
+    </div>
+
+    <div class="hero-main">
+      <p class="eyebrow hero-eyebrow" data-reveal="fade" data-scrub-y="40">Surf, ride, repeat.</p>
+
+      <h1 class="hero-title display">
+        <span class="hero-line" data-reveal="up-lg">Tuk <span class="hero-amp">&amp;</span></span>
+        <span class="hero-line" data-reveal="up-lg">Tide <span class="hero-marker">surf club</span></span>
+      </h1>
+
+      <div class="hero-bottom">
+        <div class="hero-pitch">
+          <p class="lead hero-lead" data-reveal>The easygoing way to surf Sri Lanka's south coast — board under your arm, tuk-tuk at the curb.</p>
+          <div class="hero-cta" data-reveal>
+            <a class="btn btn--primary" href="https://wa.me/94765550123" target="_blank" rel="noopener">Book a session <span class="arr">→</span></a>
+            <a class="btn btn--bone" href="#about">Explore the club</a>
+          </div>
+        </div>
+
+        <a class="hero-scroll" href="#about" aria-label="Scroll to explore" data-reveal="fade">
+          <span>scroll</span>
+          <span class="hero-scroll-line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-trust" data-reveal="fade">
+    <div class="hero-trust-row">
+      <span class="hero-trust-item"><span class="hero-trust-star">★</span><span class="hero-trust-rate">4.9</span> <span class="hero-trust-mut">· 500+ lessons</span></span>
+      <span class="hero-trust-sep" aria-hidden="true"></span>
+      <span class="hero-trust-item">Certified local instructors</span>
+      <span class="hero-trust-sep" aria-hidden="true"></span>
+      <span class="hero-trust-item">Free hotel pickup <span class="hero-trust-mut">· Weligama</span></span>
+      <span class="hero-trust-sep" aria-hidden="true"></span>
+      <span class="hero-trust-item">Beginners welcome</span>
+    </div>
+  </div>
+</section>

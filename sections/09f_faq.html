@@ -1,0 +1,292 @@
+<section id="faq" class="section bg-bone grain">
+<style>
+  /* ===== FAQ — good to know ===== */
+  .faq-head{ max-width:min(820px,92vw); margin-bottom:clamp(34px,5vw,58px); }
+  .faq-head .rule{ margin:18px 0 22px; }
+  .faq-note{ font-family:var(--marker); color:var(--terra); font-size:clamp(15px,1.5vw,19px);
+             transform:rotate(-2.5deg); display:inline-block; margin-left:.35em; }
+  .faq-sub{ margin-top:18px; max-width:50ch; color:var(--ink-70);
+            font-size:clamp(15px,1.15vw,17px); }
+
+  .faq-grid{ display:grid; grid-template-columns:repeat(2,1fr);
+             gap:clamp(14px,1.6vw,20px); align-items:start; }
+
+  /* ---- accordion item ---- */
+  .faq-item{ position:relative; border:2px solid var(--ink); border-radius:var(--r);
+             background:var(--bone); box-shadow:4px 4px 0 var(--ink); overflow:hidden;
+             transition:transform .45s var(--ease), box-shadow .45s var(--ease),
+                        background .35s var(--ease); }
+  .faq-item::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.05;
+                     background-image:url("assets/img/tex/paper-ink.jpg"); background-size:420px;
+                     mix-blend-mode:multiply; z-index:0; }
+  .faq-item:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--ink); }
+  .faq-item[open]{ background:var(--bone-2); box-shadow:6px 6px 0 var(--terra); }
+  .faq-item[open]:hover{ box-shadow:8px 8px 0 var(--terra); }
+
+  .faq-q{ position:relative; z-index:1; list-style:none; cursor:pointer;
+          display:flex; align-items:center; gap:16px;
+          padding:clamp(18px,1.9vw,24px) clamp(18px,2vw,26px);
+          font-family:var(--body); font-weight:700; letter-spacing:.005em;
+          font-size:clamp(15.5px,1.18vw,18px); line-height:1.32; color:var(--ink); }
+  .faq-q::-webkit-details-marker{ display:none; }
+  .faq-q:focus-visible{ outline:3px solid var(--terra); outline-offset:-3px; }
+  .faq-q{ transition:background .3s var(--ease), padding-left .35s var(--ease); }
+  .faq-qtext{ flex:1 1 auto; transition:transform .35s var(--ease), color .3s var(--ease); }
+
+  /* summary hover — row tint, indent, indicator colour */
+  .faq-q:hover{ background:rgba(199,107,74,.06); }
+  .faq-q:hover .faq-qtext{ transform:translateX(5px); color:var(--terra); }
+  .faq-q:hover .faq-ind{ border-color:var(--terra); }
+  .faq-q:hover .faq-ind::before,
+  .faq-q:hover .faq-ind::after{ background:var(--terra); }
+  .faq-item[open] .faq-q:hover .faq-ind::before,
+  .faq-item[open] .faq-q:hover .faq-ind::after{ background:var(--bone); }
+
+  /* +/- indicator */
+  .faq-ind{ flex:none; position:relative; width:30px; height:30px; border-radius:50%;
+            border:2px solid var(--ink); display:grid; place-items:center;
+            transition:transform .45s var(--ease), background .35s var(--ease),
+                       border-color .35s var(--ease); }
+  .faq-ind::before,.faq-ind::after{ content:""; position:absolute; background:var(--ink);
+            border-radius:2px; transition:opacity .3s var(--ease), background .35s var(--ease); }
+  .faq-ind::before{ width:13px; height:2.5px; }            /* horizontal bar */
+  .faq-ind::after{ width:2.5px; height:13px; }             /* vertical bar */
+  .faq-item[open] .faq-ind{ transform:rotate(135deg); background:var(--terra);
+            border-color:var(--terra); }
+  .faq-item[open] .faq-ind::before,
+  .faq-item[open] .faq-ind::after{ background:var(--bone); }
+
+  /* answer body */
+  .faq-a{ position:relative; z-index:1; padding:0 clamp(18px,2vw,26px); }
+  .faq-a p{ margin:0; padding:0 0 clamp(18px,1.9vw,24px); padding-right:46px;
+            max-width:60ch; color:var(--ink-70); line-height:1.58;
+            font-size:clamp(14.5px,1.08vw,16px); }
+  .faq-a p::before{ content:""; display:block; height:1.5px; width:42px; margin:0 0 16px;
+                    background:var(--terra); opacity:.85; }
+
+  /* subtle open animation when JS isn't gating it */
+  .faq-item[open] .faq-a{ animation:faq-fade .45s var(--ease) both; }
+  @keyframes faq-fade{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:none; } }
+
+  /* smooth height open/close (progressive enhancement — native details still
+     works if unsupported; allow-keywords lets auto height interpolate) */
+  #faq{ interpolate-size:allow-keywords; }
+  .faq-item::details-content{
+    block-size:0; overflow:hidden; opacity:0;
+    transition:block-size .42s var(--ease), opacity .38s var(--ease),
+               content-visibility .42s var(--ease) allow-discrete; }
+  .faq-item[open]::details-content{ block-size:auto; opacity:1; }
+
+  /* footer line under accordion */
+  .faq-foot{ margin-top:clamp(30px,4vw,48px); display:flex; flex-wrap:wrap; align-items:center;
+             gap:14px 20px; padding-top:clamp(22px,2.6vw,30px);
+             border-top:2px solid rgba(36,29,24,.16); }
+  .faq-foot p{ margin:0; font-family:var(--body); font-weight:500; color:var(--ink-70);
+               font-size:clamp(14.5px,1.1vw,16.5px); }
+  .faq-foot b{ color:var(--ink); font-weight:700; }
+
+  @media (prefers-reduced-motion:reduce){
+    .faq-item[open] .faq-a{ animation:none; }
+    .faq-ind, .faq-item, .faq-q, .faq-qtext{ transition:none; }
+    .faq-item::details-content{ transition:none; }
+  }
+
+  @media (max-width:860px){
+    .faq-grid{ grid-template-columns:1fr; gap:14px; }
+    .faq-item{ box-shadow:3px 3px 0 var(--ink); }
+    .faq-item[open]{ box-shadow:5px 5px 0 var(--terra); }
+    .faq-a p{ padding-right:0; }
+  }
+</style>
+
+  <div class="container">
+
+    <div class="faq-head" data-reveal>
+      <span class="eyebrow t-terra">Good to know</span>
+      <hr class="rule">
+      <h2 class="h-lg">FAQ
+        <span class="faq-note">(before you paddle out)</span>
+      </h2>
+      <p class="faq-sub lead">Everything first-timers ask us — straight answers, no fine print.
+        Still unsure? A WhatsApp away.</p>
+    </div>
+
+    <div class="faq-grid" data-reveal-group>
+
+      <details class="faq-item" name="faq" data-reveal open>
+        <summary class="faq-q">
+          <span class="faq-qtext">Do I need to know how to swim or have surfed before?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Not at all. Total beginners and non-surfers are exactly who we love teaching. We start you
+            in the gentle whitewater of Weligama Bay, where it's shallow and forgiving, and a coach stays
+            in the water with you the whole time. Basic water confidence is plenty.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">When is the best time to surf the south coast?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>The south-coast season runs roughly November to April. Weligama Bay stays friendly for
+            beginners through most of it, with warm water year-round — no wetsuit needed, just board
+            shorts and sunscreen. Mornings are usually the cleanest.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">What's included in a lesson?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Everything you ride with: soft-top board, leash and rashguard, plus a short theory brief
+            and hands-on in-water coaching. Just bring sunscreen, water and a smile — we've got the
+            rest covered.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">Do you pick up from my hotel?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Yes — free pickup anywhere around Weligama in our tuk-tuk, board strapped to the roof.
+            Coming from Mirissa or Ahangama? Transfers are easy to arrange on request, just tell us
+            where you're staying.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">What if there are no waves or it rains?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>The ocean calls the shots, so we keep it relaxed. If conditions don't play along, you
+            reschedule for free — and since there's no deposit to book, you never lose a thing.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">How do I pay?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Cash or card, whatever suits you. There's no deposit to reserve a session — just message
+            us on WhatsApp to lock in your time, and settle up on the day.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">Are the instructors certified and insured?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Yes. Our coaches are experienced, certified local surfers who grew up on this coast and
+            know every shifting sandbank. We keep groups small so you get real attention and ride
+            with peace of mind.</p>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq" data-reveal>
+        <summary class="faq-q">
+          <span class="faq-qtext">Can kids learn?</span>
+          <span class="faq-ind" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-a">
+          <p>Absolutely — kids' lessons start from around age seven. We scale the board, the pace and
+            the patience to suit young groms, so it stays safe, playful and full of stoke.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="faq-foot" data-reveal>
+      <p>Got a question we missed? <b>Message us on WhatsApp</b> — we usually reply within the hour.</p>
+      <a class="btn btn--primary" href="https://wa.me/94765550123" target="_blank" rel="noopener">
+        Ask us anything <span class="arr" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to know how to swim or have surfed before?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. Beginners and non-surfers are welcome at Tuk & Tide Surf Club. We start you in the gentle whitewater of Weligama Bay, where it's shallow and forgiving, with a coach in the water beside you. Basic water confidence is all you need."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the best time to surf the south coast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The south-coast season runs roughly November to April. Weligama Bay stays beginner-friendly through most of the season, with warm water year-round, so no wetsuit is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included in a lesson?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every lesson includes a board, leash and rashguard, plus a theory brief and hands-on in-water coaching. Just bring sunscreen, water and a smile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you pick up from my hotel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer free pickup anywhere around Weligama in our tuk-tuk. Transfers from Mirissa or Ahangama can be arranged on request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if there are no waves or it rains?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If conditions don't cooperate, you can reschedule for free. There is no deposit to book, so you never lose a thing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept cash or card. There is no deposit required to book — just message us on WhatsApp to reserve, and pay on the day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the instructors certified and insured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our coaches are experienced, certified local instructors who grew up on this coast. We keep groups small for safety and real attention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can kids learn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Kids' lessons start from around age seven, with the board, pace and coaching scaled to suit young surfers."
+        }
+      }
+    ]
+  }
+  </script>
+</section>

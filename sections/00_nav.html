@@ -1,0 +1,207 @@
+<style>
+/* ============ NAV ============ */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  color:var(--bone);
+  padding-block:clamp(18px,2.4vw,30px);
+  transition:background .45s var(--ease), color .45s var(--ease),
+             transform .55s var(--ease), box-shadow .45s var(--ease),
+             padding-block .45s var(--ease);
+}
+.nav-bar{
+  position:relative; z-index:2;
+  width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gut);
+  display:flex; align-items:center; justify-content:space-between; gap:clamp(18px,3vw,48px);
+}
+
+/* ---- wordmark lockup (woodcut wave mark + type) ---- */
+.nav-brand{
+  display:inline-flex; align-items:center; gap:clamp(8px,.7vw,12px);
+  color:inherit; white-space:nowrap; transition:opacity .3s var(--ease);
+}
+.nav-brand:hover{ opacity:.8; }
+.nav-mark{
+  flex:0 0 auto; width:clamp(26px,2.3vw,34px); height:auto; color:var(--terra);
+  transition:transform .55s var(--ease);
+}
+.nav-brand:hover .nav-mark{ transform:translateY(-2px) rotate(-4deg); }
+.nav-mark svg{ display:block; width:100%; height:auto; fill:currentColor; }
+@media (prefers-reduced-motion:no-preference){
+  /* idle: tiny slow float on the wave mark (hover transform lives on .nav-mark, so it still wins) */
+  .nav-mark svg{ animation:nav-wave-idle 5.5s ease-in-out infinite; }
+}
+@keyframes nav-wave-idle{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-1.5px); }
+}
+.nav-wm{ display:flex; flex-direction:column; line-height:.86; }
+.nav-wm-main{
+  font-family:var(--display); text-transform:uppercase;
+  font-size:clamp(17px,1.5vw,21px); letter-spacing:.04em; line-height:.9; color:inherit;
+}
+.nav-wm-main .nav-amp{ color:var(--terra); margin-inline:.04em; }
+.nav-wm-sub{
+  font-family:var(--body); font-weight:700; text-transform:uppercase;
+  letter-spacing:.34em; font-size:clamp(7px,.62vw,8.5px); margin-top:.18em;
+  color:inherit; opacity:.72;
+}
+
+/* ---- inline links ---- */
+.nav-links{ display:flex; align-items:center; gap:clamp(18px,2.1vw,36px); }
+.nav-link{
+  font-family:var(--body); font-weight:700; text-transform:uppercase;
+  letter-spacing:.16em; font-size:12px; color:inherit; position:relative; padding-block:6px;
+}
+.nav-link::after{
+  content:""; position:absolute; left:0; bottom:2px; height:2px; width:0;
+  background:var(--terra); transition:width .35s var(--ease);
+}
+.nav-link:hover::after{ width:100%; left:0; right:auto; }
+.nav-cta{ margin-left:clamp(4px,1vw,14px); padding:.85em 1.4em; font-size:12px; }
+
+/* ---- one-shot entrance (load) ---- */
+@media (prefers-reduced-motion:no-preference){
+  /* no fill-mode: must NOT lock transform, or it would override .is-hidden/.is-stuck */
+  .nav{ animation:nav-drop .7s var(--ease); }
+  /* stagger inline links in on load */
+  .nav-links > *{ animation:nav-link-in .55s var(--ease) both; }
+  .nav-links > *:nth-child(1){ animation-delay:.18s; }
+  .nav-links > *:nth-child(2){ animation-delay:.25s; }
+  .nav-links > *:nth-child(3){ animation-delay:.32s; }
+  .nav-links > *:nth-child(4){ animation-delay:.39s; }
+  .nav-links > *:nth-child(5){ animation-delay:.46s; }
+  .nav-links > *:nth-child(6){ animation-delay:.53s; }
+  .nav-links > *:nth-child(7){ animation-delay:.60s; }
+}
+@keyframes nav-drop{
+  from{ transform:translateY(-16px); opacity:0; }
+  to{ transform:translateY(0); opacity:1; }
+}
+@keyframes nav-link-in{
+  from{ transform:translateY(-8px); opacity:0; }
+  to{ transform:translateY(0); opacity:1; }
+}
+
+/* ---- stuck state (added by motion engine after scroll) ---- */
+.nav.is-stuck{
+  background:var(--bone); color:var(--ink);
+  padding-block:clamp(9px,1.3vw,15px);
+  box-shadow:0 12px 30px rgba(36,29,24,.07);
+}
+.nav.is-stuck::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:var(--ink); opacity:.12;
+}
+
+/* ---- hidden (scroll-down auto-hide) ---- */
+.nav.is-hidden{ transform:translateY(-100%); }
+
+/* ---- hamburger ---- */
+.nav-toggle{
+  display:none; position:relative; min-width:44px; min-height:44px; flex:0 0 auto;
+  align-items:center; justify-content:center; padding:0; margin-right:-12px;
+  background:none; border:0; color:inherit; cursor:pointer;
+}
+.nav-toggle-bars{ position:relative; display:block; width:30px; height:20px; }
+.nav-toggle-bars span{
+  position:absolute; left:0; right:0; height:2.5px; border-radius:2px;
+  background:currentColor; transition:transform .4s var(--ease), top .3s var(--ease),
+             bottom .3s var(--ease), opacity .2s var(--ease);
+}
+.nav-toggle-bars span:nth-child(1){ top:2px; }
+.nav-toggle-bars span:nth-child(2){ bottom:2px; }
+
+/* ---- full-screen mobile overlay ---- */
+.nav-menu{ display:none; }
+.nav-menu-links{ display:flex; flex-direction:column; }
+
+/* ---- open state ---- */
+.nav.is-open{ background:transparent; color:var(--bone); box-shadow:none; }
+.nav.is-open::after{ display:none; }
+.nav.is-open .nav-toggle-bars span:nth-child(1){ top:9px; transform:rotate(45deg); }
+.nav.is-open .nav-toggle-bars span:nth-child(2){ bottom:8px; transform:rotate(-45deg); }
+
+/* ============ MOBILE ============ */
+@media (max-width:860px){
+  .nav-links{ display:none; }
+  .nav-toggle{ display:flex; }
+
+  .nav-menu{
+    display:flex; flex-direction:column; justify-content:center;
+    position:fixed; inset:0; z-index:1; background:var(--ink); color:var(--bone);
+    padding:clamp(90px,18vh,140px) var(--gut) clamp(40px,8vh,64px);
+    opacity:0; visibility:hidden; transform:translateY(-10px); pointer-events:none;
+    transition:opacity .5s var(--ease), transform .55s var(--ease), visibility .5s var(--ease);
+  }
+  .nav.is-open .nav-menu{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
+
+  .nav-menu-links{ gap:clamp(10px,2.4vh,22px); }
+  .nav-menu-link{
+    font-family:var(--display); text-transform:uppercase; line-height:.96;
+    font-size:clamp(34px,11vw,54px); color:var(--bone); letter-spacing:.01em;
+    opacity:0; transform:translateY(14px);
+    transition:color .3s var(--ease),
+               opacity .5s var(--ease), transform .55s var(--ease);
+  }
+  /* stagger the big links in once the overlay opens (pure CSS off .nav.is-open) */
+  .nav.is-open .nav-menu-link{ opacity:1; transform:none; }
+  .nav.is-open .nav-menu-link:nth-child(1){ transition-delay:.12s; }
+  .nav.is-open .nav-menu-link:nth-child(2){ transition-delay:.18s; }
+  .nav.is-open .nav-menu-link:nth-child(3){ transition-delay:.24s; }
+  .nav.is-open .nav-menu-link:nth-child(4){ transition-delay:.30s; }
+  .nav.is-open .nav-menu-link:nth-child(5){ transition-delay:.36s; }
+  .nav.is-open .nav-menu-link:nth-child(6){ transition-delay:.42s; }
+  .nav-menu-link:active{ color:var(--terra); }
+  .nav-menu-foot{ margin-top:clamp(34px,7vh,56px); display:flex; flex-direction:column; gap:18px; }
+  .nav-menu-cta{ align-self:flex-start; }
+  .nav-menu-tag{
+    font-family:var(--marker); color:var(--terra); font-size:18px; letter-spacing:.02em;
+  }
+}
+@media (max-width:860px){
+  .nav-brand{ font-size:clamp(16px,5vw,20px); }
+}
+</style>
+
+<header data-nav class="nav">
+  <div class="nav-bar">
+    <a class="nav-brand" href="#hero" aria-label="Tuk &amp; Tide Surf Club — home">
+      <span class="nav-mark" aria-hidden="true">
+        <svg viewBox="0 0 56 26" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.5 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 L56 26 L0 26 Z"/></svg>
+      </span>
+      <span class="nav-wm">
+        <span class="nav-wm-main">TUK<span class="nav-amp">&amp;</span>TIDE</span>
+        <span class="nav-wm-sub">Surf Club · Weligama</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#about">The Club</a>
+      <a class="nav-link" href="#services">Surf &amp; Hire</a>
+      <a class="nav-link" href="#spots">Spots</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#pricing">Rates</a>
+      <a class="nav-link" href="#merch">Shop</a>
+      <a class="btn btn--primary nav-cta" href="https://wa.me/94765550123" target="_blank" rel="noopener">Book on WhatsApp</a>
+    </nav>
+
+    <button class="nav-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars"><span></span><span></span></span>
+    </button>
+  </div>
+
+  <div class="nav-menu" data-menu id="nav-menu">
+    <nav class="nav-menu-links" aria-label="Mobile">
+      <a class="nav-menu-link" href="#about">The Club</a>
+      <a class="nav-menu-link" href="#services">Surf &amp; Hire</a>
+      <a class="nav-menu-link" href="#spots">Spots</a>
+      <a class="nav-menu-link" href="#gallery">Gallery</a>
+      <a class="nav-menu-link" href="#pricing">Rates</a>
+      <a class="nav-menu-link" href="#merch">Shop</a>
+    </nav>
+    <div class="nav-menu-foot">
+      <span class="nav-menu-tag">Surf, ride, repeat.</span>
+      <a class="btn btn--primary nav-menu-cta" href="https://wa.me/94765550123" target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
+  </div>
+</header>

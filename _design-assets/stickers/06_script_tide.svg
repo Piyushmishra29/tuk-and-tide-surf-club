@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300">
+<ellipse cx="210.0" cy="150.0" rx="200" ry="140" fill="#241D18"/>
+<ellipse cx="210.0" cy="150.0" rx="186" ry="126" fill="none" stroke="#C24A2C" stroke-width="3"/>
+<ellipse cx="210.0" cy="150.0" rx="181" ry="121" fill="none" stroke="#C24A2C" stroke-width="1"/>
+<text x="210.0" y="146" font-family="Pacifico" font-size="108" fill="#EFE3D0" text-anchor="middle" dominant-baseline="alphabetic">Tide</text>
+<circle cx="75.0" cy="128.0" r="6.8" fill="#EFE3D0"/><circle cx="69.5" cy="137.5" r="6.8" fill="#EFE3D0"/><circle cx="58.5" cy="137.5" r="6.8" fill="#EFE3D0"/><circle cx="53.0" cy="128.0" r="6.8" fill="#EFE3D0"/><circle cx="58.5" cy="118.5" r="6.8" fill="#EFE3D0"/><circle cx="69.5" cy="118.5" r="6.8" fill="#EFE3D0"/><circle cx="64.0" cy="128.0" r="6.1" fill="#241D18"/>
+<circle cx="367.0" cy="128.0" r="6.8" fill="#EFE3D0"/><circle cx="361.5" cy="137.5" r="6.8" fill="#EFE3D0"/><circle cx="350.5" cy="137.5" r="6.8" fill="#EFE3D0"/><circle cx="345.0" cy="128.0" r="6.8" fill="#EFE3D0"/><circle cx="350.5" cy="118.5" r="6.8" fill="#EFE3D0"/><circle cx="361.5" cy="118.5" r="6.8" fill="#EFE3D0"/><circle cx="356.0" cy="128.0" r="6.1" fill="#241D18"/>
+<text x="210.0" y="212" font-family="DM Sans" font-weight="700" font-size="26" letter-spacing="10" fill="#C24A2C" text-anchor="middle">SURF CLUB</text>
+</svg>

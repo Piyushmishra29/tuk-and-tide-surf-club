@@ -1,0 +1,196 @@
+/* ============================================================
+   TUK & TIDE SURF CLUB — site design system
+   Heritage charcoal-on-terracotta. Shared tokens + base + utilities.
+   Section-specific CSS lives in each section partial, PREFIXED by section.
+   ============================================================ */
+
+/* ---------- fonts ---------- */
+@font-face{ font-family:'Ultra'; src:url('../fonts/Ultra.ttf'); font-display:swap; }
+@font-face{ font-family:'Permanent Marker'; src:url('../fonts/PermanentMarker.ttf'); font-display:swap; }
+@font-face{ font-family:'Pacifico'; src:url('../fonts/Pacifico.ttf'); font-display:swap; }
+@font-face{ font-family:'Anton'; src:url('../fonts/Anton.ttf'); font-display:swap; }
+@font-face{ font-family:'DM Sans'; src:url('../fonts/DMSans.ttf'); font-weight:400; font-display:swap; }
+@font-face{ font-family:'DM Sans'; src:url('../fonts/DMSans.ttf'); font-weight:700; font-display:swap; }
+
+/* ---------- tokens ---------- */
+:root{
+  --ink:#241D18; --ink-2:#2E251E; --terra:#C24A2C; --clay:#9E3A20;
+  --bone:#EFE3D0; --bone-2:#E7D8C2; --sand:#D8C4A6; --teal:#2F5D57;
+  --ink-70:rgba(36,29,24,.70); --ink-45:rgba(36,29,24,.45); --bone-70:rgba(239,227,208,.72);
+
+  --display:'Ultra', Georgia, serif;
+  --anton:'Anton', Impact, sans-serif;
+  --marker:'Permanent Marker', cursive;
+  --script:'Pacifico', cursive;
+  --body:'DM Sans', system-ui, sans-serif;
+
+  --maxw:1280px; --gut:clamp(20px,5vw,64px);
+  --sect:clamp(72px,11vw,150px);
+  --r:14px; --r-lg:26px;
+  --ease:cubic-bezier(.16,.84,.34,1);
+}
+
+/* ---------- reset / base ---------- */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:auto; }
+body{ font-family:var(--body); background:var(--bone); color:var(--ink);
+      font-size:clamp(15px,1.05vw,17px); line-height:1.6; -webkit-font-smoothing:antialiased;
+      overflow-x:hidden; }
+img,svg,video{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; cursor:pointer; border:0; background:none; }
+::selection{ background:var(--terra); color:var(--bone); }
+
+/* ---------- a11y: focus ring + skip link ---------- */
+:focus-visible{ outline:3px solid var(--terra); outline-offset:2px; }
+.bg-ink :focus-visible,.bg-teal :focus-visible{ outline-color:var(--bone); }
+.skip-link{ position:absolute; left:-9999px; top:0; z-index:9999; background:var(--ink);
+            color:var(--bone); padding:10px 16px; }
+.skip-link:focus{ left:8px; top:8px; }
+
+/* lenis */
+html.lenis,html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-stopped{ overflow:hidden; }
+
+/* ---------- type helpers ---------- */
+.display{ font-family:var(--display); font-weight:400; line-height:.92; letter-spacing:.5px;
+          text-transform:uppercase; }
+.anton{ font-family:var(--anton); text-transform:uppercase; letter-spacing:.01em; line-height:.95; }
+.marker{ font-family:var(--marker); }
+.script{ font-family:var(--script); }
+.eyebrow{ font-family:var(--body); font-weight:700; text-transform:uppercase;
+          letter-spacing:.28em; font-size:clamp(10px,.86vw,12px); }
+.lead{ font-size:clamp(17px,1.5vw,22px); line-height:1.5; }
+.t-terra{ color:var(--terra); } .t-bone{ color:var(--bone); } .t-ink{ color:var(--ink); }
+.t-clay{ color:var(--clay); } .t-teal{ color:var(--teal); }
+/* small/eyebrow terra fails contrast on light → bump to clay (large display .t-terra is fine) */
+.eyebrow.t-terra, .pill.t-terra, small.t-terra{ color:var(--clay); }
+
+h1,h2,h3{ font-family:var(--display); font-weight:400; text-transform:uppercase; line-height:.92; }
+.h-xl{ font-family:var(--display); font-size:clamp(44px,9vw,140px); line-height:.86; text-transform:uppercase; }
+.h-lg{ font-family:var(--display); font-size:clamp(34px,6vw,84px); line-height:.9; text-transform:uppercase; }
+.h-md{ font-family:var(--display); font-size:clamp(26px,3.4vw,46px); line-height:.94; text-transform:uppercase; }
+
+/* ---------- layout ---------- */
+.container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gut); }
+.section{ padding-block:var(--sect); position:relative; }
+/* perf: skip painting + pause animations for off-screen sections (huge scroll win on long pages).
+   Hero/nav are excluded (not .section). 'auto' intrinsic size remembers real height → no jump. */
+@supports (content-visibility:auto){
+  .section, .mq, .ft{ content-visibility:auto; contain-intrinsic-size:auto 880px; }
+}
+.bg-ink{ background:var(--ink); color:var(--bone); }
+.bg-terra{ background:var(--terra); color:var(--bone); }
+.bg-bone{ background:var(--bone); color:var(--ink); }
+.bg-bone2{ background:var(--bone-2); color:var(--ink); }
+.bg-teal{ background:var(--teal); color:var(--bone); }
+.grain::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.06;
+   background-image:url("../img/tex/paper-ink.jpg"); background-size:480px; mix-blend-mode:multiply; }
+
+/* ---------- buttons ---------- */
+.btn{ position:relative; isolation:isolate; overflow:hidden;
+      display:inline-flex; align-items:center; gap:.6em; font-family:var(--body); font-weight:700;
+      text-transform:uppercase; letter-spacing:.14em; font-size:13px; padding:1.05em 1.7em;
+      border-radius:100px; border:2px solid var(--ink); transition:transform .35s var(--ease),
+      background .35s, color .35s, border-color .35s, box-shadow .35s var(--ease); will-change:transform; }
+.btn--primary{ background:var(--clay); color:var(--bone); border-color:var(--clay); }
+.btn--primary:hover{ background:#8A3019; border-color:#8A3019; }
+.btn--ink{ background:var(--ink); color:var(--bone); }
+.btn--ghost{ background:transparent; }
+.btn--ghost:hover{ background:var(--ink); color:var(--bone); }
+.btn--bone{ background:var(--bone); color:var(--ink); border-color:var(--bone); }
+.btn .arr{ transition:transform .4s var(--ease); }
+.btn:hover .arr{ transform:translateX(4px); }
+/* shine sweep — diagonal light band glides across on hover (sits above bg, under text) */
+.btn::before{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+   background:linear-gradient(110deg, transparent 18%, rgba(255,255,255,.20) 50%, transparent 82%);
+   transform:translateX(-120%); transition:transform .6s var(--ease); }
+.btn:hover{ box-shadow:0 8px 22px rgba(36,29,24,.16); }
+.btn:hover::before{ transform:translateX(120%); }
+.btn:active{ transform:translateY(1px) scale(.98); box-shadow:0 3px 10px rgba(36,29,24,.14); }
+@media (prefers-reduced-motion:reduce){ .btn::before{ display:none; } }
+
+.pill{ display:inline-flex; align-items:center; gap:.5em; padding:.5em 1em; border-radius:100px;
+       border:1.5px solid currentColor; font-family:var(--body); font-weight:700; font-size:11px;
+       letter-spacing:.18em; text-transform:uppercase;
+       transition:transform .35s var(--ease), background .35s var(--ease); }
+.pill:hover{ transform:translateY(-2px); background:color-mix(in srgb, currentColor 10%, transparent); }
+.rule{ height:2px; width:64px; background:var(--terra); border:0; }
+
+/* ---------- reveal system (JS adds .has-js to <html>; observer adds .is-in) ---------- */
+html.has-js [data-reveal]{ opacity:0; transform:translateY(28px);
+   transition:opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease),
+   clip-path .8s var(--ease); will-change:opacity,transform; }
+html.has-js [data-reveal="left"]{ transform:translateX(-40px); }
+html.has-js [data-reveal="right"]{ transform:translateX(40px); }
+html.has-js [data-reveal="up-lg"]{ transform:translateY(60px); }
+html.has-js [data-reveal="scale"]{ transform:scale(.92); }
+html.has-js [data-reveal="scale-up"]{ transform:scale(.86) translateY(34px); }
+html.has-js [data-reveal="fade"]{ transform:none; }
+html.has-js [data-reveal="blur"]{ transform:translateY(20px); filter:blur(14px); }
+html.has-js [data-reveal="rotate"]{ transform:rotate(-4deg) translateY(34px); transform-origin:left bottom; }
+/* clip wipes: keep residual area (≥45%) so IntersectionObserver still fires —
+   a full inset(0 100% 0 0) zeroes the IO rect in Chromium and the reveal never triggers.
+   opacity (from base) + clip together give the wipe-in feel. */
+html.has-js [data-reveal="clip"]{ transform:none; clip-path:inset(0 55% 0 0); }
+html.has-js [data-reveal="clip-up"]{ transform:none; clip-path:inset(55% 0 0 0); }
+html.has-js [data-reveal].is-in{ opacity:1; transform:none; filter:none; clip-path:inset(0 0 0 0); }
+
+/* split text: line-mask reveal of each word/char */
+.split-ready{ }
+.split-u{ display:inline-block; overflow:hidden; vertical-align:top; }
+.split-i{ display:inline-block; transform:translateY(108%); opacity:0;
+   transition:transform .72s var(--ease), opacity .72s var(--ease); will-change:transform; }
+[data-split].is-in .split-i{ transform:translateY(0); opacity:1; }
+html:not(.has-js) .split-i, html.is-static .split-i{ transform:none !important; opacity:1 !important; }
+
+/* static mode for screenshots: index.html?static shows everything immediately */
+html.is-static [data-reveal]{ opacity:1 !important; transform:none !important; filter:none !important; clip-path:none !important; transition:none !important; }
+@media (prefers-reduced-motion:reduce){
+  html.has-js [data-reveal]{ opacity:1 !important; transform:none !important; filter:none !important; clip-path:none !important; transition:none; }
+  .split-i{ transform:none !important; opacity:1 !important; transition:none !important; }
+}
+
+/* ---------- marquee ---------- */
+.marquee{ overflow:hidden; white-space:nowrap; }
+.marquee__track{ display:inline-flex; gap:.6em; will-change:transform; }
+
+/* ---------- helpers ---------- */
+.grid{ display:grid; gap:clamp(16px,2.4vw,34px); }
+.flex{ display:flex; } .center{ align-items:center; } .between{ justify-content:space-between; }
+.wrap{ flex-wrap:wrap; } .gap{ gap:clamp(12px,1.6vw,24px); }
+.stack > * + *{ margin-top:1em; }
+.tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+.muted{ color:var(--ink-70); } .muted-bone{ color:var(--bone-70); }
+.maxch{ max-width:54ch; } .ta-c{ text-align:center; } .mx-auto{ margin-inline:auto; }
+@media (max-width:760px){ :root{ --sect:clamp(56px,16vw,90px); } }
+
+/* ---------- mobile WhatsApp FAB (≤860px only) ---------- */
+.wa-fab{ position:fixed; right:16px; bottom:16px; z-index:900; width:56px; height:56px;
+         border-radius:50%; background:#25D366; color:#fff; display:none;
+         box-shadow:0 6px 18px rgba(0,0,0,.28); }
+.wa-fab svg{ width:30px; height:30px; fill:#fff; }
+@media (max-width:860px){ .wa-fab{ display:flex; align-items:center; justify-content:center; } }
+
+/* ---------- global interaction polish ---------- */
+/* smooth colour/opacity transitions on every link */
+a{ transition:color .3s var(--ease), opacity .3s var(--ease); }
+
+/* reusable underline-wipe hover (left→right) — opt-in via .u-wipe */
+.u-wipe{ background-image:linear-gradient(currentColor,currentColor);
+   background-size:0% 1.5px; background-position:0 100%; background-repeat:no-repeat;
+   transition:background-size .4s var(--ease); }
+.u-wipe:hover,.u-wipe:focus-visible{ background-size:100% 1.5px; }
+@media (prefers-reduced-motion:reduce){ .u-wipe{ transition:none; } }
+
+/* ---------- top reading-progress bar (scroll-driven, progressive enhancement) ---------- */
+.progress-bar{ display:none; }
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .progress-bar{ display:block; position:fixed; left:0; top:0; height:3px; width:100%; z-index:9999;
+       background:var(--terra); transform-origin:0 50%; transform:scaleX(0); pointer-events:none;
+       animation:tt-progress linear both; animation-timeline:scroll(root); }
+    @keyframes tt-progress{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+  }
+}

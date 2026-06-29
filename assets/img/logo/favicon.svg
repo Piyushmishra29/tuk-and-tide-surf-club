@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Tuk &amp; Tide">
+  <rect width="64" height="64" rx="14" fill="#C24A2C"/>
+  <path d="M6 42c4 0 4-5 8-5s4 5 8 5 4-5 8-5 4 5 8 5 4-5 8-5 4 5 8 5"
+        fill="none" stroke="#241D18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="29" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="26" fill="#241D18" letter-spacing="-1">T&amp;T</text>
+</svg>

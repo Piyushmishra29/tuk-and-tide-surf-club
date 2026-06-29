@@ -1,0 +1,255 @@
+<section id="book" class="section bg-ink grain">
+<style>
+  /* ============ BOOKING / CONTACT — prefixed .bk-* ============ */
+  .bk-head{ max-width:62ch; }
+  .bk-head .rule{ margin:18px 0 22px; }
+  .bk-sub{ color:var(--bone-70); max-width:46ch; }
+
+  .bk-grid{ display:grid; gap:clamp(20px,2.6vw,40px); margin-top:clamp(40px,5vw,68px);
+    grid-template-columns:1.15fr .85fr; align-items:stretch; }
+  @media (max-width:920px){ .bk-grid{ grid-template-columns:1fr; } }
+
+  /* ---- shared card chrome ---- */
+  .bk-card{ background:var(--bone); color:var(--ink); border:2px solid var(--bone);
+    border-radius:var(--r-lg); padding:clamp(24px,2.6vw,40px); position:relative; }
+
+  /* ---- form ---- */
+  .bk-form{ display:flex; flex-direction:column; }
+  .bk-form-title{ font-family:var(--anton); text-transform:uppercase; letter-spacing:.01em;
+    line-height:.96; font-size:clamp(20px,1.7vw,26px); }
+  .bk-form-note{ color:var(--ink-70); font-size:13px; margin-top:6px; line-height:1.45; }
+  .bk-form-note a{ color:var(--clay); text-decoration:underline; text-underline-offset:2px; }
+
+  .bk-fields{ display:grid; gap:clamp(14px,1.6vw,20px); margin-top:clamp(20px,2.4vw,28px);
+    grid-template-columns:1fr 1fr; }
+  .bk-field{ display:flex; flex-direction:column; gap:7px; }
+  .bk-field--full{ grid-column:1 / -1; }
+  /* focus micro-interaction — label + accent bar lift, terra accent */
+  .bk-label{ transition:color .3s var(--ease), transform .3s var(--ease); }
+  .bk-field:focus-within .bk-label{ color:var(--terra); transform:translateY(-1px); }
+  @media (max-width:520px){ .bk-fields{ grid-template-columns:1fr; }
+    .bk-field{ grid-column:1 / -1; } }
+
+  .bk-label{ font-family:var(--body); font-weight:700; text-transform:uppercase;
+    letter-spacing:.16em; font-size:11px; color:var(--ink); }
+
+  /* font-size:16px on inputs/select prevents iOS focus-zoom */
+  .bk-input{ font-family:var(--body); font-size:16px; color:var(--ink);
+    background:var(--bone-2); border:1.6px solid var(--ink); border-radius:12px;
+    padding:.72em .9em; width:100%; line-height:1.35; appearance:none; -webkit-appearance:none;
+    transition:border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease); }
+  .bk-input::placeholder{ color:var(--ink-45); }
+  .bk-input:hover{ background:#efe3d0; }
+  .bk-input:focus{ outline:none; border-color:var(--terra); background:var(--bone);
+    box-shadow:0 0 0 3px rgba(194,74,44,.20); }
+  textarea.bk-input{ resize:vertical; min-height:104px; font-size:16px; }
+
+  .bk-select-wrap{ position:relative; }
+  select.bk-input{ padding-right:2.4em; cursor:pointer; font-size:16px; }
+  .bk-select-wrap::after{ content:""; position:absolute; right:1em; top:50%;
+    width:9px; height:9px; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink);
+    transform:translateY(-70%) rotate(45deg); pointer-events:none; }
+
+  .bk-submit{ margin-top:clamp(20px,2.4vw,26px); width:100%; justify-content:center;
+    transition:filter .25s var(--ease), box-shadow .25s var(--ease); }
+  /* submit hover/press feedback + arrow nudge */
+  .bk-submit:hover{ filter:brightness(1.04); box-shadow:0 9px 24px rgba(194,74,44,.28); }
+  .bk-submit:active{ filter:brightness(.96); }
+  .bk-submit .arr, .bk-wa .arr{ display:inline-block; transition:transform .3s var(--ease); }
+  .bk-submit:hover .arr, .bk-wa:hover .arr{ transform:translateX(5px); }
+  .bk-form-foot{ margin-top:14px; font-size:12px; color:var(--ink-70); display:flex;
+    align-items:center; gap:.5em; }
+  .bk-form-foot::before{ content:""; flex:none; width:8px; height:8px; border-radius:50%;
+    background:var(--teal); box-shadow:0 0 0 3px rgba(47,93,87,.22); }
+
+  /* ---- contact panel ---- */
+  .bk-panel{ display:flex; flex-direction:column;
+    background:linear-gradient(180deg, var(--terra), var(--clay)); color:var(--bone);
+    border:2px solid var(--terra); border-radius:var(--r-lg);
+    padding:clamp(24px,2.6vw,38px); position:relative; overflow:hidden; }
+  .bk-panel::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.10;
+    background-image:url("assets/img/tex/paper-ink.jpg"); background-size:420px; mix-blend-mode:multiply; }
+  .bk-panel > *{ position:relative; z-index:1; }
+
+  .bk-panel-eyebrow{ font-family:var(--body); font-weight:700; text-transform:uppercase;
+    letter-spacing:.22em; font-size:11px; color:var(--bone-70); }
+  .bk-panel-title{ font-family:var(--anton); text-transform:uppercase; letter-spacing:.01em;
+    line-height:.94; font-size:clamp(26px,2.4vw,38px); margin:8px 0 6px; }
+  .bk-panel-copy{ color:rgba(239,227,208,.86); font-size:14.5px; line-height:1.5; max-width:34ch; }
+
+  .bk-wa{ width:100%; justify-content:center; margin:clamp(20px,2.4vw,26px) 0 6px; }
+  .bk-wa.btn--bone:hover{ background:var(--ink); color:var(--bone); border-color:var(--ink); }
+
+  .bk-contacts{ list-style:none; margin:clamp(18px,2.2vw,24px) 0 0; padding:0;
+    border-top:1.5px dashed var(--bone-70); }
+  .bk-contacts li{ display:flex; align-items:center; gap:.7em; padding:11px 0;
+    border-bottom:1.5px dashed var(--bone-70); font-size:14.5px; }
+  .bk-contacts li b{ font-family:var(--body); font-weight:700; text-transform:uppercase;
+    letter-spacing:.14em; font-size:10.5px; color:var(--bone-70); flex:none; width:88px; }
+  .bk-contacts a{ text-decoration:none; }
+  .bk-contacts a:hover{ text-decoration:underline; text-underline-offset:2px; }
+
+  .bk-meta{ margin-top:auto; padding-top:clamp(20px,2.4vw,26px); display:flex;
+    flex-direction:column; gap:14px; }
+  .bk-hours{ display:flex; align-items:center; gap:.6em; font-size:14px; }
+  .bk-hours .bk-dot{ flex:none; width:9px; height:9px; border-radius:50%; background:var(--bone);
+    box-shadow:0 0 0 3px rgba(239,227,208,.28); animation:bk-pulse 2.4s var(--ease) infinite; }
+  @keyframes bk-pulse{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+  @media (prefers-reduced-motion:reduce){ .bk-hours .bk-dot{ animation:none; } }
+
+  /* ---- map embed ---- */
+  .bk-map{ position:relative; border-radius:14px; overflow:hidden;
+    border:1.5px solid rgba(239,227,208,.30); background:rgba(36,29,24,.22); }
+  .bk-map iframe{ display:block; width:100%; height:170px; border:0;
+    filter:saturate(.92) contrast(1.02); }
+  .bk-map-tag{ position:absolute; left:10px; bottom:10px; z-index:2; display:flex;
+    align-items:center; gap:.45em; padding:6px 11px; border-radius:999px;
+    background:rgba(36,29,24,.78); color:var(--bone); font-family:var(--body); font-weight:700;
+    text-transform:uppercase; letter-spacing:.12em; font-size:10px; text-decoration:none;
+    border:1px solid rgba(239,227,208,.25); }
+  .bk-map-tag:hover{ background:var(--ink); }
+  .bk-map-tag svg{ flex:none; width:13px; height:13px; }
+</style>
+
+  <div class="container">
+
+    <div class="bk-head" data-reveal-group>
+      <p class="eyebrow t-terra" data-reveal>Get out there</p>
+      <h2 class="h-lg t-bone" data-reveal>Book your<br>session</h2>
+      <hr class="rule" data-reveal="fade">
+      <p class="lead bk-sub" data-reveal>Fastest reply on WhatsApp — tell us your dates and we&rsquo;ll
+        sort the rest.</p>
+    </div>
+
+    <div class="bk-grid">
+
+      <!-- LEFT — enquiry form → opens WhatsApp with a pre-filled summary -->
+      <form id="bk-form" class="bk-card bk-form" data-reveal="left">
+        <h3 class="bk-form-title">Send an enquiry</h3>
+        <p class="bk-form-note">Hit send and we&rsquo;ll open WhatsApp with your details ready to go.
+          Prefer email? <a href="mailto:hello@tukandtide.lk">hello@tukandtide.lk</a>.</p>
+
+        <div class="bk-fields" data-reveal-group>
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-name">Name</label>
+            <input class="bk-input" id="bk-name" name="name" type="text"
+                   autocomplete="name" placeholder="Your name" required>
+          </div>
+
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-dates">Dates</label>
+            <input class="bk-input" id="bk-dates" name="dates" type="text"
+                   placeholder="e.g. 12–16 Aug">
+          </div>
+
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-want">I want to&hellip;</label>
+            <div class="bk-select-wrap">
+              <select class="bk-input" id="bk-want" name="interest">
+                <option>Surf lesson</option>
+                <option>Board rental</option>
+                <option>Tuk-tuk tour</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-size">Group size</label>
+            <input class="bk-input" id="bk-size" name="size" type="number" min="1"
+                   inputmode="numeric" placeholder="e.g. 2">
+          </div>
+
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-level">Level</label>
+            <div class="bk-select-wrap">
+              <select class="bk-input" id="bk-level" name="level">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bk-field" data-reveal>
+            <label class="bk-label" for="bk-email">Email <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-45);">(optional)</span></label>
+            <input class="bk-input" id="bk-email" name="email" type="email"
+                   autocomplete="email" placeholder="you@email.com">
+          </div>
+
+          <div class="bk-field bk-field--full" data-reveal>
+            <label class="bk-label" for="bk-msg">Message</label>
+            <textarea class="bk-input" id="bk-msg" name="message"
+              placeholder="Anything else we should know…"></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn--primary bk-submit" type="submit">
+          Send on WhatsApp <span class="arr">&rarr;</span></button>
+        <p class="bk-form-foot">No deposit needed — we&rsquo;ll confirm everything before you pay.</p>
+      </form>
+
+      <!-- RIGHT — contact panel -->
+      <aside class="bk-panel" data-reveal="right">
+        <p class="bk-panel-eyebrow">Quickest reply</p>
+        <h3 class="bk-panel-title">Message us<br>direct</h3>
+        <p class="bk-panel-copy">Drop your dates and what you&rsquo;re after — we usually reply
+          within the hour, dawn to dusk.</p>
+
+        <a class="btn btn--bone bk-wa" href="https://wa.me/94765550123">
+          Book on WhatsApp <span class="arr">&rarr;</span></a>
+
+        <ul class="bk-contacts">
+          <li><b>WhatsApp</b><a href="https://wa.me/94765550123">+94 76 555 0123</a></li>
+          <li><b>Instagram</b><a href="https://instagram.com/tukandtide.lk">@tukandtide.lk</a></li>
+          <li><b>Email</b><a href="mailto:hello@tukandtide.lk">hello@tukandtide.lk</a></li>
+          <li><b>Web</b><a href="https://tukandtide.lk">tukandtide.lk</a></li>
+        </ul>
+
+        <div class="bk-meta">
+          <p class="bk-hours"><span class="bk-dot"></span>
+            <span><b style="font-weight:700;letter-spacing:.06em;">Open now</b> &middot;
+              Dawn patrol 6am&ndash;6pm daily</span></p>
+
+          <div class="bk-map" data-tilt data-tilt-max="5">
+            <iframe src="https://www.google.com/maps?q=Weligama+Bay,+Sri+Lanka&output=embed"
+                    title="Map of Weligama Bay, Sri Lanka — Tuk &amp; Tide Surf Club"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a class="bk-map-tag" href="https://maps.google.com/?q=Weligama+Bay+Sri+Lanka"
+               target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/>
+                <circle cx="12" cy="10" r="2.6"/></svg>
+              Weligama Bay</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var f = document.getElementById('bk-form');
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      var name  = v('bk-name')  || 'there';
+      var dates = v('bk-dates') || 'flexible';
+      var want  = v('bk-want');
+      var size  = v('bk-size')  || 'just me';
+      var level = v('bk-level');
+      var msg   = v('bk-msg');
+      var text  = "Hi Tuk & Tide! I'm " + name +
+                  ". Dates: " + dates +
+                  ". I want: " + want +
+                  ". Group size: " + size +
+                  ". Level: " + level + ".";
+      if(msg) text += " " + msg;
+      window.open('https://wa.me/94765550123?text=' + encodeURIComponent(text), '_blank');
+    });
+  })();
+  </script>
+</section>

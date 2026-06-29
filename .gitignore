@@ -2,5 +2,7 @@ build/_*
 build/pg-*.png
 build/*.html
 build/*.output
-assets/refs/
+_design-assets/refs/
 .DS_Store
+node_modules/
+site/

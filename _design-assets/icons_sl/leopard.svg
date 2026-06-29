@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#241D18">
+  <!-- long heavy tail sweeping up-left -->
+  <path d="M16 31 C10 33 5 31 3 24 C1 19 3 13 7 11 C8 10 10 11 9.5 13.5 C7 15 6.5 19 9 24 C11 28 14 29 17 28 Z"/>
+  <!-- legs (walking, staggered, sturdy) -->
+  <path d="M19 32 h6 v17 a3 3 0 0 1 -6 0 Z"/>
+  <path d="M28 32 h6 v15 a3 3 0 0 1 -6 0 Z"/>
+  <path d="M38 32 h6 v17 a3 3 0 0 1 -6 0 Z"/>
+  <path d="M44.5 32 h5 v15 a2.5 2.5 0 0 1 -5 0 Z"/>
+  <!-- long low muscular torso -->
+  <path d="M14 28 C14 22 18 20 26 20 L44 20 C49 20 51 24 51 29 C51 34 48 36 43 36 L23 36 C18 36 14 33 14 28 Z"/>
+  <!-- head with strong muzzle -->
+  <path d="M46 25 C46 20 49 17 54 17 C58 17 61 19 62 23 C63 25 63 27 62 29 L60 31 C59 32 57 32 55 31 L50 31 C47 31 46 28 46 26 Z"/>
+  <!-- small rounded ears -->
+  <path d="M49 19 C49 14 51 13 53 14 C54 15 54 19 53 20 Z"/>
+  <path d="M55 18 C55 13 58 13 60 15 C61 16 60 19 59 20 Z"/>
+
+  <!-- carved terracotta rosette marks -->
+  <circle cx="22" cy="24" r="1.8" fill="#C24A2C"/>
+  <circle cx="29" cy="23" r="1.8" fill="#C24A2C"/>
+  <circle cx="36" cy="24" r="1.8" fill="#C24A2C"/>
+  <circle cx="43" cy="25" r="1.6" fill="#C24A2C"/>
+  <circle cx="19" cy="30" r="1.6" fill="#C24A2C"/>
+  <circle cx="26" cy="30" r="1.6" fill="#C24A2C"/>
+  <circle cx="33" cy="31" r="1.6" fill="#C24A2C"/>
+  <circle cx="40" cy="30" r="1.6" fill="#C24A2C"/>
+  <circle cx="21" cy="40" r="1.5" fill="#C24A2C"/>
+  <circle cx="30" cy="39" r="1.5" fill="#C24A2C"/>
+  <circle cx="40" cy="40" r="1.5" fill="#C24A2C"/>
+  <circle cx="46" cy="39" r="1.4" fill="#C24A2C"/>
+  <circle cx="53" cy="23" r="1.4" fill="#C24A2C"/>
+  <circle cx="10" cy="22" r="1.4" fill="#C24A2C"/>
+  <circle cx="61" cy="28" r="1.5" fill="#C24A2C"/>
+</svg>

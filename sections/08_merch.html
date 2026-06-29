@@ -1,0 +1,211 @@
+<section id="merch" class="section bg-bone2 grain">
+<style>
+  /* ===== 08 MERCH / shop-teaser — prefix .mr- ===== */
+  .mr-wrap{ position:relative; z-index:1; }
+  .mr-head{ max-width:640px; }
+  .mr-head .rule{ margin:18px 0 22px; }
+  .mr-ey{ color:var(--clay); }
+  .mr-h{ margin-top:6px; color:var(--ink); }
+  .mr-h .mr-amp{ color:var(--terra); -webkit-text-stroke:0; }
+  .mr-sub{ margin-top:18px; max-width:48ch; color:var(--ink-70); }
+
+  .mr-grid{ display:grid; grid-template-columns:1.04fr 1fr;
+            gap:clamp(22px,2.8vw,40px); align-items:stretch;
+            margin-top:clamp(40px,5vw,64px); }
+
+  /* ---- sticker pile (terracotta panel) ---- */
+  .mr-lab{ position:relative; border-radius:var(--r-lg); background:var(--terra);
+           padding:clamp(26px,3vw,42px) clamp(20px,2.6vw,36px) clamp(54px,4vw,58px);
+           overflow:hidden; box-shadow:0 24px 50px -28px rgba(36,29,24,.55); }
+  .mr-lab::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+           background:radial-gradient(120% 90% at 28% 10%, rgba(255,255,255,.18), transparent 58%); }
+  .mr-lab-top{ position:relative; display:flex; align-items:baseline; justify-content:space-between;
+           gap:14px; margin-bottom:clamp(14px,2vw,24px); }
+  .mr-lab-t{ font-family:var(--marker); font-size:clamp(15px,1.5vw,21px); color:var(--bone); }
+  .mr-lab-n{ font-family:var(--body); font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+           font-size:11px; color:rgba(239,227,208,.85); }
+
+  .mr-pile{ position:relative; display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+            gap:clamp(6px,1.4vw,18px); padding-top:8px; }
+  .mr-stk{ width:clamp(72px,9.2vw,116px); aspect-ratio:1/1; flex:0 0 auto; position:relative; }
+  /* inner carries the scatter transform + idle float so it never fights the
+     reveal engine (which forces transform:none on the outer .is-in element) */
+  .mr-stk-i{ display:block; width:100%; height:100%;
+           --rot:0deg; --ty:0px; --sc:1;
+           transform:rotate(var(--rot)) translateY(var(--ty)) scale(var(--sc));
+           transition:transform .5s var(--ease), filter .5s var(--ease);
+           filter:drop-shadow(0 8px 16px rgba(36,29,24,.4)); will-change:transform; }
+  .mr-stk-i img{ width:100%; height:100%; object-fit:contain; pointer-events:none; }
+  /* organic scatter: rotate + vertical offset + scale per child (as vars) */
+  .mr-stk:nth-child(1)  .mr-stk-i{ --rot:-9deg;  --ty:8px;   }
+  .mr-stk:nth-child(2)  .mr-stk-i{ --rot:6deg;   --ty:-12px; --sc:1.08; }
+  .mr-stk:nth-child(3)  .mr-stk-i{ --rot:-4deg;  --ty:14px;  }
+  .mr-stk:nth-child(4)  .mr-stk-i{ --rot:11deg;  --ty:-6px;  }
+  .mr-stk:nth-child(5)  .mr-stk-i{ --rot:-12deg; --ty:-2px;  --sc:1.06; }
+  .mr-stk:nth-child(6)  .mr-stk-i{ --rot:5deg;   --ty:16px;  }
+  .mr-stk:nth-child(7)  .mr-stk-i{ --rot:-7deg;  --ty:-10px; }
+  .mr-stk:nth-child(8)  .mr-stk-i{ --rot:9deg;   --ty:10px;  --sc:1.05; }
+  .mr-stk:nth-child(9)  .mr-stk-i{ --rot:-3deg;  --ty:-14px; }
+  .mr-stk:nth-child(10) .mr-stk-i{ --rot:8deg;   --ty:6px;   }
+  /* gentle idle float/rotate — keeps each sticker's base scatter, adds a sway.
+     Different delay + duration per child so the pile breathes out of phase. */
+  @media (prefers-reduced-motion:no-preference){
+    .mr-stk-i{ animation:mr-float 6s ease-in-out infinite; }
+    @keyframes mr-float{
+      0%,100%{ transform:rotate(var(--rot)) translateY(var(--ty)) scale(var(--sc)); }
+      50%{ transform:rotate(calc(var(--rot) + 3.5deg))
+                     translateY(calc(var(--ty) - 8px)) scale(calc(var(--sc) * 1.015)); }
+    }
+    .mr-stk:nth-child(1)  .mr-stk-i{ animation-duration:6.2s; animation-delay:-0.4s; }
+    .mr-stk:nth-child(2)  .mr-stk-i{ animation-duration:5.4s; animation-delay:-1.6s; }
+    .mr-stk:nth-child(3)  .mr-stk-i{ animation-duration:6.8s; animation-delay:-0.9s; }
+    .mr-stk:nth-child(4)  .mr-stk-i{ animation-duration:5.8s; animation-delay:-2.3s; }
+    .mr-stk:nth-child(5)  .mr-stk-i{ animation-duration:6.5s; animation-delay:-1.1s; }
+    .mr-stk:nth-child(6)  .mr-stk-i{ animation-duration:5.6s; animation-delay:-3.0s; }
+    .mr-stk:nth-child(7)  .mr-stk-i{ animation-duration:6.9s; animation-delay:-0.6s; }
+    .mr-stk:nth-child(8)  .mr-stk-i{ animation-duration:5.2s; animation-delay:-2.7s; }
+    .mr-stk:nth-child(9)  .mr-stk-i{ animation-duration:6.4s; animation-delay:-1.9s; }
+    .mr-stk:nth-child(10) .mr-stk-i{ animation-duration:5.9s; animation-delay:-0.2s; }
+  }
+  /* hover: straighten, lift, scale up — pause the float so it sits flat */
+  .mr-stk:hover{ z-index:5; }
+  .mr-stk:hover .mr-stk-i{ animation-play-state:paused;
+                 transform:rotate(0deg) translateY(-6px) scale(1.16);
+                 filter:drop-shadow(0 14px 24px rgba(36,29,24,.5)); }
+  .mr-lab-cap{ position:absolute; left:0; right:0; bottom:clamp(16px,1.8vw,22px); text-align:center;
+           font-family:var(--script); font-size:clamp(14px,1.4vw,18px); color:var(--bone); }
+
+  /* ---- product tiles ---- */
+  .mr-shop{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.6vw,18px); }
+  .mr-tile{ display:flex; flex-direction:column; overflow:hidden;
+            border:1.5px solid rgba(36,29,24,.13); border-radius:var(--r); background:var(--bone);
+            box-shadow:0 14px 30px -22px rgba(36,29,24,.5);
+            transition:border-color .4s var(--ease), transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .mr-tile:hover{ border-color:rgba(194,74,44,.55); transform:translateY(-4px);
+            box-shadow:0 24px 40px -24px rgba(36,29,24,.6); }
+  .mr-shot{ position:relative; width:100%; aspect-ratio:4/5; overflow:hidden; background:var(--sand); }
+  .mr-shot img{ width:100%; height:100%; object-fit:cover;
+            transition:transform .7s var(--ease); }
+  .mr-tile:hover .mr-shot img{ transform:scale(1.07); }
+  .mr-info{ padding:clamp(13px,1.4vw,17px) clamp(15px,1.5vw,18px) clamp(15px,1.6vw,19px);
+            display:flex; flex-direction:column; gap:6px; }
+  .mr-name{ font-family:var(--anton); font-size:clamp(19px,1.8vw,25px); letter-spacing:.01em;
+            line-height:.98; color:var(--ink); text-transform:uppercase; }
+  .mr-desc{ font-size:12.5px; line-height:1.4; color:var(--ink-70); }
+  .mr-price{ margin-top:2px; display:inline-flex; align-items:baseline; gap:5px;
+            font-family:var(--body); font-weight:700; }
+  .mr-price .mr-from{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-45); }
+  .mr-price .mr-amt{ font-family:var(--anton); font-size:clamp(18px,1.7vw,23px); color:var(--terra);
+            letter-spacing:.01em; display:inline-block; transform-origin:left bottom;
+            transition:transform .4s var(--ease), color .4s var(--ease); }
+  .mr-tile:hover .mr-amt{ transform:scale(1.1); color:var(--clay); }
+
+  /* wide tile (cap) spans both columns, horizontal */
+  .mr-tile--wide{ grid-column:1 / -1; flex-direction:row; align-items:stretch; }
+  .mr-tile--wide .mr-shot{ width:clamp(150px,38%,230px); aspect-ratio:auto; flex:0 0 auto; }
+  .mr-tile--wide .mr-info{ flex:1; justify-content:center; gap:7px; }
+
+  /* ---- price strip + CTA ---- */
+  .mr-foot{ margin-top:clamp(26px,3vw,40px); display:flex; flex-wrap:wrap; align-items:center;
+            justify-content:space-between; gap:clamp(18px,2.4vw,34px);
+            border-top:1.5px solid rgba(36,29,24,.14); padding-top:clamp(22px,2.4vw,30px); }
+  .mr-strip{ display:flex; flex-wrap:wrap; align-items:center; gap:clamp(10px,1.4vw,18px); }
+  .mr-row-i{ display:inline-flex; align-items:baseline; gap:7px; }
+  .mr-row-i b{ font-family:var(--anton); font-weight:400; font-size:clamp(15px,1.4vw,19px);
+            letter-spacing:.02em; text-transform:uppercase; color:var(--ink); }
+  .mr-row-i s{ text-decoration:none; font-family:var(--anton); font-size:clamp(15px,1.4vw,19px);
+            color:var(--terra); }
+  .mr-dot{ width:5px; height:5px; border-radius:50%; background:rgba(36,29,24,.3); }
+  .mr-cta{ display:flex; align-items:center; gap:16px; }
+  .mr-go{ font-family:var(--marker); font-size:14px; color:var(--clay); white-space:nowrap; }
+
+  @media (max-width:900px){
+    .mr-grid{ grid-template-columns:1fr; gap:24px; }
+    .mr-stk{ width:clamp(78px,20vw,108px); }
+  }
+  @media (max-width:560px){
+    .mr-shop{ grid-template-columns:1fr; }
+    .mr-tile--wide{ flex-direction:row; }
+    .mr-tile--wide .mr-shot{ width:42%; }
+    .mr-foot{ flex-direction:column; align-items:flex-start; gap:22px; }
+    .mr-cta{ flex-direction:column; align-items:flex-start; gap:12px; }
+  }
+</style>
+
+  <div class="container mr-wrap">
+    <div class="mr-head" data-reveal-group>
+      <span class="eyebrow mr-ey" data-split="words">Take the club home</span>
+      <h2 class="h-lg mr-h" data-reveal>The <span class="mr-amp">Shop</span></h2>
+      <hr class="rule" data-reveal>
+      <p class="lead mr-sub" data-reveal>Stickers, tees, totes &amp; caps — salt-cured goods from the lane.</p>
+    </div>
+
+    <div class="mr-grid">
+      <!-- sticker pile -->
+      <div class="mr-lab" data-reveal="scale">
+        <div class="mr-lab-top">
+          <span class="mr-lab-t">Peel &amp; stick</span>
+          <span class="mr-lab-n">~20 die-cut designs</span>
+        </div>
+        <div class="mr-pile" data-reveal-group>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/01_stamp_tuk.png" alt="Tuk-tuk stamp sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/05_sun_seal.png" alt="Sun seal sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/02_stamp_wave.png" alt="Wave stamp sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/17_stay_salty.png" alt="Stay Salty sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/04_groovy_srr.png" alt="Groovy Surf Ride Repeat sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/10_wordmark.png" alt="Tuk &amp; Tide wordmark sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/16_sunset.png" alt="Sunset sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/19_weligama.png" alt="Weligama sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/11_shaka.png" alt="Shaka sticker" loading="lazy"></span></span>
+          <span class="mr-stk" data-reveal="scale-up"><span class="mr-stk-i"><img src="assets/img/stickers/09_hibiscus.png" alt="Hibiscus sticker" loading="lazy"></span></span>
+        </div>
+        <span class="mr-lab-cap">slap one on your board</span>
+      </div>
+
+      <!-- product tiles -->
+      <div class="mr-shop" data-reveal-group>
+        <article class="mr-tile" data-reveal="scale-up" data-tilt data-tilt-max="6">
+          <div class="mr-shot"><img src="assets/img/mockups/02_tee.png" alt="Tuk &amp; Tide club tee" loading="lazy"></div>
+          <div class="mr-info">
+            <h3 class="mr-name">Club Tee</h3>
+            <p class="mr-desc">Soft cotton, woodcut crest. Sun-faded forever.</p>
+            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$24</span></p>
+          </div>
+        </article>
+        <article class="mr-tile" data-reveal="scale-up" data-tilt data-tilt-max="6">
+          <div class="mr-shot"><img src="assets/img/mockups/04_tote.png" alt="Tuk &amp; Tide boat tote" loading="lazy"></div>
+          <div class="mr-info">
+            <h3 class="mr-name">Boat Tote</h3>
+            <p class="mr-desc">Heavy canvas — towels, fruit &amp; wax all day.</p>
+            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$18</span></p>
+          </div>
+        </article>
+        <article class="mr-tile mr-tile--wide" data-reveal="scale-up" data-tilt data-tilt-max="5">
+          <div class="mr-shot"><img src="assets/img/mockups/01_cap.png" alt="Tuk &amp; Tide lane cap" loading="lazy"></div>
+          <div class="mr-info">
+            <h3 class="mr-name">Lane Cap</h3>
+            <p class="mr-desc">Enamel pin, curved brim. Curb-side ready.</p>
+            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$28</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- price strip + CTA -->
+    <div class="mr-foot">
+      <div class="mr-strip" data-reveal>
+        <span class="mr-row-i"><b>Sticker pack</b><s>$6</s></span>
+        <span class="mr-dot"></span>
+        <span class="mr-row-i"><b>Tee</b><s>$24</s></span>
+        <span class="mr-dot"></span>
+        <span class="mr-row-i"><b>Tote</b><s>$18</s></span>
+      </div>
+      <div class="mr-cta" data-reveal>
+        <span class="mr-go">in stock &amp; ready to ship —</span>
+        <a class="btn btn--primary" href="https://wa.me/94765550123" target="_blank" rel="noopener">
+          DM to buy <span class="arr">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

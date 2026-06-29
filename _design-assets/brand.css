@@ -1,0 +1,79 @@
+/* ============================================================
+   TUK & TIDE SURF CLUB — Heritage Brand Stylesheet
+   Charcoal-ink-on-terracotta vintage woodcut / screenprint system.
+   Shared by every page partial. WeasyPrint-safe (no inset:,
+   display:contents, mix-blend-mode, text-shadow, filter:drop-shadow).
+   ============================================================ */
+
+@font-face { font-family:'Ultra';   src:url('fonts/Ultra.ttf'); }
+@font-face { font-family:'Marker';  src:url('fonts/PermanentMarker.ttf'); }
+@font-face { font-family:'DM Sans'; src:url('fonts/DMSans.ttf'); font-weight:400; }
+@font-face { font-family:'DM Sans'; src:url('fonts/DMSans.ttf'); font-weight:700; }
+
+:root{
+  --ink:#241D18;        /* charcoal — primary ink            */
+  --terra:#C24A2C;      /* terracotta — primary background    */
+  --bone:#EFE3D0;       /* bone / sand — light background     */
+  --clay:#9E3A20;       /* deep clay — dark terracotta accent */
+  --teal:#2F5D57;       /* surf teal — sparing accent         */
+  --ink-60:#6a5a4e;     /* muted ink for secondary text       */
+
+  --display:'Ultra', serif;     /* fat wood-type headlines */
+  --marker:'Marker', cursive;   /* hand-brushed accents    */
+  --body:'DM Sans', sans-serif; /* clean body / labels     */
+}
+
+/* ---- Page system (A4 portrait) ---- */
+@page { size:A4; margin:0; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ font-family:var(--body); color:var(--ink); }
+
+.page{
+  position:relative; width:210mm; height:297mm; overflow:hidden;
+  background:var(--terra) url('tex/paper-terra.jpg') center/cover no-repeat; color:var(--ink);
+  page-break-after:always; padding:20mm 18mm;
+}
+.page:last-child{ page-break-after:auto; }
+.page.bone{ background:var(--bone) url('tex/paper-bone.jpg') center/cover no-repeat; }
+.page.ink{ background:var(--ink) url('tex/paper-ink.jpg') center/cover no-repeat; color:var(--bone); }
+.page.bleed{ padding:0; }
+
+/* ---- Type helpers ---- */
+.kicker{ font-family:var(--body); font-weight:700; letter-spacing:.34em;
+         text-transform:uppercase; font-size:9.5pt; color:var(--ink); }
+.page.ink .kicker{ color:var(--terra); }
+h1.disp{ font-family:var(--display); font-size:40pt; line-height:0.98;
+         color:var(--ink); margin:3mm 0 5mm; }
+.page.ink h1.disp{ color:var(--bone); }
+h2.sub{ font-family:var(--display); font-size:18pt; color:var(--ink); margin-bottom:3mm; }
+.marker{ font-family:var(--marker); color:var(--ink); }
+p{ font-family:var(--body); font-size:10.5pt; line-height:1.6; max-width:150mm; color:var(--ink); }
+.page.ink p{ color:var(--bone); }
+.lead{ font-size:13pt; line-height:1.5; }
+.small{ font-size:8.5pt; color:var(--ink-60); }
+
+/* ---- Reusable bits ---- */
+.rule{ height:3px; width:48mm; background:var(--ink); border-radius:2px; margin:4mm 0; }
+.page.ink .rule{ background:var(--terra); }
+.chip{ display:inline-block; padding:2mm 4mm; border:2px solid var(--ink); border-radius:30px;
+       font-family:var(--body); font-weight:700; font-size:9pt; text-transform:uppercase;
+       letter-spacing:.08em; color:var(--ink); }
+.panel{ border:2px solid var(--ink); border-radius:4mm; padding:7mm; }
+.panel.solid{ background:var(--ink); color:var(--bone); border:none; }
+
+/* ---- Footer page mark ---- */
+.pgmark{ position:absolute; bottom:11mm; left:18mm; right:18mm;
+         display:flex; justify-content:space-between;
+         font-family:var(--body); font-weight:700; font-size:7.5pt; letter-spacing:.16em;
+         text-transform:uppercase; color:var(--ink); }
+.page.ink .pgmark{ color:var(--terra); }
+
+/* ---- Brand asset paths (relative to build/book.html):
+   ../assets/brand/logo-terracotta.png   full lockup on terracotta
+   ../assets/brand/logo-reversed.png     full lockup on charcoal (bone ink)
+   ../assets/brand/logo-terracotta-worn.png  worn screenprint version
+   ../assets/brand/mark-tuktuk-C24A2C.png  tuk-tuk mark on terracotta
+   ../assets/brand/mark-tuktuk-EFE3D0.png  tuk-tuk mark on bone
+   ../assets/brand/mark-wave-C24A2C.png    wave mark on terracotta
+   ../assets/brand/mark-wave-EFE3D0.png    wave mark on bone
+---- */

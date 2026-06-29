@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#241D18">
+  <!-- water ripples (terracotta accents) -->
+  <path d="M4 51 q5 -3 10 0 t10 0 t10 0 t10 0 t10 0" stroke="#C24A2C" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M8 56 q5 -3 10 0 t10 0 t10 0 t10 0" stroke="#C24A2C" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <!-- tall wooden pole / stilt rising from the water -->
+  <rect x="24.3" y="7" width="4" height="52" rx="1.2"/>
+  <!-- perch crossbar / foot rest -->
+  <rect x="18" y="30" width="22" height="3" rx="1.5"/>
+  <!-- legs hanging over the crossbar -->
+  <path d="M27 27 q9 1 11 6 l-3 1 q-4 -4 -10 -3 z"/>
+  <rect x="34.6" y="32" width="3.4" height="11" rx="1.5"/>
+  <!-- torso, leaning forward over the water -->
+  <path d="M21 17 q-2 8 4 15 l5 -1 q-3 -7 -1 -14 q-4 -2.5 -8 0 z"/>
+  <!-- head -->
+  <circle cx="23.5" cy="11.5" r="4.6"/>
+  <!-- arm reaching out to grip the rod -->
+  <path d="M26 19 q8 -1 15 2 l-1.4 3.2 q-7 -3 -14 -1.6 z"/>
+  <!-- fishing rod (charcoal), gripped at the hand, tip raised -->
+  <path d="M39 20.2 L41 21.8 L54 4.8 L52 3.2 Z"/>
+  <!-- fishing line (terracotta) from rod tip down into the water -->
+  <path d="M53 4.5 L53 50" stroke="#C24A2C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</svg>

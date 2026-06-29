@@ -1,0 +1,137 @@
+<section id="ribbon" class="mq bg-terra grain">
+  <style>
+    /* ============ MARQUEE BEAT — prefixed .mq-* ============ */
+    .mq{ padding-block:clamp(26px,5.2vw,64px); overflow:hidden; }
+    .mq .mq-band{
+      position:relative;
+      /* slight, confident tilt — band overhangs so edges never gap */
+      width:108%;
+      margin-left:-4%;
+      transform:rotate(-2.4deg);
+      border-block:3px solid var(--bone);
+      padding-block:clamp(14px,2.4vw,30px);
+    }
+    /* engine scrolls .marquee__track; keep items vertically centred */
+    .mq .marquee__track{ align-items:center; gap:clamp(.28em,1.4vw,.6em); }
+
+    .mq-item{
+      display:inline-flex; align-items:center;
+      font-family:var(--display); font-weight:400;
+      text-transform:uppercase; letter-spacing:.5px; line-height:1;
+      font-size:clamp(40px,9vw,128px);
+      color:var(--bone);
+      /* faint screenprint depth */
+      text-shadow:0 2px 0 rgba(36,29,24,.16);
+      white-space:nowrap;
+    }
+    /* hollow accent on the middle word for rhythm */
+    .mq-item .mq-hollow{
+      color:transparent;
+      -webkit-text-stroke:clamp(1.4px,.32vw,3px) var(--bone);
+    }
+    .mq-dot{ padding-inline:.18em; opacity:.78; }
+
+    .mq-seal{
+      flex:none;
+      height:clamp(38px,7.2vw,96px); width:auto;
+      margin-inline:clamp(.34em,1.4vw,.7em);
+      filter:drop-shadow(0 3px 6px rgba(36,29,24,.22));
+      transform:translateY(2%);
+    }
+    /* slow continuous spin on the separator seal as it passes */
+    @media (prefers-reduced-motion:no-preference){
+      .mq-seal{ animation:mq-spin 18s linear infinite; transform-origin:50% 52%; }
+    }
+    @keyframes mq-spin{
+      from{ transform:translateY(2%) rotate(0deg); }
+      to{ transform:translateY(2%) rotate(360deg); }
+    }
+
+    /* word hover accent — colour warm + slight pop (fine-pointer only) */
+    @media (hover:hover) and (pointer:fine){
+      .mq-item{ transition:color .35s var(--ease), transform .35s var(--ease); }
+      .mq-item:hover{ color:var(--sun,#f2c14e); transform:scale(1.035); }
+      .mq-item:hover .mq-hollow{ -webkit-text-stroke-color:var(--sun,#f2c14e); }
+    }
+
+    /* second, thinner counter-running line for layered depth */
+    .mq-band--mini{
+      margin-top:clamp(8px,1.2vw,16px);
+      padding-block:clamp(6px,1vw,12px);
+      border-block-width:2px;
+      opacity:.92;
+    }
+    .mq-band--mini .mq-item{
+      font-size:clamp(15px,2.6vw,30px);
+      letter-spacing:1.5px;
+      text-shadow:none;
+    }
+    .mq-band--mini .mq-dot{ opacity:.6; }
+
+    /* CSS fallback loop (JS engine overrides via translateX). 8 identical
+       items → translating by -50% (=4 items) lands seamlessly. */
+    .mq .marquee__track{ animation:mq-scroll 26s linear infinite; }
+    html.has-js .mq .marquee__track{ animation:none; }
+    @keyframes mq-scroll{
+      from{ transform:translate3d(0,0,0); }
+      to{ transform:translate3d(-50%,0,0); }
+    }
+    @media (prefers-reduced-motion:reduce){
+      .mq .marquee__track{ animation:none; }
+    }
+    @media (max-width:760px){
+      .mq .mq-band{ transform:rotate(-2deg); border-width:2px; }
+      .mq-item{ text-shadow:0 1.5px 0 rgba(36,29,24,.16); }
+    }
+  </style>
+
+  <!-- whole stack tilts a touch with scroll (small/tasteful) -->
+  <div class="mq-stack" data-scrub-rotate="2.4">
+    <div class="mq-band" data-reveal="scale">
+      <div class="marquee" data-marquee>
+        <div class="marquee__track">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+          <span class="mq-item">Surf<span class="mq-dot">·</span><span class="mq-hollow">Ride</span><span class="mq-dot">·</span>Repeat</span>
+          <img class="mq-seal" src="assets/img/stickers/05_sun_seal.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </div>
+
+    <!-- second, thinner line running the opposite way for layered motion -->
+    <div class="mq-band mq-band--mini" data-reveal="fade">
+      <div class="marquee" data-marquee="0.3" data-direction="right">
+        <div class="marquee__track">
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+          <span class="mq-item">Salt<span class="mq-dot">·</span>Sun<span class="mq-dot">·</span><span class="mq-hollow">Tide</span><span class="mq-dot">·</span>Tuk</span>
+          <span class="mq-dot">✦</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

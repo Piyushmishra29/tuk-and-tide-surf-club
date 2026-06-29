@@ -1,0 +1,182 @@
+<section id="spots" class="section bg-ink grain">
+<style>
+  .sp-wrap{ display:grid; grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);
+    gap:clamp(32px,5vw,80px); align-items:start; }
+  .sp-head{ margin-bottom:clamp(36px,5vw,64px); max-width:62ch; }
+  .sp-eyebrow{ color:var(--terra); }
+  .sp-title{ margin:.22em 0 .4em; color:var(--bone); }
+  .sp-intro{ color:var(--bone-70); max-width:46ch; }
+
+  /* ---- map panel (left) ---- */
+  .sp-mapwrap{ position:sticky; top:clamp(24px,8vh,90px); }
+  .sp-frame{ position:relative; padding:clamp(12px,1.4vw,18px); background:var(--bone-2);
+    border:2px solid var(--ink); border-radius:var(--r);
+    box-shadow:0 28px 60px -28px rgba(0,0,0,.7); }
+  .sp-frame::after{ content:""; position:absolute; inset:8px; border:1px solid var(--ink-45);
+    border-radius:calc(var(--r) - 6px); pointer-events:none; }
+  .sp-mapinner{ overflow:hidden; border-radius:calc(var(--r) - 8px); }
+  .sp-map{ width:100%; height:clamp(440px,52vw,600px); object-fit:cover; object-position:center;
+    display:block; border-radius:calc(var(--r) - 8px); filter:saturate(.95) contrast(1.02);
+    transition:filter .6s var(--ease); }
+  .sp-frame{ transition:box-shadow .5s var(--ease); }
+  .sp-frame:hover{ box-shadow:0 36px 70px -26px rgba(0,0,0,.78); }
+  .sp-frame:hover .sp-map{ filter:saturate(1.05) contrast(1.04); }
+  @media (max-width:860px){ .sp-map{ height:clamp(420px,70vw,520px); } }
+  .sp-cap{ position:absolute; left:50%; bottom:-15px; transform:translateX(-50%);
+    background:var(--terra); color:var(--bone); padding:.55em 1.2em; border-radius:100px;
+    border:2px solid var(--ink); font-family:var(--body); font-weight:700; font-size:11px;
+    letter-spacing:.18em; text-transform:uppercase; white-space:nowrap;
+    box-shadow:0 8px 22px -10px rgba(0,0,0,.6); }
+  .sp-tape{ position:absolute; top:-16px; left:24px; font-family:var(--marker); color:var(--terra);
+    font-size:clamp(15px,1.5vw,19px); transform:rotate(-4deg); }
+
+  /* ---- breaks list (right) ---- */
+  .sp-list{ list-style:none; }
+  .sp-row{ display:grid; grid-template-columns:auto 1fr; column-gap:clamp(16px,2vw,28px);
+    align-items:baseline; padding:clamp(20px,2.6vw,30px) 0;
+    border-top:1px solid rgba(239,227,208,.16); }
+  .sp-row:first-child{ border-top:0; }
+  .sp-num{ font-family:var(--anton); font-size:clamp(26px,3.2vw,40px); color:var(--terra);
+    line-height:1; letter-spacing:.01em; }
+  .sp-body{ min-width:0; }
+  .sp-topline{ display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px; margin-bottom:.45em; }
+  .sp-name{ font-family:var(--display); text-transform:uppercase; color:var(--bone);
+    font-size:clamp(22px,2.7vw,38px); line-height:.95; letter-spacing:.5px; }
+  .sp-desc{ color:var(--bone-70); font-size:clamp(14px,1.05vw,16px); max-width:42ch; }
+  .sp-desc b{ color:var(--bone); font-weight:700; }
+
+  .sp-pill{ display:inline-flex; align-items:center; gap:.5em; padding:.42em .9em; border-radius:100px;
+    font-family:var(--body); font-weight:700; font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; white-space:nowrap; border:1.5px solid currentColor; }
+  .sp-pill::before{ content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .sp-pill--beg{ color:var(--teal); }
+  .sp-pill--all{ color:var(--sand); }
+  .sp-pill--adv{ color:var(--terra); }
+
+  .sp-row{ transition:transform .5s var(--ease); }
+  .sp-num{ transition:color .4s var(--ease), transform .45s var(--ease); }
+  .sp-name{ transition:color .35s var(--ease); }
+  .sp-pill{ transition:transform .35s var(--ease), box-shadow .35s var(--ease); }
+  .sp-row:hover{ transform:translateX(12px); }
+  .sp-row:hover .sp-num{ color:var(--sand); transform:scale(1.14); }
+  .sp-row:hover .sp-name{ color:var(--terra); }
+  .sp-row:hover .sp-pill{ transform:translateY(-2px) scale(1.07);
+    box-shadow:0 6px 16px -8px currentColor; }
+
+  /* ---- best time to surf ---- */
+  .sp-season{ margin-top:clamp(40px,5vw,68px); display:flex; flex-wrap:wrap;
+    align-items:center; gap:clamp(14px,2vw,28px);
+    padding:clamp(20px,2.4vw,28px) clamp(20px,2.6vw,32px);
+    border:1.5px solid rgba(239,227,208,.22); border-radius:var(--r);
+    background:rgba(239,227,208,.04); }
+  .sp-season-key{ font-family:var(--marker); color:var(--terra);
+    font-size:clamp(18px,2vw,26px); line-height:1; transform:rotate(-2deg);
+    flex:0 0 auto; }
+  .sp-season-body{ min-width:220px; flex:1 1 260px; }
+  .sp-season-eyebrow{ display:block; font-family:var(--body); font-weight:700;
+    text-transform:uppercase; letter-spacing:.2em; font-size:10px; color:var(--sand);
+    margin-bottom:.5em; }
+  .sp-season-text{ color:var(--bone-70); font-size:clamp(14px,1.05vw,16px);
+    line-height:1.5; max-width:52ch; }
+  .sp-season-text b{ color:var(--bone); font-weight:700; }
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes sp-key-float{ 0%,100%{ transform:rotate(-2deg) translateY(0); }
+      50%{ transform:rotate(-2deg) translateY(-5px); } }
+    .sp-season.is-in .sp-season-key{ animation:sp-key-float 3.4s var(--ease) infinite; }
+  }
+
+  @media (max-width:860px){
+    .sp-wrap{ grid-template-columns:1fr; gap:clamp(40px,7vw,56px); }
+    .sp-mapwrap{ position:static; max-width:440px; margin-inline:auto; width:100%; }
+  }
+  @media (max-width:480px){
+    .sp-row{ grid-template-columns:1fr; row-gap:8px; }
+    .sp-num{ font-size:30px; }
+  }
+</style>
+
+  <div class="container">
+    <header class="sp-head" data-reveal>
+      <p class="eyebrow sp-eyebrow">Sense of place</p>
+      <h2 class="h-lg sp-title">Surf the<br>South Coast</h2>
+      <p class="lead sp-intro">Four breaks, one easy stretch of coast — and the tuk-tuk is how you
+        get between them, board strapped on, salt in the air.</p>
+    </header>
+
+    <div class="sp-wrap">
+      <!-- LEFT: illustrated map -->
+      <div class="sp-mapwrap" data-reveal="left">
+        <div class="sp-frame" data-tilt data-tilt-max="6">
+          <span class="sp-tape">our patch →</span>
+          <div class="sp-mapinner" data-img-parallax="0.1">
+            <img class="sp-map" src="assets/img/mag/m4.jpg" width="735" height="1102"
+                 alt="Illustrated map of Sri Lanka marking the south-coast surf breaks" loading="lazy">
+          </div>
+          <span class="sp-cap">Weligama Bay · South Coast</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: numbered breaks -->
+      <ol class="sp-list" data-reveal-group>
+        <li class="sp-row" data-reveal="left">
+          <span class="sp-num" data-reveal="scale">01</span>
+          <div class="sp-body">
+            <div class="sp-topline">
+              <h3 class="sp-name">Weligama Bay</h3>
+              <span class="sp-pill sp-pill--beg">Beginner</span>
+            </div>
+            <p class="sp-desc">Soft, forgiving beach break and our home sands —
+              <b>where every first wave starts.</b></p>
+          </div>
+        </li>
+
+        <li class="sp-row" data-reveal="left">
+          <span class="sp-num" data-reveal="scale">02</span>
+          <div class="sp-body">
+            <div class="sp-topline">
+              <h3 class="sp-name">Mirissa</h3>
+              <span class="sp-pill sp-pill--all">All levels</span>
+            </div>
+            <p class="sp-desc">Mellow peaks, <b>whales offshore</b> and the south coast's
+              best sunsets just up the road.</p>
+          </div>
+        </li>
+
+        <li class="sp-row" data-reveal="left">
+          <span class="sp-num" data-reveal="scale">03</span>
+          <div class="sp-body">
+            <div class="sp-topline">
+              <h3 class="sp-name">Midigama</h3>
+              <span class="sp-pill sp-pill--adv">Advanced</span>
+            </div>
+            <p class="sp-desc"><b>Lazy Left &amp; Ram's Right</b> — punchy reef waves
+              for confident, intermediate-plus surfers.</p>
+          </div>
+        </li>
+
+        <li class="sp-row" data-reveal="left">
+          <span class="sp-num" data-reveal="scale">04</span>
+          <div class="sp-body">
+            <div class="sp-topline">
+              <h3 class="sp-name">Ahangama</h3>
+              <span class="sp-pill sp-pill--adv">Advanced</span>
+            </div>
+            <p class="sp-desc">A run of <b>fast, clean points</b> — the long-board cruise
+              and the surf-safari's last stop.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <aside class="sp-season" data-reveal>
+      <span class="sp-season-key">when&nbsp;to&nbsp;come →</span>
+      <div class="sp-season-body">
+        <span class="sp-season-eyebrow">Best time to surf</span>
+        <p class="sp-season-text">The south-coast season runs roughly <b>November to April</b> —
+          clean swell, light winds and <b>warm water with no wetsuit needed.</b> Our home break,
+          <b>Weligama Bay</b>, stays beginner-friendly through most of it, so first-timers can
+          paddle out almost any morning.</p>
+      </div>
+    </aside>
+  </div>
+</section>
