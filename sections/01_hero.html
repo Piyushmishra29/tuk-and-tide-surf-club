@@ -8,34 +8,29 @@
 
   /* background photo + parallax layer */
   .hero-bg{ position:absolute; inset:-8% 0; z-index:0; will-change:transform; }
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:58% 42%; }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center; }
 
   /* charcoal scrim for legibility (bottom + side + soft top + radial darken behind title) */
   .hero-scrim{ position:absolute; inset:0; z-index:1; pointer-events:none;
     background:
-      radial-gradient(120% 78% at 30% 64%, rgba(36,29,24,.62) 0%, rgba(36,29,24,.28) 38%, rgba(36,29,24,0) 66%),
-      linear-gradient(180deg, rgba(20,16,13,.52) 0%, rgba(20,16,13,0) 20%, rgba(20,16,13,0) 30%, rgba(20,16,13,.74) 76%, rgba(20,16,13,.96) 100%),
-      linear-gradient(90deg, rgba(36,29,24,.72) 0%, rgba(36,29,24,.32) 42%, rgba(36,29,24,0) 70%); }
+      radial-gradient(120% 78% at 30% 64%, rgba(36,29,24,.50) 0%, rgba(36,29,24,.20) 38%, rgba(36,29,24,0) 66%),
+      linear-gradient(180deg, rgba(20,16,13,.35) 0%, rgba(20,16,13,0) 20%, rgba(20,16,13,0) 30%, rgba(20,16,13,.55) 76%, rgba(20,16,13,.80) 100%),
+      linear-gradient(90deg, rgba(36,29,24,.50) 0%, rgba(36,29,24,.20) 42%, rgba(36,29,24,0) 70%); }
   .hero-grain{ position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.12;
     background-image:url('assets/img/tex/grain.webp'); background-size:320px; mix-blend-mode:overlay; }
 
   /* content shell */
   .hero-inner{ position:relative; z-index:3; width:100%; max-width:var(--maxw);
     margin-inline:auto; padding-inline:var(--gut);
-    padding-block:clamp(96px,13vh,132px) clamp(64px,9vh,92px);
+    padding-block:clamp(72px,10vh,100px) clamp(40px,6vh,60px);
     display:flex; flex-direction:column; min-height:100svh; min-height:100vh; }
-
-  .hero-top{ display:flex; }
-  .hero-pill{ color:var(--bone); border-color:var(--bone-70);
-    background:rgba(20,16,13,.28); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
-  .hero-pill .hero-dot{ width:7px; height:7px; border-radius:50%; background:var(--terra); flex:none; }
 
   .hero-main{ margin-top:auto; }
   .hero-eyebrow{ color:var(--bone-70); margin-bottom:clamp(14px,2vh,22px);
     display:inline-flex; align-items:center; gap:.9em; }
   .hero-eyebrow::before{ content:""; width:clamp(28px,4vw,52px); height:2px; background:var(--terra); }
 
-  .hero-title{ font-size:clamp(62px,16.5vw,236px); line-height:.80; letter-spacing:1px;
+  .hero-title{ font-size:clamp(40px,11vw,150px); line-height:.80; letter-spacing:1px;
     color:var(--bone); text-shadow:0 2px 40px rgba(20,16,13,.35);
     margin:0; }
   .hero-line{ display:block; }
@@ -84,19 +79,14 @@
 
   /* ambient idle accents (reduced-motion safe) */
   @media (prefers-reduced-motion:no-preference){
-    .hero-dot{ animation:hero-dot-pulse 2.6s var(--ease) infinite; }
     .hero-scroll{ animation:hero-scroll-bob 3.2s var(--ease) infinite; }
   }
-  @keyframes hero-dot-pulse{
-    0%,100%{ box-shadow:0 0 0 0 rgba(194,74,44,.5); }
-    55%{ box-shadow:0 0 0 6px rgba(194,74,44,0); } }
   @keyframes hero-scroll-bob{
     0%,100%{ transform:translateY(0); }
     50%{ transform:translateY(5px); } }
 
   @media (max-width:760px){
-    .hero-bg img{ object-position:60% 40%; }
-    .hero-title{ font-size:clamp(62px,19vw,108px); line-height:.84; }
+    .hero-title{ font-size:clamp(40px,14vw,80px); line-height:.84; }
     .hero-marker{ font-size:.26em; transform:rotate(-6deg) translateY(-.3em); }
     .hero-bottom{ align-items:flex-start; }
     .hero-scroll{ display:none; }
@@ -109,16 +99,15 @@
   </style>
 
   <div class="hero-bg" data-parallax="0.18">
-    <img src="assets/img/photos/r10_sunset_front.webp" alt="A blue tuk-tuk parked on a Weligama beach road at sunset, headlights glowing over the south-coast surf" loading="eager" fetchpriority="high">
+    <picture>
+      <source srcset="assets/img/photos/hero-mobile.webp" media="(max-width: 760px)">
+      <img src="assets/img/photos/hero-cover.webp" alt="Tuk & Tide Surf Club — Weligama Bay, Sri Lanka" loading="eager" fetchpriority="high">
+    </picture>
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-grain"></div>
 
   <div class="hero-inner" data-reveal-group>
-    <div class="hero-top">
-      <span class="pill hero-pill" data-reveal="up"><span class="hero-dot"></span>Weligama Bay · Sri Lanka</span>
-    </div>
-
     <div class="hero-main">
       <p class="eyebrow hero-eyebrow" data-reveal="fade" data-scrub-y="40">Surf, ride, repeat.</p>
 

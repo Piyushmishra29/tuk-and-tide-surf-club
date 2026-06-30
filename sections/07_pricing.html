@@ -39,12 +39,11 @@
 
   /* deliberate FEATURED tier (the centre card) */
   .pr-card--featured{
-    transform:scale(1.045);
     box-shadow:0 26px 56px rgba(36,29,24,.34), 0 0 0 2px #E9774F;
     z-index:2;
   }
   .pr-card--featured:hover{
-    transform:scale(1.045) translateY(-6px);
+    transform:translateY(-6px);
     box-shadow:0 36px 70px rgba(36,29,24,.40), 0 0 0 2px #E9774F;
   }
   .pr-badge{
@@ -121,7 +120,7 @@
   @media (hover:none){
     html.has-js .pr-card[data-reveal].is-in:hover{ transform:none; }
     .pr-card:hover{ transform:none; }
-    .pr-card--featured:hover{ transform:scale(1.045); }
+    .pr-card--featured:hover{ transform:translateY(-6px); }
     @media (max-width:880px){ .pr-card--featured:hover{ transform:none; } }
   }
 </style>

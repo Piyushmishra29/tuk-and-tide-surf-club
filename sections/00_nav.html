@@ -20,12 +20,11 @@
   color:inherit; white-space:nowrap; transition:opacity .3s var(--ease);
 }
 .nav-brand:hover{ opacity:.8; }
-.nav-mark{
-  flex:0 0 auto; width:clamp(26px,2.3vw,34px); height:auto; color:var(--terra);
-  transition:transform .55s var(--ease);
-}
-.nav-brand:hover .nav-mark{ transform:translateY(-2px) rotate(-4deg); }
-.nav-mark svg{ display:block; width:100%; height:auto; fill:currentColor; }
+.nav-logo{ height:clamp(36px,3.2vw,48px); width:auto; display:block; }
+.nav-logo-white{ display:block; }
+.nav-logo-black{ display:none; }
+.nav.is-stuck .nav-logo-white{ display:none; }
+.nav.is-stuck .nav-logo-black{ display:block; }
 @media (prefers-reduced-motion:no-preference){
   /* idle: tiny slow float on the wave mark (hover transform lives on .nav-mark, so it still wins) */
   .nav-mark svg{ animation:nav-wave-idle 5.5s ease-in-out infinite; }
@@ -166,13 +165,8 @@
 <header data-nav class="nav">
   <div class="nav-bar">
     <a class="nav-brand" href="#hero" aria-label="Tuk &amp; Tide Surf Club — home">
-      <span class="nav-mark" aria-hidden="true">
-        <svg viewBox="0 0 56 26" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.5 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 L56 26 L0 26 Z"/></svg>
-      </span>
-      <span class="nav-wm">
-        <span class="nav-wm-main">TUK<span class="nav-amp">&amp;</span>TIDE</span>
-        <span class="nav-wm-sub">Surf Club · Weligama</span>
-      </span>
+      <img class="nav-logo nav-logo-white" src="assets/img/logo/logo-white.webp" alt="Tuk &amp; Tide Surf Club">
+      <img class="nav-logo nav-logo-black" src="assets/img/logo/logo-black.webp" alt="Tuk &amp; Tide Surf Club">
     </a>
 
     <nav class="nav-links" aria-label="Primary">

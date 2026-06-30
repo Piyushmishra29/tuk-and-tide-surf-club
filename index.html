@@ -86,12 +86,11 @@
   color:inherit; white-space:nowrap; transition:opacity .3s var(--ease);
 }
 .nav-brand:hover{ opacity:.8; }
-.nav-mark{
-  flex:0 0 auto; width:clamp(26px,2.3vw,34px); height:auto; color:var(--terra);
-  transition:transform .55s var(--ease);
-}
-.nav-brand:hover .nav-mark{ transform:translateY(-2px) rotate(-4deg); }
-.nav-mark svg{ display:block; width:100%; height:auto; fill:currentColor; }
+.nav-logo{ height:clamp(36px,3.2vw,48px); width:auto; display:block; }
+.nav-logo-white{ display:block; }
+.nav-logo-black{ display:none; }
+.nav.is-stuck .nav-logo-white{ display:none; }
+.nav.is-stuck .nav-logo-black{ display:block; }
 @media (prefers-reduced-motion:no-preference){
   /* idle: tiny slow float on the wave mark (hover transform lives on .nav-mark, so it still wins) */
   .nav-mark svg{ animation:nav-wave-idle 5.5s ease-in-out infinite; }
@@ -232,13 +231,8 @@
 <header data-nav class="nav">
   <div class="nav-bar">
     <a class="nav-brand" href="#hero" aria-label="Tuk &amp; Tide Surf Club — home">
-      <span class="nav-mark" aria-hidden="true">
-        <svg viewBox="0 0 56 26" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.5 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 q7 -14 14 0 L56 26 L0 26 Z"/></svg>
-      </span>
-      <span class="nav-wm">
-        <span class="nav-wm-main">TUK<span class="nav-amp">&amp;</span>TIDE</span>
-        <span class="nav-wm-sub">Surf Club · Weligama</span>
-      </span>
+      <img class="nav-logo nav-logo-white" src="assets/img/logo/logo-white.webp" alt="Tuk &amp; Tide Surf Club">
+      <img class="nav-logo nav-logo-black" src="assets/img/logo/logo-black.webp" alt="Tuk &amp; Tide Surf Club">
     </a>
 
     <nav class="nav-links" aria-label="Primary">
@@ -284,34 +278,29 @@
 
   /* background photo + parallax layer */
   .hero-bg{ position:absolute; inset:-8% 0; z-index:0; will-change:transform; }
-  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:58% 42%; }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center; }
 
   /* charcoal scrim for legibility (bottom + side + soft top + radial darken behind title) */
   .hero-scrim{ position:absolute; inset:0; z-index:1; pointer-events:none;
     background:
-      radial-gradient(120% 78% at 30% 64%, rgba(36,29,24,.62) 0%, rgba(36,29,24,.28) 38%, rgba(36,29,24,0) 66%),
-      linear-gradient(180deg, rgba(20,16,13,.52) 0%, rgba(20,16,13,0) 20%, rgba(20,16,13,0) 30%, rgba(20,16,13,.74) 76%, rgba(20,16,13,.96) 100%),
-      linear-gradient(90deg, rgba(36,29,24,.72) 0%, rgba(36,29,24,.32) 42%, rgba(36,29,24,0) 70%); }
+      radial-gradient(120% 78% at 30% 64%, rgba(36,29,24,.50) 0%, rgba(36,29,24,.20) 38%, rgba(36,29,24,0) 66%),
+      linear-gradient(180deg, rgba(20,16,13,.35) 0%, rgba(20,16,13,0) 20%, rgba(20,16,13,0) 30%, rgba(20,16,13,.55) 76%, rgba(20,16,13,.80) 100%),
+      linear-gradient(90deg, rgba(36,29,24,.50) 0%, rgba(36,29,24,.20) 42%, rgba(36,29,24,0) 70%); }
   .hero-grain{ position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.12;
     background-image:url('assets/img/tex/grain.webp'); background-size:320px; mix-blend-mode:overlay; }
 
   /* content shell */
   .hero-inner{ position:relative; z-index:3; width:100%; max-width:var(--maxw);
     margin-inline:auto; padding-inline:var(--gut);
-    padding-block:clamp(96px,13vh,132px) clamp(64px,9vh,92px);
+    padding-block:clamp(72px,10vh,100px) clamp(40px,6vh,60px);
     display:flex; flex-direction:column; min-height:100svh; min-height:100vh; }
-
-  .hero-top{ display:flex; }
-  .hero-pill{ color:var(--bone); border-color:var(--bone-70);
-    background:rgba(20,16,13,.28); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
-  .hero-pill .hero-dot{ width:7px; height:7px; border-radius:50%; background:var(--terra); flex:none; }
 
   .hero-main{ margin-top:auto; }
   .hero-eyebrow{ color:var(--bone-70); margin-bottom:clamp(14px,2vh,22px);
     display:inline-flex; align-items:center; gap:.9em; }
   .hero-eyebrow::before{ content:""; width:clamp(28px,4vw,52px); height:2px; background:var(--terra); }
 
-  .hero-title{ font-size:clamp(62px,16.5vw,236px); line-height:.80; letter-spacing:1px;
+  .hero-title{ font-size:clamp(40px,11vw,150px); line-height:.80; letter-spacing:1px;
     color:var(--bone); text-shadow:0 2px 40px rgba(20,16,13,.35);
     margin:0; }
   .hero-line{ display:block; }
@@ -360,19 +349,14 @@
 
   /* ambient idle accents (reduced-motion safe) */
   @media (prefers-reduced-motion:no-preference){
-    .hero-dot{ animation:hero-dot-pulse 2.6s var(--ease) infinite; }
     .hero-scroll{ animation:hero-scroll-bob 3.2s var(--ease) infinite; }
   }
-  @keyframes hero-dot-pulse{
-    0%,100%{ box-shadow:0 0 0 0 rgba(194,74,44,.5); }
-    55%{ box-shadow:0 0 0 6px rgba(194,74,44,0); } }
   @keyframes hero-scroll-bob{
     0%,100%{ transform:translateY(0); }
     50%{ transform:translateY(5px); } }
 
   @media (max-width:760px){
-    .hero-bg img{ object-position:60% 40%; }
-    .hero-title{ font-size:clamp(62px,19vw,108px); line-height:.84; }
+    .hero-title{ font-size:clamp(40px,14vw,80px); line-height:.84; }
     .hero-marker{ font-size:.26em; transform:rotate(-6deg) translateY(-.3em); }
     .hero-bottom{ align-items:flex-start; }
     .hero-scroll{ display:none; }
@@ -385,16 +369,15 @@
   </style>
 
   <div class="hero-bg" data-parallax="0.18">
-    <img src="assets/img/photos/r10_sunset_front.webp" alt="A blue tuk-tuk parked on a Weligama beach road at sunset, headlights glowing over the south-coast surf" loading="eager" fetchpriority="high">
+    <picture>
+      <source srcset="assets/img/photos/hero-mobile.webp" media="(max-width: 760px)">
+      <img src="assets/img/photos/hero-cover.webp" alt="Tuk & Tide Surf Club — Weligama Bay, Sri Lanka" loading="eager" fetchpriority="high">
+    </picture>
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-grain"></div>
 
   <div class="hero-inner" data-reveal-group>
-    <div class="hero-top">
-      <span class="pill hero-pill" data-reveal="up"><span class="hero-dot"></span>Weligama Bay · Sri Lanka</span>
-    </div>
-
     <div class="hero-main">
       <p class="eyebrow hero-eyebrow" data-reveal="fade" data-scrub-y="40">Surf, ride, repeat.</p>
 
@@ -1492,12 +1475,11 @@
 
   /* deliberate FEATURED tier (the centre card) */
   .pr-card--featured{
-    transform:scale(1.045);
     box-shadow:0 26px 56px rgba(36,29,24,.34), 0 0 0 2px #E9774F;
     z-index:2;
   }
   .pr-card--featured:hover{
-    transform:scale(1.045) translateY(-6px);
+    transform:translateY(-6px);
     box-shadow:0 36px 70px rgba(36,29,24,.40), 0 0 0 2px #E9774F;
   }
   .pr-badge{
@@ -1574,7 +1556,7 @@
   @media (hover:none){
     html.has-js .pr-card[data-reveal].is-in:hover{ transform:none; }
     .pr-card:hover{ transform:none; }
-    .pr-card--featured:hover{ transform:scale(1.045); }
+    .pr-card--featured:hover{ transform:translateY(-6px); }
     @media (max-width:880px){ .pr-card--featured:hover{ transform:none; } }
   }
 </style>
@@ -2250,15 +2232,15 @@
   .mr-h .mr-amp{ color:var(--terra); -webkit-text-stroke:0; }
   .mr-sub{ margin-top:18px; max-width:48ch; color:var(--ink-70); }
 
-  .mr-grid{ display:grid; grid-template-columns:1.04fr 1fr;
+  .mr-grid{ display:grid; grid-template-columns:1fr;
             gap:clamp(22px,2.8vw,40px); align-items:stretch;
             margin-top:clamp(40px,5vw,64px); }
 
   /* ---- sticker pile (terracotta panel) ---- */
   .mr-lab{ position:relative; border-radius:var(--r-lg); background:var(--terra);
-           padding:clamp(26px,3vw,42px) clamp(20px,2.6vw,36px) clamp(54px,4vw,58px);
-           overflow:hidden; box-shadow:0 24px 50px -28px rgba(36,29,24,.55); }
-  .mr-lab::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.55;
+           padding:clamp(36px,4vw,52px) clamp(24px,3vw,40px) clamp(60px,5vw,68px);
+           box-shadow:0 24px 50px -28px rgba(36,29,24,.55); }
+  .mr-lab::before{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:.55;
            background:radial-gradient(120% 90% at 28% 10%, rgba(255,255,255,.18), transparent 58%); }
   .mr-lab-top{ position:relative; display:flex; align-items:baseline; justify-content:space-between;
            gap:14px; margin-bottom:clamp(14px,2vw,24px); }
@@ -2268,35 +2250,27 @@
 
   .mr-pile{ position:relative; display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
             gap:clamp(6px,1.4vw,18px); padding-top:8px; }
-  .mr-stk{ width:clamp(72px,9.2vw,116px); aspect-ratio:1/1; flex:0 0 auto; position:relative; }
-  /* inner carries the scatter transform + idle float so it never fights the
-     reveal engine (which forces transform:none on the outer .is-in element) */
-  .mr-stk-i{ display:block; width:100%; height:100%;
-           --rot:0deg; --ty:0px; --sc:1;
-           transform:rotate(var(--rot)) translateY(var(--ty)) scale(var(--sc));
+  .mr-stk{ width:clamp(90px,11vw,140px); flex:0 0 auto; position:relative; }
+  .mr-stk-i{ display:flex; align-items:center; justify-content:center;
            transition:transform .5s var(--ease), filter .5s var(--ease);
            filter:drop-shadow(0 8px 16px rgba(36,29,24,.4)); will-change:transform; }
-  .mr-stk-i img{ width:100%; height:100%; object-fit:contain; pointer-events:none; }
-  /* organic scatter: rotate + vertical offset + scale per child (as vars) */
-  .mr-stk:nth-child(1)  .mr-stk-i{ --rot:-9deg;  --ty:8px;   }
-  .mr-stk:nth-child(2)  .mr-stk-i{ --rot:6deg;   --ty:-12px; --sc:1.08; }
-  .mr-stk:nth-child(3)  .mr-stk-i{ --rot:-4deg;  --ty:14px;  }
-  .mr-stk:nth-child(4)  .mr-stk-i{ --rot:11deg;  --ty:-6px;  }
-  .mr-stk:nth-child(5)  .mr-stk-i{ --rot:-12deg; --ty:-2px;  --sc:1.06; }
-  .mr-stk:nth-child(6)  .mr-stk-i{ --rot:5deg;   --ty:16px;  }
-  .mr-stk:nth-child(7)  .mr-stk-i{ --rot:-7deg;  --ty:-10px; }
-  .mr-stk:nth-child(8)  .mr-stk-i{ --rot:9deg;   --ty:10px;  --sc:1.05; }
-  .mr-stk:nth-child(9)  .mr-stk-i{ --rot:-3deg;  --ty:-14px; }
-  .mr-stk:nth-child(10) .mr-stk-i{ --rot:8deg;   --ty:6px;   }
-  /* gentle idle float/rotate — keeps each sticker's base scatter, adds a sway.
-     Different delay + duration per child so the pile breathes out of phase. */
+  .mr-stk-i img{ width:100%; height:auto; pointer-events:none; }
+  .mr-stk:nth-child(1)  .mr-stk-i{ transform:translateY(8px); }
+  .mr-stk:nth-child(2)  .mr-stk-i{ transform:translateY(-12px) scale(1.08); }
+  .mr-stk:nth-child(3)  .mr-stk-i{ transform:translateY(14px); }
+  .mr-stk:nth-child(4)  .mr-stk-i{ transform:translateY(-6px); }
+  .mr-stk:nth-child(5)  .mr-stk-i{ transform:translateY(-2px) scale(1.06); }
+  .mr-stk:nth-child(6)  .mr-stk-i{ transform:translateY(16px); }
+  .mr-stk:nth-child(7)  .mr-stk-i{ transform:translateY(-10px); }
+  .mr-stk:nth-child(8)  .mr-stk-i{ transform:translateY(10px) scale(1.05); }
+  .mr-stk:nth-child(9)  .mr-stk-i{ transform:translateY(-14px); }
+  .mr-stk:nth-child(10) .mr-stk-i{ transform:translateY(6px); }
   @media (prefers-reduced-motion:no-preference){
-    .mr-stk-i{ animation:mr-float 6s ease-in-out infinite; }
     @keyframes mr-float{
-      0%,100%{ transform:rotate(var(--rot)) translateY(var(--ty)) scale(var(--sc)); }
-      50%{ transform:rotate(calc(var(--rot) + 3.5deg))
-                     translateY(calc(var(--ty) - 8px)) scale(calc(var(--sc) * 1.015)); }
+      0%,100%{ translate:0 0; }
+      50%{ translate:0 -7px; }
     }
+    .mr-stk-i{ animation:mr-float 6s ease-in-out infinite; }
     .mr-stk:nth-child(1)  .mr-stk-i{ animation-duration:6.2s; animation-delay:-0.4s; }
     .mr-stk:nth-child(2)  .mr-stk-i{ animation-duration:5.4s; animation-delay:-1.6s; }
     .mr-stk:nth-child(3)  .mr-stk-i{ animation-duration:6.8s; animation-delay:-0.9s; }
@@ -2308,43 +2282,12 @@
     .mr-stk:nth-child(9)  .mr-stk-i{ animation-duration:6.4s; animation-delay:-1.9s; }
     .mr-stk:nth-child(10) .mr-stk-i{ animation-duration:5.9s; animation-delay:-0.2s; }
   }
-  /* hover: straighten, lift, scale up — pause the float so it sits flat */
   .mr-stk:hover{ z-index:5; }
   .mr-stk:hover .mr-stk-i{ animation-play-state:paused;
-                 transform:rotate(0deg) translateY(-6px) scale(1.16);
+                 transform:translateY(-6px) scale(1.16);
                  filter:drop-shadow(0 14px 24px rgba(36,29,24,.5)); }
   .mr-lab-cap{ position:absolute; left:0; right:0; bottom:clamp(16px,1.8vw,22px); text-align:center;
            font-family:var(--script); font-size:clamp(14px,1.4vw,18px); color:var(--bone); }
-
-  /* ---- product tiles ---- */
-  .mr-shop{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.6vw,18px); }
-  .mr-tile{ display:flex; flex-direction:column; overflow:hidden;
-            border:1.5px solid rgba(36,29,24,.13); border-radius:var(--r); background:var(--bone);
-            box-shadow:0 14px 30px -22px rgba(36,29,24,.5);
-            transition:border-color .4s var(--ease), transform .5s var(--ease), box-shadow .5s var(--ease); }
-  .mr-tile:hover{ border-color:rgba(194,74,44,.55); transform:translateY(-4px);
-            box-shadow:0 24px 40px -24px rgba(36,29,24,.6); }
-  .mr-shot{ position:relative; width:100%; aspect-ratio:4/5; overflow:hidden; background:var(--sand); }
-  .mr-shot img{ width:100%; height:100%; object-fit:cover;
-            transition:transform .7s var(--ease); }
-  .mr-tile:hover .mr-shot img{ transform:scale(1.07); }
-  .mr-info{ padding:clamp(13px,1.4vw,17px) clamp(15px,1.5vw,18px) clamp(15px,1.6vw,19px);
-            display:flex; flex-direction:column; gap:6px; }
-  .mr-name{ font-family:var(--anton); font-size:clamp(19px,1.8vw,25px); letter-spacing:.01em;
-            line-height:.98; color:var(--ink); text-transform:uppercase; }
-  .mr-desc{ font-size:12.5px; line-height:1.4; color:var(--ink-70); }
-  .mr-price{ margin-top:2px; display:inline-flex; align-items:baseline; gap:5px;
-            font-family:var(--body); font-weight:700; }
-  .mr-price .mr-from{ font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-45); }
-  .mr-price .mr-amt{ font-family:var(--anton); font-size:clamp(18px,1.7vw,23px); color:var(--terra);
-            letter-spacing:.01em; display:inline-block; transform-origin:left bottom;
-            transition:transform .4s var(--ease), color .4s var(--ease); }
-  .mr-tile:hover .mr-amt{ transform:scale(1.1); color:var(--clay); }
-
-  /* wide tile (cap) spans both columns, horizontal */
-  .mr-tile--wide{ grid-column:1 / -1; flex-direction:row; align-items:stretch; }
-  .mr-tile--wide .mr-shot{ width:clamp(150px,38%,230px); aspect-ratio:auto; flex:0 0 auto; }
-  .mr-tile--wide .mr-info{ flex:1; justify-content:center; gap:7px; }
 
   /* ---- price strip + CTA ---- */
   .mr-foot{ margin-top:clamp(26px,3vw,40px); display:flex; flex-wrap:wrap; align-items:center;
@@ -2361,13 +2304,10 @@
   .mr-go{ font-family:var(--marker); font-size:14px; color:var(--clay); white-space:nowrap; }
 
   @media (max-width:900px){
-    .mr-grid{ grid-template-columns:1fr; gap:24px; }
-    .mr-stk{ width:clamp(78px,20vw,108px); }
+    .mr-grid{ gap:24px; }
+    .mr-stk{ width:clamp(82px,20vw,120px); }
   }
   @media (max-width:560px){
-    .mr-shop{ grid-template-columns:1fr; }
-    .mr-tile--wide{ flex-direction:row; }
-    .mr-tile--wide .mr-shot{ width:42%; }
     .mr-foot{ flex-direction:column; align-items:flex-start; gap:22px; }
     .mr-cta{ flex-direction:column; align-items:flex-start; gap:12px; }
   }
@@ -2403,33 +2343,7 @@
         <span class="mr-lab-cap">slap one on your board</span>
       </div>
 
-      <!-- product tiles -->
-      <div class="mr-shop" data-reveal-group>
-        <article class="mr-tile" data-reveal="scale-up" data-tilt data-tilt-max="6">
-          <div class="mr-shot"><img src="assets/img/mockups/02_tee.webp" alt="Tuk &amp; Tide club tee" loading="lazy"></div>
-          <div class="mr-info">
-            <h3 class="mr-name">Club Tee</h3>
-            <p class="mr-desc">Soft cotton, woodcut crest. Sun-faded forever.</p>
-            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$24</span></p>
-          </div>
-        </article>
-        <article class="mr-tile" data-reveal="scale-up" data-tilt data-tilt-max="6">
-          <div class="mr-shot"><img src="assets/img/mockups/04_tote.webp" alt="Tuk &amp; Tide boat tote" loading="lazy"></div>
-          <div class="mr-info">
-            <h3 class="mr-name">Boat Tote</h3>
-            <p class="mr-desc">Heavy canvas — towels, fruit &amp; wax all day.</p>
-            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$18</span></p>
-          </div>
-        </article>
-        <article class="mr-tile mr-tile--wide" data-reveal="scale-up" data-tilt data-tilt-max="5">
-          <div class="mr-shot"><img src="assets/img/mockups/01_cap.webp" alt="Tuk &amp; Tide lane cap" loading="lazy"></div>
-          <div class="mr-info">
-            <h3 class="mr-name">Lane Cap</h3>
-            <p class="mr-desc">Enamel pin, curved brim. Curb-side ready.</p>
-            <p class="mr-price"><span class="mr-from">from</span><span class="mr-amt">$28</span></p>
-          </div>
-        </article>
-      </div>
+
     </div>
 
     <!-- price strip + CTA -->
@@ -2455,7 +2369,7 @@
 <!-- 11_footer -->
 <footer class="ft bg-ink grain">
 <style>
-  .ft{ position:relative; overflow:hidden; padding-block:clamp(64px,9vw,120px) clamp(28px,3vw,40px); }
+  .ft{ position:relative; padding-block:clamp(64px,9vw,120px) clamp(28px,3vw,40px); }
   .ft .container{ position:relative; z-index:2; }
 
   /* ---- closing brand moment ---- */
@@ -2516,7 +2430,7 @@
   .ft-bottom .item b{ color:var(--bone); font-weight:700; }
   .ft-bottom .note{ font-family:var(--marker); color:var(--terra); letter-spacing:.02em;
     font-size:clamp(12px,1vw,15px); transform:rotate(-1.5deg); }
-  .ft-mark{ width:26px; height:26px; opacity:.9; }
+  .ft-mark{ height:clamp(18px,1.6vw,26px); width:auto; opacity:.8; }
 
   /* ---- giant ghost wave behind brand ---- */
   .ft-ghost{ position:absolute; right:-6%; top:8%; width:min(46vw,560px); opacity:.05;
@@ -2542,7 +2456,7 @@
   }
 </style>
 
-  <img class="ft-ghost" src="assets/img/logo/mark-wave-EFE3D0.webp" alt="" aria-hidden="true">
+  <img class="ft-ghost" src="assets/img/logo/logo-white.webp" alt="" aria-hidden="true">
 
   <div class="container">
 
@@ -2598,7 +2512,7 @@
     <hr class="ft-rule">
     <div class="ft-bottom">
       <div class="item">
-        <img class="ft-mark" src="assets/img/logo/mark-wave-C24A2C.webp" alt="">
+        <img class="ft-mark" src="assets/img/logo/logo-white.webp" alt="Tuk &amp; Tide Surf Club">
         <span>&copy; 2026 <b>Tuk &amp; Tide Surf Club</b></span>
       </div>
       <div class="item">Weligama &middot; Sri Lanka</div>
